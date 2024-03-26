@@ -1,0 +1,28 @@
+Nueva Zelanda;Pacific/Auckland;🇳🇿
+Corea del Sur;Asia/Seoul;🇰🇷
+Japón;Asia/Tokyo;🇯🇵
+Islas Canarias;Atlantic/Canary;🇮🇨
+Argentina;America/Buenos_Aires;🇦🇷
+Uruguay;America/Montevideo;🇺🇾
+Brasil;America/Sao_Paulo;🇧🇷
+Chile;America/Santiago;🇨🇱
+Paraguay;America/Asuncion;🇵🇾
+Venezuela;America/Caracas;🇻🇪
+República Dominicana;America/Santo_Domingo;🇩🇴
+Bolivia;America/La_Paz;🇧🇴
+Puerto Rico;America/Puerto_Rico;🇵🇷
+Florida;America/New_York;🇺🇸
+New York;America/New_York;🇺🇸
+Cuba;America/Havana;🇨🇺
+Panamá;America/Panama;🇵🇸
+Perú;America/Lima;🇵🇪
+Colombia;America/Bogota;🇨🇴
+Ecuador;America/Guayaquil;🇪🇨
+México;SystemV/CST6;🇲🇽
+Costa Rica;America/Costa_Rica;🇨🇷
+Honduras;America/Tegucigalpa;🇭🇳
+El Salvador;America/El_Salvador;🇸🇻
+Nicaragua;America/Managua;🇳🇮
+Guatemala;America/Guatemala;🇬🇹
+California;America/Los_Angeles;🇺🇸
+España;Europe/Madrid;🇪🇸
