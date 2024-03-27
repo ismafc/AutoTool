@@ -5143,6 +5143,46 @@ public class CodeChef {
         scn.close();
     }
 
+    /*
+     * Problem: The Tom and Jerry Game!
+     * 
+     * As usual, Tom and Jerry are fighting. Tom has strength TS and Jerry has strength JS. 
+     * You are given TS and your task is to find the number of possible values of JS such that Jerry wins the following game.
+     * The game consists of one or more turns. In each turn:
+     * If both TS and JS are even, their values get divided by 2 and the game proceeds with the next turn.
+     * If both TS and JS are odd, a tie is declared and the game ends.
+     * If TS is even and JS is odd, Tom wins the game.
+     * If TS is odd and JS is even, Jerry wins the game.
+     * Find the number of possible initial values of JS such that 1 <= JS <= TS, there is no tie and Jerry wins the game.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. 
+     * The description of T test cases follows.
+     * The first and only line of each test case contains a single integer TS.
+     * 
+     * Output:
+     * For each test case, print a single line containing one integer - the number of values of JS such that Jerry wins the game.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= TS <= 10^18
+     */
+    public static void solveCodeChefEOEO() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long TS = scn.nextLong();
+            long TSaux = TS;
+            long pow2 = 1;
+            while (TSaux % 2 == 0) {
+                TSaux /= 2;
+                pow2 *= 2;
+            }
+            pow2 *= 2;
+            System.out.println(TS / pow2);
+        }
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
