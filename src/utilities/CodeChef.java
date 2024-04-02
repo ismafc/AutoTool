@@ -5185,6 +5185,69 @@ public class CodeChef {
     }
 
     /*
+     * Problem: The Ides of March
+     * 
+     * Beware the ides of March.
+     * Julius Caesar was warned by a soothsayer to be wary of the ides of March - namely, the 15-th of March.
+     * Today is the N-th day of March. Your task is to tell Caesar whether it is the ides of March, 
+     * so that he can take extra safety precautions if necessary.
+     * 
+     * Input Format:
+     * The only line of input will contain a single integer N, today's date in March.
+     * 
+     * Output Format:
+     * Print "Yes" if today is the ides of March, and "No" otherwise (without quotes).
+     * Each letter of the output may be printed in either uppercase or lowercase, i.e, 
+     * the strings NO, no, nO, and No will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= N <= 15
+     */
+    public static void solveCodeChefIDESM() {
+        Scanner scn = new Scanner(System.in);
+        long N = scn.nextLong();
+        System.out.println(N == 15 ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
+     * Problem: Extreme Basketball
+     * 
+     * Alice and Bob are playing a game of basketball against each other, one-versus-one.
+     * Currently, Alice has A points, and Bob has B points.
+     * 
+     * Each shot of a player can score either 2 or 3 points.
+     * Alice isn't just out to win - she wants to win in dominant fashion.
+     * Alice believes that her win is dominant if she ends the game with at least 1010 points more than Bob.
+     * If Alice is able to prevent Bob from scoring any more points, 
+     * what's the minimum number of shots she further needs to get a dominant victory?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of a single line of input, 
+     * containing two space-separated integers A and B - the initial scores of Alice and Bob.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum number of shots Alice needs to win a dominant victory.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 2 <= A, B <= 100
+     */
+    public static void solveCodeChefBBWIN() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long diff = 10 + B - A;
+            System.out.println(diff > 0 ? (diff + 2) / 3 : 0);
+        }
+        scn.close();
+    }
+
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
