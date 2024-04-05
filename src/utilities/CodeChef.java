@@ -5246,6 +5246,129 @@ public class CodeChef {
         scn.close();
     }
 
+    /*
+     * Problem: Reach 5 Star
+     * 
+     * Chef loves giving contests on Codechef. Chef wants to become 5 star rated. Currently his rating on Codechef is X.
+     * After today's contest, his rating will increase by Y. Note that Y can be negative which means that Chef's rating will decrease.
+     * Find whether Chef will become 5 star rated after today's contest.
+     * Chef will be considered 55 star rated if his rating is greater than or equal to 2000.
+     * 
+     * Input Format:
+     * The first line contains two space-separated integers X and Y - 
+     * chef's initial rating and the amount by which his rating will increase, respectively.
+     * 
+     * Output Format:
+     * Output YES if chef will become 55 star rated, and NO otherwise.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 0 <= X < 2000
+     * -2000 <= Y < 2000
+     * 
+     */
+    public static void solveCodeChefR5S() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(X + Y >= 2000 ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
+     * Problem: Moody Chef
+     * 
+     * Chef loves integers that are in the range of l to r. 
+     * More formally, Chef loves an integer x if it satisfies the condition l <= x <= r.
+     * Chef has an array A of length N. Currently, the happiness of Chef is 0.
+     * He will examine the elements of the array in order from index 1 to N.
+     * If he finds an integer that he loves, his happiness will increase by 1; otherwise, his happiness will decrease by 1.
+     * Find the values of maximum and minimum happiness Chef will experience while going through the array.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains three integers N, l and r - 
+     * the number of elements in the array, the least number that chef loves, the biggest number that chef loves.
+     * The next contains N space-separated integers, where the ith integer denotes Ai.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, 
+     * two space-separated integers denoting the maximum and minimum happiness Chef will experience.
+     * 
+     * Constraints:
+     * 1 <= T <= 2 * 10^5
+     * 1 <= N <= 2 * 10^5
+     * 1 <= l <= r <= 2 * 10^5
+     * 1 <= Ai <= 2 * 10^5
+     * The sum of N over all test cases won't exceed 2.5 * 10^5.
+     */
+    public static void solveCodeChefMOOCHEF() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long l = scn.nextLong();
+            long r = scn.nextLong();
+            long happyness = 0;
+            long max_happyness = 0;
+            long min_happyness = 0;
+            while (N-- > 0) {
+                long Ai = scn.nextLong();
+                if (l <= Ai && Ai <= r)
+                    happyness += 1;
+                else
+                    happyness -= 1;
+                max_happyness = Math.max(max_happyness, happyness);
+                min_happyness = Math.min(min_happyness, happyness);
+            }
+            System.out.println(max_happyness + " " + min_happyness);
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: New Piece
+     * 
+     * Chef's favorite game is chess. Today, he invented a new piece and wants to see its strengths.
+     * From a cell (X, Y), the new piece can move to any cell of the chessboard such that its color is different from that of (X, Y).
+     * The new piece is currently located at cell (A, B). 
+     * Chef wants to calculate the minimum number of steps required to move it to (P, Q).
+     * 
+     * Note: A chessboard is an 8 x 8 square board, where the cell at the intersection of the ith row and jth column is denoted 
+     * (i, j). Cell (i, j) is colored white if i + j is even and black if i+j is odd.
+     * 
+     * Input Format:
+     * 
+     * The first line of input contains a single integer T denoting the number of test cases. The description of the test cases follows.
+     * Each test case consists of a single line of input, containing four space-separated integers A, B, P, Q.
+     * 
+     * Output Format:
+     * For each test case, output a single line containing one integer - 
+     * the minimum number of moves taken by the new piece to reach (P, Q) from (A, B).
+     * 
+     * Constraints:
+     * 1 <= T <= 5000
+     * 1 <= A,B,P,Q <= 8
+     */
+    public static void solveCodeChefNEWPIECE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long P = scn.nextLong();
+            long Q = scn.nextLong();
+            if (A == P && B == Q)
+                System.out.println(0);
+            else if ((A + B) % 2 != (P + Q) % 2)
+                System.out.println(1);
+            else
+                System.out.println(2);
+        }
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
