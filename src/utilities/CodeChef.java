@@ -5437,6 +5437,106 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Football Training
+     * 
+     * As a football trainer, you have several players training under you. 
+     * Each of these players are fans of either Leo or Ronald, but not both.
+     * X of the players are fans of Leo, and want a free kick session to be carried out.
+     * Y of the players are fans of Ronald, and want a penalty session to be carried out.
+     * Note that each player is a fan of exactly one of Leo or Ronald, so there are X + Y players in total.
+     * It'd be nice if players are actually interested in their training, 
+     * so you decide to hold whichever type of training has more people interested in it.
+     * Given X and Y, which type of training session will you hold?
+     * It is guaranteed that X != Y.
+     * 
+     * Input Format:
+     * The first and only line of input contains two space-separated integers X and Y -
+     * which denote the number of Leo's fans and the number of Ronald's fans, respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line which session will be carried out: 
+     * "FREEKICK" if it'll be a free kick session, and "PENALTY" if it'll be a penalty session (without quotes).
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e, if the answer is PENALTY, the strings penalty, PENALTY, pEnALty, and so on will all be accepted.
+     * 
+     * Constraints:
+     * 0 <= X <= 100
+     * 0 <= Y <= 100
+     * X != Y
+     */
+    public static void solveCodeChefMESSI() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(X > Y ? "FREEKICK" : "PENALTY");
+        scn.close();
+    }
+
+    /*
+     * Problem: Pep Bidding
+     * 
+     * Pep is known for his golden bids on football matches. Surprisingly, he has a rather simple strategy!
+     * Team A and team P are playing against each other, and each of them have N players.
+     * For each i from 1 to N,
+     * Pep believes that the ith player on team A has an attack power of attAi, and a defense power of defAi.
+     * Similarly, the ith player on team P has an attack power of attPi, and a defense power of defPi.
+     * The total attack power of a team is the sum of the attack powers of all of its N players.
+     * The total defense power is defined similarly.
+     * If the total attack power of one team is strictly greater than the total attack power of the other team, 
+     * and its total defense power is strictly greater than the total defense power of the other team, Pep bids for that team.
+     * Otherwise, he'll bid for a draw. Can you tell what Pep will bid on?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of five lines of input.
+     * The first line of each test case contains a single integer N, the number of players on both teams.
+     * The second line contains N space-separated integers attA1, attA2, ..., attAN - the elements of attA.
+     * The third line contains N space-separated integers defA1, defA2, ..., defAN - the elements of defA.
+     * The fourth line contains N space-separated integers attP1, attP2, ..., attPN - the elements of attP.
+     * The fifth line contains NN space-separated integers defP1, defP2, ..., defPN - the elements of defPdefP.
+     * 
+     * Output Format:
+     * For each test case, output on a new line a string representing what Pep bids for: either "A", "P", or "DRAW" (without quotes).
+     * Each letter of the output may be printed in either lowercase or uppercase, 
+     * i.e, the strings DRAW, draw, dRaW, and so on will be considered equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 2000
+     * 0 <= attAi <= 1000
+     * 0 <= defAi <= 1000
+     * 0 <= attPi <= 1000
+     * 0 <= defPi <= 1000
+     * The sum of N over all test cases won't exceed 2000.
+     */
+    public static void solveCodeChefBID() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long attA = 0;
+            for (long i = 1; i <= N; i++)
+                attA += scn.nextLong();
+            long defA = 0;
+            for (long i = 1; i <= N; i++)
+                defA += scn.nextLong();
+            long attP = 0;
+            for (long i = 1; i <= N; i++)
+                attP += scn.nextLong();
+            long defP = 0;
+            for (long i = 1; i <= N; i++)
+                defP += scn.nextLong();
+            if (attA > attP && defA > defP)
+                System.out.println("A");
+            else if (attP > attA && defP > defA)
+                System.out.println("P");
+            else
+                System.out.println("DRAW");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
