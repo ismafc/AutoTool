@@ -5537,6 +5537,74 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Giant Wheel
+     * 
+     * Alice is visiting the amusement park!
+     * Alice's height is X centimeters.
+     * The park stipulates that the minimum height necessary to get on the giant wheel is 60 centimeters.
+     * Will Alice be able to ride on the giant wheel?
+     * 
+     * Input Format:
+     * The only line of input contains a single integer X - Alice's height.
+     * 
+     * Output Format:
+     * Output the answer on a single line: "Yes" if Alice can ride the giant wheel, and "No" otherwise (without quotes).
+     * Each letter of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings NO, no, No, and nO will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= X <= 100
+     */
+    public static void solveCodeChefGIANT() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        System.out.println(X >= 60 ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
+     * Problem: Swapping Marks Digits
+     * 
+     * Alice scored A marks and Bob scored B marks in an exam. Both A and B are two-digit numbers that don't contain the digit 0.
+     * Alice wants her marks to display higher than Bob's.
+     * For this, she can reverse her score and/or Bob's score.
+     * Is there a way for her score to display higher than Bob's?
+     * For example, if A = 37 and B = 83, Alice can reverse her score to make it 73, 
+     * and also reverse Bob's score to make it 38, and now her score is higher.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains two space-separated integers A and B -
+     * the marks obtained by Alice and Bob, respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the answer: 
+     * "Yes" if Alice can change her score to display higher than Bob's, and "No" otherwise (without quotes).
+     * Each letter of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings No, no, NO, and nO will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 11 <= A, B < 100
+     * A and B don't contain 0 in their decimal representation.
+     */
+    public static void solveCodeChefSWMA() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long Af = (A % 10) * 10 + A / 10;
+            long Bf = (B % 10) * 10 + B / 10;
+            if (A > B || A > Bf || Af > B || Af > Bf)
+                System.out.println("YES");
+            else
+                System.out.println("NO");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
