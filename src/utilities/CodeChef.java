@@ -5643,7 +5643,6 @@ public class CodeChef {
     /*
      * Problem: Alternating subarray prefix
      * 
-     * Read problems statements in Mandarin Chinese, Russian and Vietnamese as well.
      * There's an array A consisting of N non-zero integers A1..N. 
      * A subarray of A is called alternating if any two adjacent elements in it have different signs 
      * (i.e. one of them should be negative and the other should be positive).
@@ -5685,6 +5684,38 @@ public class CodeChef {
             while (subarray-- > 1)
                 System.out.print((subarray + 1) + " ");
             System.out.println(subarray + 1);
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Easy Permutation
+     * 
+     * You are given an integer N.
+     * Construct any permutation A of N integers such that the value LCM(1 + A1 , 2 + A2, ..., N + AN) is minimised.
+     * Note:
+     * LCM denotes the least common multiple of the integers.
+     * A permutation of N integers contains all integers from 1 to N exactly once.
+     * 
+     * Input Format:
+     * First line will contain T, number of test cases. Then the test cases follow.
+     * Each test case contains a single line of input, one integer N.
+     * 
+     * Output Format:
+     * For each test case, output a permutation that minimises the value LCM(1 + A1 , 2 + A2, ..., N + AN).
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 2 <= N <= 1000
+     */
+    public static void solveCodeChefEASYPERM() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong() + 1;
+            while (N-- > 2)
+                System.out.print(N + " ");
+            System.out.println(N);
         }
         scn.close();
     }
