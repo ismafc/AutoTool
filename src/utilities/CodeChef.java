@@ -5719,6 +5719,45 @@ public class CodeChef {
         }
         scn.close();
     }
+    
+    /*
+     * Problem: Ballon d'Or
+     * 
+     * Leo has already won the Ballon d'Or 88 times, so he is really impressed with it (is he?).
+     * Leo has an array A containing N integers. Each element of this array is either 1 or 2.
+     * He wants to figure out if the product of all the elements of the array can be written as an 8-th power of some integer, i.e, k^8 for some integer k.
+     * Print Yes if it can and No if it can't.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * The first line of each test case contains a single integer N - the number of integers in Leo's array.
+     * The second line contains N space-separated integers A1, A2, ..., AN, denoting the elements of array A.
+     * 
+     * Output Format:
+     * For each test case, output on a new line "YES" if a valid kk exists, and "No" otherwise (without quotes).
+     * Each letter of the output may be printed in either uppercase or lowercase, i.e, the strings no, No, nO, and NO will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= N <= 2*10^5
+     * 1 <= Ai <= 2
+     * The sum of N over all test cases won't exceed 2*10^5.
+
+
+     */
+    public static void solveCodeChefBLNDOR() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long twos = 0;
+            while (N-- > 0) 
+                twos += (scn.nextLong() - 1);
+            System.out.println((twos % 8 == 0) ? "YES" : "NO");
+        }
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
