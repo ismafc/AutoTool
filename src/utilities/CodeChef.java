@@ -5832,6 +5832,55 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Dominant Element
+     * 
+     * You are given an array A of length N. 
+     * An element X is said to be dominant if the frequency of X in A 
+     * is strictly greater than the frequency of any other element in the A.
+     * For example, if A = [2, 1, 4, 4, 4] then 
+     * 4 is a dominant element since its frequency is higher than the frequency of any other element in A.
+     * Find if there exists any dominant element in A.
+     * 
+     * Input Format:
+     * The first line of input contains a single integer T - the number of test cases. Then the test cases follow.
+     * The first line of each test case contains an integer N - the size of the array A.
+     * The second line of each test case contains N space-separated integers A1, A2, ..., AN denoting the array A.
+     * 
+     * Output Format:
+     * For each test case, output YES if there exists any dominant element in A. Otherwise, output NO.
+     * You may print each character of YES and NO in uppercase or lowercase (for example, yes, yEs, Yes will be considered identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 500
+     * 1 <= N <= 1000
+     * 1 <= Ai <= N
+     */
+    public static void solveCodeChefDOMINANT2() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            HashMap<Long, Long> hashMap = new HashMap<>();
+            long N = scn.nextLong();
+            long max = 0;
+            long occurences = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                hashMap.put(Ai, hashMap.getOrDefault(Ai, 0L) + 1);
+            }
+            for (Map.Entry<Long, Long> entry : hashMap.entrySet()) {
+                if (entry.getValue() > max) {
+                    max = entry.getValue();
+                    occurences = 1;
+                }
+                else if (entry.getValue() == max)
+                    occurences++;
+            }
+            System.out.println(occurences == 1 ? "YES" : "NO");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
