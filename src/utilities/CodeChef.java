@@ -5743,8 +5743,6 @@ public class CodeChef {
      * 1 <= N <= 2*10^5
      * 1 <= Ai <= 2
      * The sum of N over all test cases won't exceed 2*10^5.
-
-
      */
     public static void solveCodeChefBLNDOR() {
         Scanner scn = new Scanner(System.in);
@@ -5755,6 +5753,80 @@ public class CodeChef {
             while (N-- > 0) 
                 twos += (scn.nextLong() - 1);
             System.out.println((twos % 8 == 0) ? "YES" : "NO");
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Remaining Neighborhoods
+     * 
+     * As elections approach the country of Chefland, Chef's campaign is in full swing.
+     * Chef's city has exactly 100100 neighborhoods.
+     * Chef has already visited NN of them to canvass for votes, and he won't stop till he's visited every last one of them!
+     * How many more neighborhoods does Chef need to visit?
+     * 
+     * Input Format:
+     * The only line of input will contain a single integer NN, the number of neighborhoods Chef has already visited.
+     * 
+     * Output Format:
+     * Print a single integer: the number of neighborhoods Chef still needs to visit.
+     * 
+     * Constraints:
+     * 0 <= N <= 100
+     */
+    public static void solveCodeChefNEIREM() {
+        Scanner scn = new Scanner(System.in);
+        long N = scn.nextLong();
+        System.out.println(100 - N);
+        scn.close();
+    }
+
+    /*
+     * Problem: Gotta Catch Em All
+     * 
+     * You're playing your favorite video game: Pekómon!
+     * The objective of the game is, of course, to "Catch Them All".
+     * There are NN different Pekómon in the game. The ith of them has a catching difficulty of Ai.
+     * To catch these Pekómon, you must use Pekóballs. There are two types of Pekóballs available to you:
+     * Normal Pekóballs, which cost X coins each.
+     * You need to throw exactly Ai Normal Pekóballs to catch a Pekómon whose catching difficulty is Ai.
+     * Master Pekóballs, which cost Y coins each.
+     * You need to throw only 1 Master Pekóball to catch any Pekómon, no matter what its catching difficulty is.
+     * Find the minimum number of coins you need to spend on buying Pekóballs, so that you can catch all N Pekómon.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * The first line of each test case contains three space-separated integers N, X, and Y -
+     * the number of Pekómon, the cost of a Normal Pekóball, and the cost of a Master Pekóball.
+     * The second line contains N space-separated integers A1, A2, ..., AN - the catching difficulties of the Pekómon.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum number of coins you need to spend on buying Pekóballs, 
+     * in order to catch all N Pekómon.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 1 <= X <= Y <= 100
+     * 1 <= Ai <= 100
+     */
+    public static void solveCodeChefGCEA() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long total = 0;
+            while (N-- > 0) {
+                long Ai = scn.nextLong();
+                if (X * Ai < Y)
+                    total += (X * Ai);
+                else
+                    total += Y;
+            }
+            System.out.println(total);
         }
         scn.close();
     }
