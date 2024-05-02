@@ -5983,6 +5983,43 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Three Boxes
+     * 
+     * Chef has 3 boxes of sizes A, B, and C respectively. 
+     * He puts the boxes in bags of size D (A <= B <= C <= D). 
+     * Find the minimum number of bags Chef needs so that he can put each box in a bag. 
+     * A bag can contain more than one box if the sum of sizes of boxes in the bag does not exceed the size of the bag.
+     * 
+     * Input Format:
+     * The first line contains T denoting the number of test cases. Then the test cases follow.
+     * Each test case contains four integers A, B, C, and D on a single line denoting the sizes of the boxes and bags.
+     * 
+     * Output Format:
+     * For each test case, output on a single line the minimum number of bags Chef needs.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= A <= B <= C <= D <= 100
+     */
+    public static void solveCodeChefTHREEBOX() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long C = scn.nextLong();
+            long D = scn.nextLong();
+            if (D >= A + B + C)
+                System.out.println(1);
+            else if (D >= A + B || D >= B + C)
+                System.out.println(2);
+            else
+                System.out.println(3);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
