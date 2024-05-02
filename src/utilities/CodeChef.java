@@ -5930,6 +5930,59 @@ public class CodeChef {
     }
 
     /*
+     * Problem: ICE CREAM
+     * 
+     * Chef wants to buy 2 ice creams, each costing X dollars, for him and Chefina.
+     * However, he only has Y dollars with him. Will he be able to buy 2 ice creams?
+     * 
+     * Input Format:
+     * The only line of input will contain 2 space-separated integers X and Y, the price of each ice cream and the money Chef has.
+     * 
+     * Output Format:
+     * Print YES if Chef will be able to buy two ice creams, otherwise print NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= X, Y <= 100
+     */
+    public static void solveCodeChefICE_CREAM() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println((Y >= X * 2) ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
+     * Problem: Change Please
+     * 
+     * You just travelled in a cab and you owe the driver X dollars.
+     * However, you only have a 100 dollar bill, and the driver only has 10 dollar bills with which he can pay you back.
+     * You hand the 100 dollar bill to the driver. Find the maximum amount which the driver can pay back without giving more than he owes.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of a single integer X, the amount you owe the driver.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the maximum amount which driver can pay back without giving more than he owes.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= X <= 100
+     */
+    public static void solveCodeChefCHANGE_PLZ() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            System.out.println(100 - X - (100 - X) % 10);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
