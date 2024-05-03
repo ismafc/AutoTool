@@ -6020,6 +6020,48 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Change It
+     * 
+     * You are given a sequence A1, A2, ..., AN. You want all the elements of the sequence to be equal. 
+     * In order to achieve that, you may perform zero or more moves. 
+     * In each move, you must choose an index i (1 <= i <= N), then choose j = i - 1 or j = i + 1 
+     * (it is not allowed to choose j = 0 or j = N + 1) and change the value of Ai to Aj - 
+     * in other words, you should replace the value of one element of the sequence by one of its adjacent elements.
+     * What is the minimum number of moves you need to make in order to make all the elements of the sequence equal?
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first line of each test case contains a single integer N.
+     * The second line contains N space-separated integers A1, A2, ..., AN.
+     * 
+     * Output:
+     * For each test case, print a single line containing one integer - the minimum required number of moves.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 1 <= Ai <= 100 for each valid i
+     */
+    public static void solveCodeChefCHNGIT() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            HashMap<Long, Long> hashMap = new HashMap<>();
+            long N = scn.nextLong();
+            long max = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                long newAi = hashMap.getOrDefault(Ai, 0L) + 1;
+                hashMap.put(Ai, newAi);
+                if (newAi > max)
+                    max = newAi;
+            }
+            System.out.println(N - max);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
