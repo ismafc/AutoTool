@@ -6105,6 +6105,62 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Devouring Donuts
+     * 
+     * Chef baked a full tray of donuts, but couldn't resist and ate them all!
+     * The tray had X donuts, and each donut contains Y calories.
+     * How many calories did Chef consume in total?
+     * 
+     * Input Format:
+     * The only line of input contains two space-separated integers X and Y - the number of donuts and the calorie count of each one.
+     * 
+     * Output Format:
+     * Print a single integer: the total number of calories consumed by Chef.
+     * 
+     * Constraints:
+     * 1 <= X <= 10
+     * 200 <= Y <= 300
+     */
+    public static void solveCodeChefDEVDON() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(Y * X);
+        scn.close();
+    }
+
+    /*
+     * Problem: Legs on a Farm
+     * 
+     * After a long and fulfilling career, Chef has decided to retire to a farm out in the countryside.
+     * This farm has several cows and chickens, but Chef doesn't know exactly how many of each there are - 
+     * he can only see that there are NN legs in total across all the animals.
+     * Note that each cow has 4 legs and each chicken has 2 legs, and it is guaranteed that N is even.
+     * With N legs in total, what's the minimum possible number of animals that can be present on the farm?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case will contain a single integer NN - the number of legs.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum possible number of animals that can be present on the farm.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 2 <= N <= 2000
+     * N is even.
+     */
+    public static void solveCodeChefFARMLEGS() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            System.out.println(N / 4 + ((N % 4) / 2));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
