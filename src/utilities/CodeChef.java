@@ -6161,6 +6161,73 @@ public class CodeChef {
     }
 
     /*
+    * Problem: Morning Run
+    * 
+    * Chef wants to run at least 10001000 meters to reach his fitness goal.
+    * There's a rectangular park nearby, with a length of X meters and a width of Y meters.
+    * Can Chef complete his goal by running one loop around the park? 
+    * (Loop meaning running the entire path around the edge of the park.)
+    *
+    * Input Format:
+    * The only line of input will contain 2 space-separated integers X and Y, 
+    * the length and the width of the rectangular park.
+    *
+    * Output Format:
+    * Print "YES" if Chef will be able to complete his fitness goal, otherwise print "NO" (without quotes).
+    * You may print each character of the output in either uppercase or lowercase 
+    * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+    *
+    * Constraints:
+    * 1 <= X, Y <= 1000
+    */
+    public static void solveCodeChefMORNINGRUN() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println((2 * X + 2 * Y) >= 1000 ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
+    * Problem: Money Double
+    *
+    * Chef's bank gives him a unique offer - 
+    * at the end of each year, they offer Chef to either add 1000 rupees to his bank account, 
+    * or double the amount stored in his bank account.
+    * Chef initially has X rupees in his account. 
+    * What is the maximum amount of money that Chef can accumulate after Y years?
+    * 
+    * Input Format:
+    * The first line of input will contain a single integer T, denoting the number of test cases.
+    * The first and only line of each test case contains 2 space-separated integers X and Y, as described in the statement.
+    *
+    * Output Format:
+    * For each test case, output on a new line one integer: 
+    * the maximum amount of money which Chef can accumulate after Y years.
+    *
+    * Constraints:
+    * 1 <= T <= 10^5
+    * 1 <= X <= 10^5
+    * 1 <= Y <= 10
+    */
+    public static void solveCodeChefMONEYDOUBLE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            while (Y-- > 0) {
+                if (X * 2 > X  + 1000)
+                    X *= 2;
+                else
+                    X += 1000;
+            }
+            System.out.println(X);
+        }
+        scn.close();
+    }
+    
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
