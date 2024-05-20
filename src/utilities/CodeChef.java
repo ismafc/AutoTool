@@ -6226,6 +6226,60 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+    * Problem: Table Strength
+    *
+    * You have N table legs, of different strengths.
+    * Pillar i can bear a weight of Wi​, and will break if it has to bear a larger weight.
+    * You'd like to construct a table using some non-empty subset of these table legs.
+    * When you place a weight on a table, its load is equally distributed to each of its legs.
+    * For example, if you build a table with 4 legs, and place a weight of 18 on it, each leg will need to bear a weight of 18 / 4 = 4,5.
+    * So for instance, a table whose legs have strengths [4,4,5,6] will not be able to bear this weight (the two legs with strength 4 will break), 
+    * whereas a table with leg strengths [5,6,6,8] will be able to bear it.
+    * Find the maximum possible weight that a table built out of some of these N legs can bear, without any of the legs breaking.
+    * It can be proved that this maximum weight is always an integer.
+    * Note: Subsets need not be contiguous: for example, [1,3] is a subset of [1,4,3,2].
+    *
+    * Input Format:
+    * The first line of input will contain a single integer TT, denoting the number of test cases.
+    * Each test case consists of two lines of input.
+    * -> The first line of each test case contains a single integer N, the number of table legs you have.
+    * -> The second line of each test case contains nn space-separated integers W1, W2, ..., WN​, denoting the weight each leg can withstand.
+    *
+    * Output Format:
+    * For each test case, output on a new line the maximum weight the table can withstand by using some non-empty subset of table legs.
+    *
+    * Constraints:
+    * 1 <= T <= 2 * 10^4
+    * 1 <= n <= 2 * 10^5
+    * 1 <= w[i] <= 10^4
+    * it is guaranteed that the sum of n over all test cases won't exceed 2 * 10^5.
+    */
+    public static void solveCodeChefSTRONGTABLE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            ArrayList<Long> strengths = new ArrayList<>();
+            long N = scn.nextLong();
+            for (int i = 0; i < N; i++)
+                strengths.add(scn.nextLong());
+            Collections.sort(strengths);
+            Collections.reverse(strengths);
+            long sum = 0;
+            long max = 0;
+            for (long i = 0; i < N; i++) {
+                long Wi = strengths.get((int)i);
+                sum += Wi;
+                if (Wi * (i + 1) < sum)
+                    max = Math.max(max, Wi * (i + 1));
+                else
+                    max = Wi * (i + 1);
+            }
+            System.out.println(max);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
