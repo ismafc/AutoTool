@@ -6315,6 +6315,44 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Covid and Theatre Tickets
+     * 
+     * Mr. Chef is the manager of the Code cinemas and after a long break, 
+     * the theatres are now open to the public again. To compensate for the loss in revenue due to Covid-19, 
+     * Mr. Chef wants to maximize the profits for every show from now on and at the same time follow the guidelines set the by government.
+     * The guidelines are:
+     * If two people are seated in the same row, there must be at least one empty seat between them.
+     * If two people are seated in different rows, there must be at least one completely empty row between them. 
+     * That is, if there are people seated in rows i and j where i < j, 
+     * there must be some row kk such that i < k < j and nobody is seated in row k.
+     * Given the information about the number of rows and the number of seats in each row, 
+     * find the maximum number of tickets Mr. Chef can sell.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases. 
+     * The description of T test cases follows.
+     * Each test case consists of a single line of input containing two space-separated integers N, M -
+     * the number of rows and the number of seats in each row, respectively.
+     * 
+     * Output Format:
+     * For each test case, output a single line containing one integer – the maximum number of tickets Mr. Chef can sell.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N, M <= 100
+     */
+    public static void solveCodeChefCOVID_19() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long M = scn.nextLong();
+            System.out.println((N / 2 + N % 2) * (M / 2 + M % 2));
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
