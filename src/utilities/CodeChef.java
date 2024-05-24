@@ -6429,7 +6429,40 @@ public class CodeChef {
         System.out.println(X - Y >= 18 ? "RCB" : "CSK");
         scn.close();
     }
+
+    /*
+     * Problem: Football Ties
+     * 
+     * According to the Premier League rules, the winner of a game gets 3 points while the loser of a game gets 00 points. 
+     * On the other hand, if there is a draw, both sides get 1 point each.
+     * Two teams A and B played several games against each other and finally ended up with the score of X and Y points respectively.
+     * We do not know how many games were played. Find the minimum possible number of draws that may have happened.
+     * It is guaranteed that there is at least one way to end up with the final score being XX and YY points respectively.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case contains XX and YY - the final scores of teams AA and BB respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the minimum number of draws that could have happened.
+     * 
+     * Constraints:
+     * 1 <= T <= 75
+     * 0 <= X, Y <= 14
+     * There is at least 1 way to obtain the final score X and Y.
+     */
+    public static void solveCodeChefFOOTBALLTIES() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            System.out.println(Math.max(X % 3, Y % 3));
+        }
+        scn.close();
+    }
     
+
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
