@@ -6402,6 +6402,33 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: RCB vs CSK
+     * 
+     * In the recent RCB vs CSK match, RCB batted first and scored X runs while CSK batted second and scored Y runs.
+     * It is known that RCB qualifies to the playoffs if they win by at least 18 runs, otherwise CSK qualify. 
+     * Knowing the final scores of both teams, find out who qualified to the playoffs.
+     * 
+     * Input Format:
+     * The only line of input contains 2 integers X and Y - the final scores of RCB and CSK respectively.
+     * 
+     * Output Format:
+     * Output RCB if RCB managed to qualify to the playoffs, otherwise output CSK.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings RCB, rCb, rcb, and rcB will all be treated as identical).
+     * 
+     * Constraints:
+     * 150 <= X <= 250
+     * 150 <= Y <= X + 6
+     */
+    public static void solveCodeChefRCBCSK() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong(); 
+        long Y = scn.nextLong(); 
+        System.out.println(X - Y >= 18 ? "RCB" : "CSK");
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
