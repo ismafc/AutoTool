@@ -6461,7 +6461,38 @@ public class CodeChef {
         }
         scn.close();
     }
-    
+
+    /*
+     * Problem: Equalize AB
+     * 
+     * You are given two numbers A and B along with an integer X. In one operation you can do one of the following:
+     * Set A = A + X and B = B - X
+     * Set A = A - X and B = B + X
+     * Determine if you can make A and B equal after applying the operation any number of times (possibly zero).
+     * 
+     * Input Format:
+     * The first line contains a single integer T - the number of test cases. Then the test cases follow.
+     * The first and only line of each test case contains two space-separated integers A, B and X - the parameters mentioned in the statement.
+     * 
+     * Output Format:
+     * For each test case, output YES if you can make A and B equal after applying the operation any number of times (possibly zero). 
+     * Otherwise, output NO. You can output each letter in any case i.e. YES, yes, yEs are all considered the same.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= A, B, X <= 10^9
+     */
+    public static void solveCodeChefEQUALIZEAB() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long X = scn.nextLong();
+            System.out.println((Math.abs(A - B) % (2 * X) == 0) ? "YES" : "NO");
+        }
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
