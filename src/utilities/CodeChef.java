@@ -6688,6 +6688,51 @@ public class CodeChef {
         System.out.println(X >= Y * 2 ? "Yes" : "No");
         scn.close();
     }
+
+    /*
+     * Problem: Spell Splice
+     * 
+     * Chef has N magic spells. The ith spell has a volatility of Vi and a strength of Ai.
+     * When spells i and j (1 <= i <= j <= N) are activated together, 
+     * they merge to form a single spell of strength (Ai * Vj + Vi * Aj).
+     * What's the maximum possible strength of a spell Chef can obtain by activating exactly two of his spells?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains a single integer NN, the number of spells.
+     * The next N lines describe the spells. The ith of them contains two space-separated integers Vi and Ai - 
+     * the volatility and strength of the ith spell.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum possible power of a combined spell.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 2 <= N <= 100
+     * 1 <= Ai, Vi <= 1000
+     */
+    public static void solveCodeChefCMIX() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            ArrayList<Long> strengths = new ArrayList<>();
+            ArrayList<Long> volatilities = new ArrayList<>();
+            long maxcombinedstrength = 0;
+            for (long i = 1; i <= N; i++) {
+                volatilities.add(scn.nextLong());
+                strengths.add(scn.nextLong());
+                for (long j = 1; j < i; j++) {
+                    long newcombinedstrength = strengths.get((int)i - 1) * volatilities.get((int)j - 1) + strengths.get((int)j - 1) * volatilities.get((int)i - 1);
+                    if (newcombinedstrength > maxcombinedstrength)
+                        maxcombinedstrength = newcombinedstrength;
+                }
+            }
+            System.out.println(maxcombinedstrength);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
