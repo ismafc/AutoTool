@@ -143,4 +143,33 @@ public class CodeChefLibrary {
         }
         return mishear;
     }
+
+    /**
+     * @brief Checks if 'Pi' is lower than all elements in 'prices'.
+     * @param Pi The value to check.
+     * @param prices The array of prices.
+     * @return True if 'Pi' is lower than all elements in 'prices', false otherwise.
+     */
+    public static boolean isCheaper(long Pi, long[] prices) {
+        boolean cheaper = true;
+        for (int i = 0; i < prices.length; i++) {
+            if (prices[i] <= Pi) {
+                cheaper = false;
+                break;
+            }
+        }
+        return cheaper;
+    }
+
+    /**
+     * @brief Shifts all elements in 'prices' to the left and assigns 'Pi' to the last element.
+     * @param prices The array of prices.
+     * @param Pi The value to assign to the last element.
+     */
+    public static void leftShiftPrices(long[] prices, long Pi) {
+        for (int i = 0; i < prices.length - 1; i++) {
+            prices[i] = prices[i + 1];
+        }
+        prices[prices.length - 1] = Pi;
+    }
 }

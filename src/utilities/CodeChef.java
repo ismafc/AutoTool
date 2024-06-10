@@ -6733,6 +6733,50 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Phone Prices
+     * 
+     * Chef wants to buy a new phone, but he is not willing to spend a lot of money. 
+     * Instead, he checks the price of his chosen model everyday and waits for the price to drop to an acceptable value. 
+     * So far, he has observed the price for N days (number 1 through N); for each valid i, the price on the ith day was Pi dollars.
+     * On each day, Chef considers the price of the phone to be good 
+     * if it is strictly smaller than all the prices he has observed during the previous five days. 
+     * If there is no record of the price on some of the previous five days 
+     * (because Chef has not started checking the price on that day yet), 
+     * then Chef simply ignores that previous day - we could say that he considers the price on that day to be infinite.
+     * Now, Chef is wondering - on how many days has he considered the price to be good? Find the number of these days.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first line of each test case contains a single integer N.
+     * The second line contains NN space-separated integers P1, P2, ..., PN.
+     * 
+     * Output:
+     * For each test case, print a single line containing one integer ― the number of days with a good price.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 7 <= N <= 100
+     * 350 <= Pi <= 750 for each valid i
+     */
+    public static void solveCodeChefS10E() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long[] prices = {Long.MAX_VALUE, Long.MAX_VALUE, Long.MAX_VALUE, Long.MAX_VALUE, Long.MAX_VALUE};
+            long goodprices = 0;
+            for (long i = 1; i <= N; i++) {
+                long Pi = scn.nextLong();
+                if (CodeChefLibrary.isCheaper(Pi, prices))
+                    goodprices++;
+                CodeChefLibrary.leftShiftPrices(prices, Pi);
+            }
+            System.out.println(goodprices);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
