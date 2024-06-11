@@ -6777,6 +6777,53 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Program: Mathison and pangrams
+     * 
+     * Mathison recently inherited an ancient papyrus that contained some text.
+     * Unfortunately, the text was not a pangram. 
+     * Now, Mathison has a particular liking for holoalphabetic strings and the text bothers him. 
+     * The good news is that Mathison can buy letters from the local store in order to turn his text into a pangram.
+     * However, each letter has a price and Mathison is not very rich. 
+     * Can you help Mathison find the cheapest way to obtain a pangram?
+     * 
+     * Input:
+     * The first line of the input file will contain one integer, T, representing the number of tests.
+     * Each test will be formed from two lines. 
+     * The first one contains 26 space-separated integers, representing the prices of all letters. 
+     * The second will contain Mathison's initial text (a string of N lowercase letters).
+     * 
+     * Output:
+     * The output file will contain T lines, one for each test. 
+     * Each line will contain the answer for the corresponding test.
+     * 
+     * Constraints and notes:
+     * 1 <= T <= 10
+     * 1 <= N <= 50000
+     * All prices are natural numbers between 1 and 1000000 (i.e. 106).
+     * A pangram is a string that contains every letter of the Latin alphabet at least once.
+     * All purchased letters are added to the end of the string.
+     */
+    public static void solveCodeChefMATPAN() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            HashMap<Character, Long> prices = new HashMap<>();
+            for (long i = 0; i < 26; i++) {
+                long Pi = scn.nextLong();
+                prices.put((char)(i + 97), Pi);
+            }
+            String pangram = scn.next();
+            for (char c : pangram.toCharArray())
+                prices.remove(c);
+            long total = 0;
+            for (long price : prices.values())
+                total += price;
+            System.out.println(total);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
