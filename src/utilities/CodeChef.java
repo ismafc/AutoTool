@@ -6824,6 +6824,59 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: String protocol
+     * 
+     * An input string SS of length NN is transferred through the network using a special protocol. 
+     * The protocol can send the string through a series of operations. 
+     * In one operation, we can choose a lowercase english alphabet CC and do one of the following:
+     * Transfer 1 copy of C through the network.
+     * Transfer 2 copies of C through the network.
+     * Each of the above transfers take 1 unit of time.
+     * Find the minimum time in which we can transfer the entire string S through the network.
+     * 
+     * Input Format:
+     * The first line will contain T - the number of test cases. Then the test cases follow.
+     * First line of each test case contains N - the length of the string S.
+     * Second line of each test case contains the string S.
+     * 
+     * Output Format:
+     * For each test case, output in a single line, the minimum time required to transfer the string.
+     *
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 10^5
+     * Sum of N over all test cases does not exceed 10^5.
+     * String S contains lowercase english alphabets only.
+     */
+    public static void solveCodeChefSTRP() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            String S = scn.next();
+            Character last = Character.MIN_VALUE;
+            long time = 0;
+            for (long i = 0; i < N; i++) {
+                Character c = S.charAt((int)i);
+                if (c.equals(last)) {
+                    time++;
+                    last = Character.MIN_VALUE;
+                }
+                else if (last.equals(Character.MIN_VALUE))
+                    last = c;                
+                else {
+                    last = c;
+                    time++;
+                }
+            }
+            if (!last.equals(Character.MIN_VALUE))
+                time++;
+            System.out.println(time);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
