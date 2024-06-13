@@ -6877,6 +6877,105 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Heat Wave
+     *
+     * During a scorching heat wave, the temperature in a Chefland reached a record high of X degrees.
+     * The next day, the recorded temperature was YY degrees. Find whether this was a new record high or not.
+     *
+     * Input Format:
+     * The first and only line of input will contain two space separated integers X and Y 
+     * denoting the highest recorded temperature and the temperature on a given day respectively.
+     *
+     * Output Format:
+     * Output on a new line, YES, if a new high was created. Otherwise print NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     *
+     * Constraints:
+     * 100 <= X, Y <= 150
+     */
+    public static void solveCodeChefHEATWAVE() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong(); 
+        long Y = scn.nextLong(); 
+        System.out.println(Y > X ? "Yes" : "No");        
+        scn.close();
+    }
+
+    /*
+     * Problem: Long Drive
+     *
+     * Chef and Chefina are out on a long road trip.
+     * The average speed of the car after 10 hours of driving is X kilometres per hour.
+     * Chef wants to achieve an average speed of Y kilometres per hour. 
+     * Given that he can travel a maximum of 100 kilometres in one hour, 
+     * find the minimum number of additional integer hours required for him to reach the target average speed.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two space-separated integers X and Y - 
+     * the average speed after 1010 hours of driving and the required average speed.
+     *
+     * Output Format:
+     * For each test case, output on a new line, 
+     * the minimum number of integer hours required for him to reach the target average speed.
+     *
+     * Constraints:
+     * 1 <= T <= 1225
+     * 50 <= X < Y < 100
+     */
+    public static void solveCodeChefLONGDRIVE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong(); 
+            long Y = scn.nextLong(); 
+            long hours = (long)Math.ceil((double)(10 * Y - 10 * X) / (double)(100 -Y));
+            System.out.println(hours);
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Distinct Substring
+     *
+     * A binary string is a string consisting of 0 and 1. 
+     * We define an island as a substring consisting of all 00s bounded by 11s (or the ends of the string).
+     * For example, in the string 100010000, there are 2 islands; 000 (bounded by 1s) and 0000 (bounded by 1 and end of string). 
+     * Note that the substring 00 in the above string is not an island.
+     * You are given positive integers NN and KK. Find whether there exists a binary string of length N such that:
+     * There are exactly KK islands in the string;
+     * Each island has a distinct length.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two space-separated integers N and K - 
+     * the length of binary string and the required number of islands.
+     *
+     * Output Format:
+     * For each test case, output on a new line, YES if there exist valid binary string, otherwise print NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     *
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= N <= 10^5
+     * 1 <= K <= 500
+     * The sum of N over all test cases won't exceed 2*10^6.
+     */
+    public static void solveCodeChefDISTSUB() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long K = scn.nextLong();
+            long minlength = K * (K + 1) / 2 + K - 1;
+            System.out.println(N >= minlength ? "Yes" : "No");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
