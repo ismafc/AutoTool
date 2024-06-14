@@ -6978,6 +6978,47 @@ public class CodeChef {
     }
     
     /*
+     * Problem: Remove Bad elements
+     * 
+     * Chef has an array A of length N.
+     * In one operation, Chef can remove any one element from the array.
+     * Determine the minimum number of operations required to make all the elements same.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains a single integer N - the length of Array A.
+     * Next line contains N space-separated integers A1, A2, A3, ..., AN - denoting the array A.
+     * 
+     * Output Format:
+     * For each test case, output the minimum number of operations required to make all the elements same.
+     * 
+     * Constraints:
+     * 1 <= T <= 4000
+     * 1 <= N <= 10^5
+     * 1 <= Ai <= N
+     * Sum of N over all test cases do not exceed 3*10^5
+     */
+    public static void solveCodeChefREMOVEBAD() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long maxFrecuency = 0;
+            HashMap<Long, Long> frecuencyMap = new HashMap<>();
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                long newFrecuency = frecuencyMap.containsKey(Ai) ? frecuencyMap.get(Ai) + 1 : 1L;
+                frecuencyMap.put(Ai, newFrecuency);
+                if (newFrecuency > maxFrecuency)
+                    maxFrecuency = newFrecuency;
+            }
+            System.out.println(N - maxFrecuency);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
