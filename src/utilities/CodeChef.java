@@ -7198,6 +7198,51 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Counting Problem
+     * 
+     * You are given an array A = [A1, A2, ..., AN].
+     * Is it possible to partition A into two non-empty subsequences S1 and S2 
+     * such that sum(S1) * sum(S2) is odd?
+     * Here, sum(S1) denotes the sum of elements in S1, and sum(S2) is defined similarly.
+     * Note: S1 and S2 must partition AA, that is:
+     * -> S1 and S2 must be non-empty
+     * -> Every element of A must be in either S1 or S2
+     * -> S1 and S2 must be disjoint (in terms of which indices their subsequences represent)
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of 2 lines of input.
+     * The first line of each test case contains a single integer N, the size of the array.
+     * The next line contains N space-separated integers A1, A2, ..., AN: the elements of the array.
+     * 
+     * Output Format:
+     * For each test case, print on a new line the answer: 
+     * YES if the array can be partitioned into two subsequences satisfying the condition, and NO otherwise.
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e, YES, yes, YEs, and yEs will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 2 <= N <= 10^5
+     * 1 <= Ai <= 10^9
+     * The sum of N across all test cases won't exceed 10^6
+     */
+    public static void solveCodeChefCOUNTP() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long odds = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                odds += Ai % 2;
+            }
+            System.out.println(odds % 2 == 0 && odds > 0 ? "YES" : "NO");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
