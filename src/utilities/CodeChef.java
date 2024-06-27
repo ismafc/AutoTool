@@ -7243,6 +7243,29 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Yoga Day
+     * 
+     * Surya Namaskar, also known as Sun Salutation, is a series of 12 yoga poses performed in a sequence.
+     * Chef repeats this sequence of yoga poses multiple times during his session.
+     * Given that Chef has performed NN yoga poses, find the number of rounds of Surya Namaskar he completed during the session.
+     * 
+     * Input Format:
+     * The input will contain a single integer N, denoting the number of yoga poses Chef performed during his session.
+     * 
+     * Output Format:
+     * Output the number of rounds of Surya Namaskar Chef completed during the session.
+     * 
+     * Constraints:
+     * 1 <= N <= 100
+     */
+    public static void solveCodeChefYOGADAY() {
+        Scanner scn = new Scanner(System.in);
+        long N = scn.nextLong(); 
+        System.out.println(N / 12);
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
