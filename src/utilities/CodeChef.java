@@ -7266,6 +7266,45 @@ public class CodeChef {
         System.out.println(N / 12);
         scn.close();
     }
+
+    /*
+     * Problem: Yoga Class
+     * 
+     * On the occasion of Yoga Day, the only yoga instructor in Chefland, Chef, has received numerous queries.
+     * Chef has managed to free up NN hours from his busy schedule to conduct yoga sessions. 
+     * There are two types of sessions that Chef offers:
+     * Type 1 session, which lasts 1 hour, and earns Chef X rupees.
+     * Type 2 session, which lasts 2 hours, and earns Chef Y (Y > X) rupees.
+     * Find the maximum amount of money Chef can earn in N hours.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three space-separated integers N, X, Y - 
+     * the number of hours for which Chef will take yoga sessions, 
+     * price of type 1 session, and price of type 2 session respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the maximum amount of money Chef can earn in NN hours.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= N <= 1000
+     * 1 <= X < Y <= 100
+     */
+    public static void solveCodeChefYOGACLASS() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long X = scn.nextLong(); 
+            long Y = scn.nextLong(); 
+            if (X * 2 >= Y)
+                System.out.println(N * X);
+            else
+                System.out.println((N / 2) * Y + (N % 2) * X);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
