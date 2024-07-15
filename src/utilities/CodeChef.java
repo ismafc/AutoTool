@@ -7353,6 +7353,100 @@ public class CodeChef {
         System.out.println(60 / X >= 5 ? "YES" : "NO");
         scn.close();
     }
+
+    /*
+     * Problem: Penalty Shoot-out
+     * 
+     * In a football match, a penalty shootout is used to determine the winner if the score is tied after regulation and extra time. 
+     * Each team takes turns attempting five penalty kicks.
+     * Team A has scored X goals in 3 turns while team B has scored Y goals in 4 turns.
+     * Determine if it's possible for the penalty shootout to end with equal score after both teams have taken all 5 of their penalty kicks.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two space-separated integers X and Y - 
+     * the number of goals scored by team A in 3 turns and team B in 4 turns respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line YES if match can still end in draw, otherwise output NO.
+     * You may print each character of the output in either uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 0 <= X <= 3
+     * 0 <= Y <= 4
+     */
+    public static void solveCodeChefPENALTYSHOOT() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long diff = Math.abs(Y - X);
+            if (diff <= 1)
+                System.out.println("YES");
+            else if (diff == 2)
+                System.out.println(X < Y ? "YES" : "NO");
+            else
+                System.out.println("NO");
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Nearly Equal
+     * 
+     * The Hamming distance between two pairs of strings of equal length is defined to be 
+     * the number of positions at which they contain different characters.
+     * For example, the Hamming distance between strings "there" and "shire" is 2 
+     * (their first and third characters are different), 
+     * while the Hamming distance between "order" and "chaos" is 5, since they differ at every position.
+     * Chef has a string A of length N.
+     * Chef's favorite string is B, which has length M. It is known that M <= N.
+     * Find the minimum Hamming distance between B and some contiguous substring of A that has length M.
+     * A substring of a string is obtained by deleting some (possibly, zero) characters from its beginning 
+     * and some (possibly, zero) characters from its end.
+     * For example, "abc", "bc", and "cd" are substrings of "abcd", but "ac" is not.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three lines of input.
+     * The first line of each test case contains two space-separated integers N and M - 
+     * the lengths of strings A and B, respectively.
+     * The second line contains the string A, consisting of N lowercase English letters.
+     * The third line contains the string B, consisting of M lowercase English letters.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum possible Hamming distance between B and some length M substring of A.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= M <= N <= 100
+     * A and B contain only lowercase English letters, i.e, the characters 'a' through 'z'.
+     */
+    public static void solveCodeChefSAMESAME() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long M = scn.nextLong();
+            String A = scn.next();
+            String B = scn.next();
+            long min = N;
+            for (long i = 0; i <= N - M; i++) {
+                long hamming = 0;
+                for (long j = i; j < i + M; j++) {
+                    if (A.charAt((int)j) != B.charAt((int)(j - i)))
+                        hamming++;
+                }
+                if (hamming < min)
+                    min = hamming;
+            }
+            System.out.println(min);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
