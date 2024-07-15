@@ -7447,6 +7447,48 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Superincreasing
+     * 
+     * An array A of length N containing positive integers is said to be superincreasing 
+     * if each element is strictly greater than the sum of all the previous elements.
+     * That is, for each i from 2 to N, the condition Ai > A1 + A2 + ... + Ai-1 should hold.
+     * For example, A = [3, 5, 10, 42] is a superincreasing array, while A = [1, 2, 3] is not 
+     * (3 = 1 + 2, but it should be strictly greater than that).
+     * Chef had a superincreasing array A of length N with him a long time ago, but has forgotten all its elements now.
+     * The only piece of information he recalls is that the value X occurred at index K of the array, i.e, AK = X.
+     * Can you tell Chef if he recalls correctly?
+     * That is, does there exist a superincreasing array A of length N such that AK = X?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains three space-separated integers N, K, and X - 
+     * the length of A, the index at which X occurs, and the value X.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the answer: Yes if a valid superincreasing array exists, and No otherwise.
+     * Each letter of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings NO, no, No, and nO` will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= K <= N <= 2*10^5
+     * 1 <= X <= 10^9
+     * The sum of N across all tests won't exceed 2*10^5.
+     */
+    public static void solveCodeChefSUPINC() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long K = scn.nextLong();
+            long X = scn.nextLong();
+            long min = (long)Math.pow(2, K - 1);
+            System.out.println(X >= min ? "YES" : "NO");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
