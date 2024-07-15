@@ -7305,6 +7305,54 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Lucky Clover
+     * 
+     * Chef heard that four-leaf clovers bring good luck, so he went looking for one.
+     * In his search, Chef found N clovers in total. Out of them, 
+     * exactly one was a four-leaf clover, and all the others were three-leaf clovers.
+     * How many leaves did Chef collect in total, across all the clovers?
+     * 
+     * Input Format:
+     * The only line of input will contain a single integer N, the number of clovers Chef found.
+     * 
+     * Output Format:
+     * Print one integer: the total number of leaves Chef collected.
+     * 
+     * Constraints:
+     * 1 <= N <= 10
+     */
+    public static void solveCodeChefLUCLO() {
+        Scanner scn = new Scanner(System.in);
+        long N = scn.nextLong(); 
+        System.out.println(4 + (N - 1) * 3);
+        scn.close();
+    }
+
+    /*
+     * Problem: Writing Speed
+     * 
+     * Rahul has a 5-page assignment due in 60 minutes. He can write one page in X minutes.
+     * Determine if Rahul can complete the assignment within the given time constraint.
+     * 
+     * Input Format:
+     * The only line of input will contain a single integer X, denoting the time taken (in minutes) by Rahul to write one page.
+     * 
+     * Output Format:
+     * Print YES if Rahul can complete the assignment in time, otherwise print NO.
+     * You may print each character of the output in either uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= X <= 1000
+     */
+    public static void solveCodeChefWRITINGSPEED() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong(); 
+        System.out.println(60 / X >= 5 ? "YES" : "NO");
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
