@@ -7531,6 +7531,72 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: International Justice Day
+     * 
+     * In honor of International Justice Day, 
+     * the Supreme Court of Chefland has decided to address all pending cases simultaneously.
+     * For a given case, the accused will be convicted if the convincing power of the prosecution, 
+     * denoted by integer X, is greater than or equal to the convincing power of the defense, denoted by integer Y.
+     * Determine whether the accused is convicted.
+     * 
+     * Input Format:
+     * The only line of input consists of space-separated integers X and Y, 
+     * denoting the convincing powers of prosecution and defense, respectively.
+     * 
+     * Output Format:
+     * Output on a new line, YES, if the accused is convicted and NO otherwise.
+     * 
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= X, Y <= 10
+     */
+    public static void solveCodeChefJUSTICE() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong(); 
+        long Y = scn.nextLong(); 
+        System.out.println(X >= Y ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
+     * Problem: Maximum Coins
+     * 
+     * Chef and Chefina are playing a series of N games.
+     * Each game has a winner. For the ith (1 <= i <= N) game, the loser pays 2^i coins to the winner.
+     * Find the maximum number of coins Chef can get if he wins exactly X games.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two space-separated integers N and X - 
+     * the total number of games and the number of games Chef wins, respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the maximum number of coins Chef can get if he wins exactly X games.
+     * 
+     * Constraints:
+     * 1 <= T <= 55
+     * 1 <= X <= N <= 10
+     */
+    public static void solveCodeChefMAXCOIN() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long X = scn.nextLong();
+            long looses = 0;
+            long wins = 0;
+            for (long i = 0; i < N - X; i++)
+                looses += (long)Math.pow(2, i + 1);
+            for (long i = N - X; i < N; i++)
+                wins += (long)Math.pow(2, i + 1);
+            System.out.println(wins - looses);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
