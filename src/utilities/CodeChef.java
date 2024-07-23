@@ -7705,6 +7705,58 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Airport Management
+     * 
+     * Chef is building an Airport in Chefland.
+     * There are N airplanes such that the ith airplane arrives at the Ai-th minute and departs at the Di-th minute.
+     * Find the minimum number of runways required at the airport so that all the arrivals and departures can occur smoothly.
+     * Notes:
+     * -> Arrival and departure timings are given in minutes after midnight.
+     * -> A plane uses the runway only in the minute at which it arrives or departs. 
+     * Between the arrival and departure times, the runway is available for use by other airplanes.
+     * -> One runway can be used by only one airplane at a point in time.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains a single integer N - the number of airplanes.
+     * The second line of each test case contains N space-separated integers A1, A2, ..., AN, denoting the arrival timings of ith airplane.
+     * The third line of each test case contains N space-separated integers D1, D2, ..., DN, denoting the departure timings of ith airplane.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the minimum number of runways required at the airport.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= N <= 10^5
+     * 0 <= Ai < Di <= 1439
+     * The sum of N over all test cases won't exceed 8*10^5
+     */
+    public static void solveCodeChefAIRM() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            HashMap<Long, Long> hashMap = new HashMap<>();
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                hashMap.put(Ai, hashMap.getOrDefault(Ai, 0L) + 1);
+            }
+            for (long i = 0; i < N; i++) {
+                long Di = scn.nextLong();
+                hashMap.put(Di, hashMap.getOrDefault(Di, 0L) + 1);
+            }
+            LinkedList<Long> listaOrdenada = new LinkedList<>();
+            for (Map.Entry<Long, Long> entry : hashMap.entrySet())
+                listaOrdenada.add(entry.getValue());
+            Collections.sort(listaOrdenada);
+            Collections.reverse(listaOrdenada);
+            System.out.println(listaOrdenada.get(0));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
