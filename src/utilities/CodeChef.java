@@ -208,7 +208,7 @@ public class CodeChef {
      * You are given a date string S. 
      * The date follows the Gregorian calendar, the one used in most parts of the world.
      * Identify whether it is of the form DD/MM/YYYY or MM/DD/YYYY, or if it can be of both forms.
-     * Here D denotes the 2-digit day, MM denotes the 2-digit month and YYYY denotes the 4-digit year.
+     * Here DD denotes the 2-digit day, MM denotes the 2-digit month and YYYY denotes the 4-digit year.
      * It is guaranteed that S is a valid date taking at least one of these forms.
      * 
      * For example,
@@ -3942,7 +3942,7 @@ public class CodeChef {
      * You can perform the following operation on string A any number of times:
      * Select a prime number X.
      * Choose any substring of string A having length X and reverse the substring.
-     * Determine whether you can make the string A equal to BB using any (possibly zero) number of operations.
+     * Determine whether you can make the string A equal to B using any (possibly zero) number of operations.
      * A substring is obtained by deleting some (possibly zero) elements from the beginning and some (possibly zero) 
      * elements from the end of the string.
      * 
@@ -5017,7 +5017,7 @@ public class CodeChef {
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of multiple lines of input.
      * The first line of each test case contains an integer N - the number of animals in the store.
-     * The next line contains NN space separated integers, denoting the type of each animal.
+     * The next line contains N space separated integers, denoting the type of each animal.
      * 
      * Output Format:
      * For each test case, output on a new line, YES, 
@@ -5102,7 +5102,7 @@ public class CodeChef {
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of multiple lines of input.
      * The first line of each test case contains one integer, N, the size of the array.
-     * The next line contains NN space-separated integers, A1, A2, ..., AN.
+     * The next line contains N space-separated integers, A1, A2, ..., AN.
      * 
      * Output Format:
      * For each test case, output on a new line, 
@@ -5493,7 +5493,7 @@ public class CodeChef {
      * The second line contains N space-separated integers attA1, attA2, ..., attAN - the elements of attA.
      * The third line contains N space-separated integers defA1, defA2, ..., defAN - the elements of defA.
      * The fourth line contains N space-separated integers attP1, attP2, ..., attPN - the elements of attP.
-     * The fifth line contains NN space-separated integers defP1, defP2, ..., defPN - the elements of defPdefP.
+     * The fifth line contains N space-separated integers defP1, defP2, ..., defPN - the elements of defPdefP.
      * 
      * Output Format:
      * For each test case, output on a new line a string representing what Pep bids for: either "A", "P", or "DRAW" (without quotes).
@@ -5762,11 +5762,11 @@ public class CodeChef {
      * 
      * As elections approach the country of Chefland, Chef's campaign is in full swing.
      * Chef's city has exactly 100100 neighborhoods.
-     * Chef has already visited NN of them to canvass for votes, and he won't stop till he's visited every last one of them!
+     * Chef has already visited N of them to canvass for votes, and he won't stop till he's visited every last one of them!
      * How many more neighborhoods does Chef need to visit?
      * 
      * Input Format:
-     * The only line of input will contain a single integer NN, the number of neighborhoods Chef has already visited.
+     * The only line of input will contain a single integer N, the number of neighborhoods Chef has already visited.
      * 
      * Output Format:
      * Print a single integer: the number of neighborhoods Chef still needs to visit.
@@ -5786,7 +5786,7 @@ public class CodeChef {
      * 
      * You're playing your favorite video game: Pekómon!
      * The objective of the game is, of course, to "Catch Them All".
-     * There are NN different Pekómon in the game. The ith of them has a catching difficulty of Ai.
+     * There are N different Pekómon in the game. The ith of them has a catching difficulty of Ai.
      * To catch these Pekómon, you must use Pekóballs. There are two types of Pekóballs available to you:
      * Normal Pekóballs, which cost X coins each.
      * You need to throw exactly Ai Normal Pekóballs to catch a Pekómon whose catching difficulty is Ai.
@@ -6134,13 +6134,13 @@ public class CodeChef {
      * 
      * After a long and fulfilling career, Chef has decided to retire to a farm out in the countryside.
      * This farm has several cows and chickens, but Chef doesn't know exactly how many of each there are - 
-     * he can only see that there are NN legs in total across all the animals.
+     * he can only see that there are N legs in total across all the animals.
      * Note that each cow has 4 legs and each chicken has 2 legs, and it is guaranteed that N is even.
      * With N legs in total, what's the minimum possible number of animals that can be present on the farm?
      * 
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
-     * The first and only line of each test case will contain a single integer NN - the number of legs.
+     * The first and only line of each test case will contain a single integer N - the number of legs.
      * 
      * Output Format:
      * For each test case, output on a new line the minimum possible number of animals that can be present on the farm.
@@ -6242,7 +6242,7 @@ public class CodeChef {
     * Note: Subsets need not be contiguous: for example, [1,3] is a subset of [1,4,3,2].
     *
     * Input Format:
-    * The first line of input will contain a single integer TT, denoting the number of test cases.
+    * The first line of input will contain a single integer T, denoting the number of test cases.
     * Each test case consists of two lines of input.
     * -> The first line of each test case contains a single integer N, the number of table legs you have.
     * -> The second line of each test case contains nn space-separated integers W1, W2, ..., WN​, denoting the weight each leg can withstand.
@@ -6437,11 +6437,11 @@ public class CodeChef {
      * On the other hand, if there is a draw, both sides get 1 point each.
      * Two teams A and B played several games against each other and finally ended up with the score of X and Y points respectively.
      * We do not know how many games were played. Find the minimum possible number of draws that may have happened.
-     * It is guaranteed that there is at least one way to end up with the final score being XX and YY points respectively.
+     * It is guaranteed that there is at least one way to end up with the final score being X and Y points respectively.
      * 
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
-     * Each test case contains XX and YY - the final scores of teams AA and BB respectively.
+     * Each test case contains X and Y - the final scores of teams A and B respectively.
      * 
      * Output Format:
      * For each test case, output on a new line, the minimum number of draws that could have happened.
@@ -6700,7 +6700,7 @@ public class CodeChef {
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of multiple lines of input.
-     * The first line of each test case contains a single integer NN, the number of spells.
+     * The first line of each test case contains a single integer N, the number of spells.
      * The next N lines describe the spells. The ith of them contains two space-separated integers Vi and Ai - 
      * the volatility and strength of the ith spell.
      * 
@@ -6750,7 +6750,7 @@ public class CodeChef {
      * Input:
      * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
      * The first line of each test case contains a single integer N.
-     * The second line contains NN space-separated integers P1, P2, ..., PN.
+     * The second line contains N space-separated integers P1, P2, ..., PN.
      * 
      * Output:
      * For each test case, print a single line containing one integer ― the number of days with a good price.
@@ -6828,7 +6828,7 @@ public class CodeChef {
     /*
      * Problem: String protocol
      * 
-     * An input string SS of length NN is transferred through the network using a special protocol. 
+     * An input string SS of length N is transferred through the network using a special protocol. 
      * The protocol can send the string through a series of operations. 
      * In one operation, we can choose a lowercase english alphabet CC and do one of the following:
      * Transfer 1 copy of C through the network.
@@ -6882,7 +6882,7 @@ public class CodeChef {
      * Problem: Heat Wave
      *
      * During a scorching heat wave, the temperature in a Chefland reached a record high of X degrees.
-     * The next day, the recorded temperature was YY degrees. Find whether this was a new record high or not.
+     * The next day, the recorded temperature was Y degrees. Find whether this was a new record high or not.
      *
      * Input Format:
      * The first and only line of input will contain two space separated integers X and Y 
@@ -6945,8 +6945,8 @@ public class CodeChef {
      * We define an island as a substring consisting of all 00s bounded by 11s (or the ends of the string).
      * For example, in the string 100010000, there are 2 islands; 000 (bounded by 1s) and 0000 (bounded by 1 and end of string). 
      * Note that the substring 00 in the above string is not an island.
-     * You are given positive integers NN and KK. Find whether there exists a binary string of length N such that:
-     * There are exactly KK islands in the string;
+     * You are given positive integers N and K. Find whether there exists a binary string of length N such that:
+     * There are exactly K islands in the string;
      * Each island has a distinct length.
      *
      * Input Format:
@@ -7101,7 +7101,7 @@ public class CodeChef {
      * For each valid i, there are Si stores that offer food of the ith type, 
      * the price of one piece of food of this type is Vi (the same in each of these stores) 
      * and each day, Pi people come to buy it; each of these people wants to buy one piece of food of the ith type.
-     * Chef is planning to open a new store at this street, where he would offer food of one of these NN types. 
+     * Chef is planning to open a new store at this street, where he would offer food of one of these N types. 
      * Chef assumes that the people who want to buy the type of food he'd offer will split equally among all stores that offer it, 
      * and if this is impossible, i.e. the number of these people pp is not divisible by the number of these stores s, 
      * then only floor(p/s) people will buy food from Chef. Chef wants to maximise his daily profit. 
@@ -7176,7 +7176,7 @@ public class CodeChef {
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of a single line of input.
-     * The first and only line of each test case contains NN and M - the number of kids and the initial number of cookies.
+     * The first and only line of each test case contains N and M - the number of kids and the initial number of cookies.
      * 
      * Output Format:
      * For each test case, output on a new line the minimum time such that Chef can evenly distribute all his cookies.
@@ -7206,7 +7206,7 @@ public class CodeChef {
      * Is it possible to partition A into two non-empty subsequences S1 and S2 
      * such that sum(S1) * sum(S2) is odd?
      * Here, sum(S1) denotes the sum of elements in S1, and sum(S2) is defined similarly.
-     * Note: S1 and S2 must partition AA, that is:
+     * Note: S1 and S2 must partition A, that is:
      * -> S1 and S2 must be non-empty
      * -> Every element of A must be in either S1 or S2
      * -> S1 and S2 must be disjoint (in terms of which indices their subsequences represent)
@@ -7249,7 +7249,7 @@ public class CodeChef {
      * 
      * Surya Namaskar, also known as Sun Salutation, is a series of 12 yoga poses performed in a sequence.
      * Chef repeats this sequence of yoga poses multiple times during his session.
-     * Given that Chef has performed NN yoga poses, find the number of rounds of Surya Namaskar he completed during the session.
+     * Given that Chef has performed N yoga poses, find the number of rounds of Surya Namaskar he completed during the session.
      * 
      * Input Format:
      * The input will contain a single integer N, denoting the number of yoga poses Chef performed during his session.
@@ -7271,7 +7271,7 @@ public class CodeChef {
      * Problem: Yoga Class
      * 
      * On the occasion of Yoga Day, the only yoga instructor in Chefland, Chef, has received numerous queries.
-     * Chef has managed to free up NN hours from his busy schedule to conduct yoga sessions. 
+     * Chef has managed to free up N hours from his busy schedule to conduct yoga sessions. 
      * There are two types of sessions that Chef offers:
      * Type 1 session, which lasts 1 hour, and earns Chef X rupees.
      * Type 2 session, which lasts 2 hours, and earns Chef Y (Y > X) rupees.
@@ -7284,7 +7284,7 @@ public class CodeChef {
      * price of type 1 session, and price of type 2 session respectively.
      * 
      * Output Format:
-     * For each test case, output on a new line, the maximum amount of money Chef can earn in NN hours.
+     * For each test case, output on a new line, the maximum amount of money Chef can earn in N hours.
      * 
      * Constraints:
      * 1 <= T <= 1000
@@ -7594,6 +7594,63 @@ public class CodeChef {
             for (long i = N - X; i < N; i++)
                 wins += (long)Math.pow(2, i + 1);
             System.out.println(wins - looses);
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Pseudo Sorted Array
+     * 
+     * An array A of length N is said to be pseudo-sorted if 
+     * it can be made non-decreasing after performing the following operation at most once.
+     * Choose an i such that 1 <= i <= N-1and swap Ai and A{i+1}
+     * Given an array A, determine if it is pseudo-sorted or not.
+     * 
+     * Input Format:
+     * The first line contains a single integer T - the number of test cases. Then the test cases follow.
+     * The first line of each test case contains an integer N - the size of the array A.
+     * The second line of each test case contains N space-separated integers A1, A2, ..., AN denoting the array A.
+     * 
+     * Output Format:
+     * For each testcase, output YES if the array A is pseudo-sorted, NO otherwise.
+     * You may print each character of YES and NO in uppercase or lowercase (for example, yes, yEs, Yes will be considered identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 2 <= N <= 10^5
+     * 1 <= Ai <= 10^9
+     * Sum of N over all test cases do not exceed 2*10^5
+     */
+    public static void solveCodeChefPSEUDOSORT() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long swaps = 0;
+            long last = 0;
+            long Ai1 = scn.nextLong();
+            long Ai2 = scn.nextLong();
+            if (Ai1 > Ai2) {
+                swaps++;
+                long temp = Ai1;
+                Ai1 = Ai2;
+                Ai2 = temp;
+            }
+            for (long i = 2; i < N; i++) {
+                long Ai = scn.nextLong();
+                last = Ai1;
+                Ai1 = Ai2;
+                Ai2 = Ai;
+                if (Ai1 > Ai2 && Ai2 >= last) {
+                    swaps++;
+                    long temp = Ai1;
+                    Ai1 = Ai2;
+                    Ai2 = temp;
+                }
+                else if (Ai1 > Ai2 && Ai2 < last)
+                    swaps += 2;
+            }
+            System.out.println(swaps < 2 ? "YES" : "NO");
         }
         scn.close();
     }
