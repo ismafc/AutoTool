@@ -7760,7 +7760,7 @@ public class CodeChef {
      * Problem: Capital Gain Tax
      *
      * The annual budget for ChefLand has been announced and people are concerned about the modification in capital gain tax.
-     * Given that the capital gain tax changed from X%X% to Y%Y%, find whether it has INCREASED, DECREASED, or remained the SAME.
+     * Given that the capital gain tax changed from X% to Y%, find whether it has INCREASED, DECREASED, or remained the SAME.
      *
      * Input Format:
      * The first and only line of input consists of two space-separated integers X and Y denoting the previous and new value of capital gain tax.
@@ -7786,6 +7786,40 @@ public class CodeChef {
             System.out.println("DECREASED");
         else
             System.out.println("SAME");
+        scn.close();
+    }
+    
+    /*
+     * Problem: Savings Account
+     *
+     * Considering the new budget, Chef decided to keep all his money in a savings account.
+     * Chef has X income sources where he gets Y rupees from each source. 
+     * However, due to bank restrictions, Chef can keep at most Z rupees in the savings account.
+     * Find the minimum number of income sources Chef should reduce to maximise his savings without exceeding the account's limit.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three space-separated integers X, Y, and Z - 
+     * the number of income sources, amount received from each source and the maximum limit of savings account respectively.
+     *
+     * Output Format:
+     * For each test case, output on a new line, the minimum number of income sources Chef should reduce to maximise his savings without exceeding the account's limit.
+     *
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= X, X <= 10
+     * 1 <= Z <= 100
+     */
+    public static void solveCodeChefXYZ343() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long Z = scn.nextLong();
+            long reduce = X - Z / Y;
+            System.out.println(reduce < 0 ? 0 : reduce);
+        }
         scn.close();
     }
     
