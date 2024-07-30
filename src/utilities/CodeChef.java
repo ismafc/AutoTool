@@ -7833,7 +7833,7 @@ public class CodeChef {
      * If multiple permutations are possible, print any of them.
      *
      * Input Format:
-     * The first line of input will contain a single integer TT, denoting the number of test cases.
+     * The first line of input will contain a single integer T, denoting the number of test cases.
      * The first and only line of each test case contains an integer N, the size of the permutation.
      *
      * Output Format:
@@ -7857,6 +7857,45 @@ public class CodeChef {
                     System.out.print(i + " ");
                 System.out.println((N - 3) + " " + (N - 1));
             }
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Prime Generator
+     * 
+     * Ram wants to generate some prime numbers for his cryptosystem. Help him please! 
+     * Your task is to generate all prime numbers between two given numbers.
+     * Warning: large Input/Output data, be careful with certain languages (though most should be OK if the algorithm is well designed)
+     *
+     * Input Format:
+     * The first line contains t, the number of test cases (less then or equal to 10).
+     * Followed by t lines which contain two numbers m and n (1 <= m <= n <= 1000000000, n - m <= 100000) separated by a space.
+     *
+     * Output Format:
+     *
+     * For every test case print all prime numbers p such that m <= p <= n, one number per line. Separate the answers for each test case by an empty line.
+     *
+     * Constraints:
+     * (1 <= m <= n <= 1000000000, n - m <= 100000)
+     */
+    public static void solveCodeChefPRIME1() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long m = scn.nextLong();
+            long n = scn.nextLong();
+            if (m <= 2) {
+                System.out.println(2);
+                m = 3;
+            }
+            else if (m % 2 == 0)
+                m++;
+            for (long i = m; i <= n; i += 2) {
+                if (CodeChefLibrary.isPrime(i))
+                    System.out.println(i);
+            }
+            System.out.println();
         }
         scn.close();
     }
