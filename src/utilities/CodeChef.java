@@ -7822,6 +7822,44 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Average Permutation
+     *
+     * You are given an integer N.
+     * Find a permutation P = [P1, P2, ..., PN] of the integers {1, 2, ..., N} 
+     * such that sum of averages of all consecutive triplets is minimized, i.e.
+     * sum{i = 1}{i = N - 2}[(Pi + P{i + 1} + P{i + 2}) / 3] is minimized.
+     * If multiple permutations are possible, print any of them.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer TT, denoting the number of test cases.
+     * The first and only line of each test case contains an integer N, the size of the permutation.
+     *
+     * Output Format:
+     * For each test case, output on a new line a permutation which satisfies the above conditions.
+     *
+     * Constraints:
+     * 1 <= T <= 1000
+     * 3 <= N <= 10^5
+     * The sum of N over all test cases won't exceed 3*10^5.
+     */
+    public static void solveCodeChefAVGPERM() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            if (N == 3)
+                System.out.println("3 2 1");
+            else {
+                System.out.print(N + " " + (N - 2) + " ");
+                for (long i = 1; i <= N - 4; i++)
+                    System.out.print(i + " ");
+                System.out.println((N - 3) + " " + (N - 1));
+            }
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
