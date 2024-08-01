@@ -7940,6 +7940,60 @@ public class CodeChef {
             System.out.println("Equal");
         scn.close();
     }
+
+    /*
+     * Problem: Gun Master
+     * 
+     * You have two guns: a close-range gun and a long-range gun.
+     * The close-range gun can only shoot targets at distances less than or equal to D, 
+     * while the long-range gun can only shoot targets at distances strictly greater than D.
+     * You can only hold one gun at a time. Initially, you are holding the close-range gun.
+     * You need to shoot at a series of N targets in order. The distance to the i-th target is Ai.
+     * Your task is to determine the minimum number of times you need to switch 
+     * between the two guns to shoot all N targets in the given order.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * The first line of each test case contains two space-separated integers N and D - 
+     * the number of targets and the maximum effective range of the close-range gun.
+     * The second line of each test case contains N space-separated integers A1, A2, ..., AN,
+     * denoting the distances to the N targets in order.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum number of gun switches required.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= N <= 100
+     * 1 <= Ai, D <= 100
+     * The sum of N across all test cases won't exceed 2*10^5.
+     */
+    public static void solveCodeChefGMGM() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long D = scn.nextLong();
+            long gun = 0;
+            long switches = 0;
+            for (long i = 0; i < N; i++) {
+                long d = scn.nextLong();
+                if (d <= D) {
+                    if (gun == 1)
+                        switches++;
+                    gun = 0;
+                }
+                else {
+                    if (gun == 0)
+                        switches++;
+                    gun = 1;
+                }
+            }
+            System.out.println(switches);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
