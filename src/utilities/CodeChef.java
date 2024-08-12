@@ -8127,6 +8127,34 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Olympics 2024
+     * 
+     * Athletes of Chefland have won G gold medals, S silver medals, and B bronze medals in the Paris Olympics.
+     * Chef will be happy only if the Chefland team wins 5 medals of each type. 
+     * Find the total number of additional medals the team needs to win to make Chef happy.
+     * 
+     * Input Format:
+     * The first and only line of input will contain three space-separated integers G, S and B -
+     * the number of gold, silver, and bronze medals, respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the total number of additional medals the team needs to win to make Chef happy.
+     * 
+     * Constraints:
+     * 1 <= G, S, B <= 5
+     */
+    public static void solveCodeChefOLYMPICS24() {
+        Scanner scn = new Scanner(System.in);
+        long G = scn.nextLong(); 
+        long S = scn.nextLong(); 
+        long B = scn.nextLong();
+        long medals = G + S + B;
+        long left = 15 - medals;
+        System.out.println(left < 0 ? 0 : left);
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
