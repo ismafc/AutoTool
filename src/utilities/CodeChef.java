@@ -8155,6 +8155,48 @@ public class CodeChef {
         System.out.println(left < 0 ? 0 : left);
         scn.close();
     }
+
+    /*
+     * Problem: No Winner
+     * 
+     * After a series of matches between Alice, Bob, and Cameron, their scores are A, B, and C, respectively.
+     * Chef plans to organise MM additional matches. In each match, two players compete, and there is exactly one winner.
+     * The winner of the match receives one point.
+     * Determine if it is possible for at least two players to end up with the same score after all MM additional matches have been completed.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains four space-separated integers A, B, C and M - 
+     * the initial scores of Alice, Bob, and Cameron, and the number of additional matches, respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the answer: 
+     * YES, if it is possible for at least two players to end up with the same score after these M matches, and NO otherwise.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= A, B, C, M <= 10
+     */
+    public static void solveCodeChefNOWINNER() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long C = scn.nextLong();
+            long M = scn.nextLong();
+            long diffAB = Math.abs(A - B);
+            long diffBC = Math.abs(B - C);
+            long diffAC = Math.abs(A - C);
+            if (diffAB <= M || diffBC <= M || diffAC <= M)
+                System.out.println("YES");
+            else
+                System.out.println("NO");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
