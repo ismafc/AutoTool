@@ -8214,11 +8214,40 @@ public class CodeChef {
      * Constraints:
      * 2 <= X <= 100
      * X is even.
-    */
+     */
     public static void solveCodeChefCLEARANCE() {
         Scanner scn = new Scanner(System.in);
         long X = scn.nextLong(); 
         System.out.println(X + X / 2);
+        scn.close();
+    }
+
+    /*
+     * problem: Gold Coins 101
+     *
+     * Chef and Chefina are competing against each other in a football game where the player scoring the maximum goals, wins.
+     * It is known that the winner of the game receives A gold coins while the loser receives B gold coins.
+     * Given that Chef scored X goals and Chefina scored Y goals (X != Y), find the number of coins Chef would receive.
+     *
+     * Input Format:
+     * The first and only line of input will contain four space-separated integers, A, B, X, and Y, denoting the coins rewarded to winner, 
+     * coins rewarded to loser, goals scored by Chef, and goals scored by Chefina respectively.
+     *
+     * Output Format:
+     * Output a single integer denoting the number of coins Chef would receive.
+     *
+     * Constraints:
+     *
+     * 1 <= B < A <= 10
+     * 1 <= X, Y <= 5, X != Y
+     */
+    public static void solveCodeChefGOLDCOINS() {
+        Scanner scn = new Scanner(System.in);
+        long A = scn.nextLong(); 
+        long B = scn.nextLong();
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(X >= Y ? A : B);
         scn.close();
     }
     
