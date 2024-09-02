@@ -8368,6 +8368,48 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Magical World
+     *
+     * Alice has two coloured shapes:
+     * A red rectangle with length A units, and width B units.
+     * A blue square with an edge length of X units.
+     * Alice lives in a magical world where the dimensions of red shapes can be changed.
+     * Each change in dimension costs 11 unit of money, 
+     * using which you can change any single dimension of a red object to any positive integer.
+     * Alice wants to make the area of the blue square greater than or equal to the area of the red rectangle.
+     * Find the minimum cost needed to make this possible.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case will contain three space-separated integers A, B, and X - 
+     * the length of the red rectangle, the width of the red rectangle, and the length of the edge of the blue square.
+     *
+     * Output Format:
+     * For each test case, output on a new line the minimum cost 
+     * required to make the area of the blue square greater than or equal to the area of the red rectangle
+     *
+     * Constraints:
+     * 1 <= T <= 10^3
+     * 1 <= A, B, X <= 10
+     */
+    public static void solveCodeChefP2149() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long A = scn.nextLong(); 
+            long B = scn.nextLong();
+            long X = scn.nextLong();
+            if (A * B <= X * X)
+                System.out.println(0);
+            else if (A <= X * X || B <= X * X)
+                System.out.println(1);
+            else
+                System.out.println(2);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
