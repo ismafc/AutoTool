@@ -8329,6 +8329,45 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Independence Day 101
+     *
+     * On the occasion of Independence Day, Chef wants to design a new flag for the country of Chefland.
+     * He has some equal-sized strips in three different colors and needs to arrange them in a line 
+     * so that no two adjacent strips share the same color.
+     * Given that Chef has A orange strips, B white strips, and C green strips, 
+     * determine if it is possible to design such a flag using all the strips.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three space-separated integers A, B, and CC - 
+     * the number of strips of orange, white, and green color respectively.
+     *
+     * Output Format:
+     * For each test case, output on a new line, YES, if it is possible to design a flag 
+     * using all the strips such that no two adjacent strips share the same color. Otherwise, print NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     *
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= A, B, C <= 10
+     */
+    public static void solveCodeChefINDEPENDENCE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long A = scn.nextLong(); 
+            long B = scn.nextLong();
+            long C = scn.nextLong();
+            long max = (A >= B && A >= C) ? A : ((B >= A && B >= C) ? B : C);
+            long min = (A <= B && A <= C) ? A : ((B <= A && B <= C) ? B : C);
+            long med = A + B + C - min - max;
+            System.out.println(((max - min) <= 1 || (max - med - min) <= 1) ? "YES" : "NO");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
