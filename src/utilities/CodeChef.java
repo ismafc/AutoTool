@@ -8436,6 +8436,47 @@ public class CodeChef {
     }
     
     /*
+     * Problem: Ratio By 2
+     *
+     * You have 2 positive integers X and Y.
+     * In one operation, you can change the value of one of the integers by 1 or −1.
+     * Find the minimum number of operations needed to ensure that either X <= (2 * Y) or Y >= (2 * X), 
+     * i.e. either X is at least twice as large as Y, or Y is at least twice as large as X.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of test case contains 22 space-separated integers X and Y.
+     *
+     * Output Format:
+     * For each test case, output on a new line the minimum number of operations.
+     *
+     * Constraints:
+     * 1 <= T <= 81
+     * 2 <= X, Y <= 10
+     */
+    public static void solveCodeChefRATIO2() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            if (X > Y) {
+                long aux = X;
+                X = Y;
+                Y = aux;
+            }
+            long diff1 = 2 * X - Y;
+            long diff2 = X - Y / 2;
+            if (diff1 < 0)
+                diff1 = 0;
+            if (diff2 < 0)
+                diff2 = 0;
+            System.out.println(Math.min(diff1, diff2));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
