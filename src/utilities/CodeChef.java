@@ -8507,6 +8507,39 @@ public class CodeChef {
         System.out.println(Math.max(A1, A2) + Math.max(B1, B2) + Math.max(C1, C2));
         scn.close();
     }
+
+    /*
+     * Problem: Chess Olympiad
+     * 
+     * The 45-th FIDE Chess Olympiad is currently being held in Budapest, Hungary.
+     * Every round, teams of four players each face off against each other in four individual games.
+     * A team receives 1 point for winning a game, 0.5 points for a draw, and 0 points for a loss.
+     * A team is said to win the round if they receive strictly more points than the opposing team.
+     * In the current round, your favorite team has already won X games, drawn Y games, and lost Z games.
+     * Can they still win this round?
+     * 
+     * Input Format:
+     * The first and only line of input will contain three space-separated integers X, Y, and Z -
+     * the number of wins, draws, and losses so far.
+     * 
+     * Output Format:
+     * Print a single string: either "YES" or "NO" (without quotes), denoting whether your team can still win the round.
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings NO, No, nO, and no will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 0 <= X, Y, Z <= 4
+     * X + Y + Z <= 4
+     */
+    public static void solveCodeChefCHOLY() {
+        Scanner scn = new Scanner(System.in);
+        scn.nextLong();
+        long Y = scn.nextLong();
+        long Z = scn.nextLong();
+        long maxwins = 4 - Y - Z;
+        System.out.println(maxwins > Z ? "YES" : "NO");
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
