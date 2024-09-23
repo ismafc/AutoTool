@@ -8540,6 +8540,50 @@ public class CodeChef {
         System.out.println(maxwins > Z ? "YES" : "NO");
         scn.close();
     }
+
+    /*
+     * Problem: Range Minimize
+     * 
+     * You are given an array A containing N integers.
+     * You can delete at most two of its elements.
+     * Find the minimum possible value of max(A) - min(A) (in other words, the range of A) after the deletions.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * The first line of each test case contains a single integer N - the length of the array.
+     * The second line contains NN space-separated integers A1, A2, ..., AN
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum possible value of max(A) - min(A) after at most two deletions.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 3 <= N <= 2*10^5
+     * 1 <= Ai <= 10^9
+     * The sum of N over all test cases won't exceed 2*10^5
+     */
+    public static void solveCodeChefMNR() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            ArrayList<Long> list = new ArrayList<>();
+            for (long i = 0; i < N; i++)
+                list.add(scn.nextLong());
+            Collections.sort(list);
+            long min1 = list.get(list.size() - 1) - list.get(2);
+            long min2 = list.get(list.size() - 3) - list.get(0);
+            long min3 = list.get(list.size() - 2) - list.get(1);
+            if (min1 <= min2 && min1 <= min3)
+                System.out.println(min1);
+            else if (min2 <= min1 && min2 <= min3)
+                System.out.println(min2);
+            else
+                System.out.println(min3);
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
