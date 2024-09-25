@@ -8586,6 +8586,57 @@ public class CodeChef {
     }
     
     /*
+     * Problem: Winning World Finals
+     * 
+     * Chef's team is participating in the ICPC World Finals.
+     * The contest is 300 minutes long, of which MM minutes have passed already.
+     * Chef's team has only one problem left to solve. Their time penalty so far is P.
+     * At any minute strictly before the 300-th, the team can make a submission.
+     * When making a submission at minute X, one of two things can happen:
+     * 1.- The submission is correct.
+     * In this case, X (the time of the submission) gets added to the team's time penalty. 
+     * No more submissions can be made after this.
+     * 2.- The submission is wrong.
+     * In this case, 2020 gets added to the team's time penalty. 
+     * The team must then wait at least one minute before making the next submission.
+     * Chef believes that as long as his team solves the problem and has a final penalty of <= 1000, 
+     * they will place first.
+     * Find the maximum number of wrong submissions that Chef's team can make, 
+     * while still ensuring that they win the contest.
+     * The first submission can be made immediately at minute M.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case will contain two space-separated integers M and P - 
+     * the number of minutes that have already passed, and the team's initial penalty.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum number of wrong submissions 
+     * Chef can make while still winning the contest.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 0 <= M < 300
+     * 0 <= P <= 700
+     */
+    public static void solveCodeChefWFWIN() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long M = scn.nextLong();
+            long P = scn.nextLong();
+            long max_wrongs_left = 300 - M - 1;
+            // P + 20 * w + (M + w) <= 1000
+            // P + 21 * w + M <= 1000
+            // 21 * w <= 1000 - P - M
+            // w <= (1000 - P - M) / 21;
+            long max_allowed_wrongs = (1000 - P - M) / 21;
+            System.out.println(Math.min(max_allowed_wrongs, max_wrongs_left));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
