@@ -8665,6 +8665,39 @@ public class CodeChef {
     }
     
     /*
+     * Problem: Make Arithmetic Progression
+     *
+     * You are given three positive integers X, Y, and Z.
+     * In one operation, you can choose any one of these values, and change it to any integer of your choice.
+     * Find the minimum number of operations required to make the sequence (X, Y, Z) an arithmetic progression.
+     * Note that (X, Y, Z) is an arithmetic progression if and only if Y − X = Z − Y.
+     *
+     * Input Format:
+     *
+     * The first line of input contains a single integer T, denoting the number of testcases.
+     * The first and only line of each testcase contains three space-separated integers X, Y and Z, denoting the three numbers.
+     *
+     * Output Format:
+     * For each test case, print one line containing a single integer: 
+     * the minimum number of operations such that (X, Y, Z) forms an arithmetic progression.
+     *
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= X, Y, Z <= 100
+     */
+    public static void solveCodeChefAP() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long Z = scn.nextLong();
+            System.out.println((Y - X == Z - Y) ? 0 : 1);
+        }
+        scn.close();
+    }
+    
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
