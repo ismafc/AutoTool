@@ -8696,6 +8696,43 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Butterfly
+     * In your garden, there are exactly R red butterflies, G green butterflies and B blue butterflies.
+     * There are also exactly R red flowers, G green flowers and B blue flowers.
+     * Determine whether it is possible for every butterfly to feed on exactly one flower, such that:
+     * No two butterflies feed on the same flower; and
+     * Each butterfly feeds on a flower whose color is different from its own color.
+     * For example, a red butterfly can only feed on green and blue flowers, not red flowers.
+     *
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains three space-separated integers R, G and B - 
+     * the number of red, green and blue butterflies (and flowers) respectively.
+     *
+     * Output Format:
+     * For each test case, output on a new line "YES" if it is possible for the butterflies to feed appropriately, and "NO" otherwise.
+     * Your output must not contain the quotation marks.
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings no, NO, nO, and No will be treated as equivalent.
+     *
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= R, G, B <= 10^8
+     */
+    public static void solveCodeChefBFLY() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long R = scn.nextLong();
+            long G = scn.nextLong();
+            long B = scn.nextLong();
+            boolean imposible = (R > G + B) || (G > R + B) || (B > R + G);
+            System.out.println(imposible == true ? "NO" : "YES");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
