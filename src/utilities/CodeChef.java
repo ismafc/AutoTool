@@ -8804,6 +8804,41 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Add 1 or 2 Game
+     * 
+     * Alice and Bob play a game.
+     * There is an integer X, which is initially 0. 
+     * On their turn, Alice or Bob can choose to increment X by either 1 or 2.
+     * The game ends as soon as X >= N holds. 
+     * When the game ends, Bob wins the game if X = N, otherwise Alice wins the game.
+     * Alice goes first, and the players alternate turns.
+     * If both players play optimally, predict the winner.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains a single integer N - the limit for the game.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the name of the winner: 
+     * the string "ALICE" if Alice wins the game, and "BOB" if Bob wins the game (without the quotes).
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings Bob, BOB, bOb, and bOB will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 10
+     * 1 <= N <= 10
+     */
+    public static void solveCodeChefADD12GAME() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            System.out.println(N == 1 ? "ALICE" : "BOB");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
