@@ -8839,6 +8839,46 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Truth Teller And Liars 101
+     * 
+     * You are a traveler and you are at a junction of 2 paths - 
+     * one leads to eternal happiness, the other to certain doom.
+     * There are a total of N + M people, N of which always tell the truth, 
+     * while the remaining MM may tell the truth or lie. All of them are aware of which path leads to where.
+     * You don't know who is a truth teller and who is not. 
+     * You will ask some randomly chosen XX people the following question:
+     * Which among the 2 paths leads to eternal happiness?
+     * Is it possible for you to be sure which paths leads to eternal happiness?
+     * If it is possible, find the minimal X where you can be sure of the path 
+     * regardless of which X people you end up asking. Otherwise, print -1.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case contains two space-separated integers N and M - 
+     * the number of truth tellers, and the number of people who may or may not tell the truth.
+     * 
+     * Output Format:
+     * For each test case, output the following:
+     * −1 if there is no way to figure out which path is the path to happiness.
+     * Otherwise, print an integer X (1 <= X <= N + M), 
+     * where X is the minimum integer such that you can be sure of the path after asking any X people.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N, M <= 10
+     */
+    public static void solveCodeChefTRUTHLIE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long M = scn.nextLong();
+            System.out.println(N <= M ? -1 : M * 2 + 1);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
