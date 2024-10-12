@@ -8948,6 +8948,37 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Rectangled
+     * 
+     * Chef loves rectangles and he wants to draw one with the largest area possible, 
+     * but the problem is that his pen has only enough ink left to draw a total of N unit length of line.
+     * Help him find the largest area of a rectangle which he can draw 
+     * if he wants to draw rectangles with integral sides only.
+     * Note that he does NOT need to finish all the ink.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of a single integer N on a new line, denoting the ink left.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the area of the largest rectangle Chef can draw.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 10^3
+     */
+    public static void solveCodeChefRCTGLD() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong() / 2;
+            System.out.println((N / 2) * (N - N / 2));
+        }
+        scn.close();
+    }
+
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
