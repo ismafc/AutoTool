@@ -8552,7 +8552,7 @@ public class CodeChef {
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of two lines of input.
      * The first line of each test case contains a single integer N - the length of the array.
-     * The second line contains NN space-separated integers A1, A2, ..., AN
+     * The second line contains N space-separated integers A1, A2, ..., AN
      * 
      * Output Format:
      * For each test case, output on a new line the minimum possible value of max(A) - min(A) after at most two deletions.
@@ -8846,7 +8846,7 @@ public class CodeChef {
      * There are a total of N + M people, N of which always tell the truth, 
      * while the remaining MM may tell the truth or lie. All of them are aware of which path leads to where.
      * You don't know who is a truth teller and who is not. 
-     * You will ask some randomly chosen XX people the following question:
+     * You will ask some randomly chosen X people the following question:
      * Which among the 2 paths leads to eternal happiness?
      * Is it possible for you to be sure which paths leads to eternal happiness?
      * If it is possible, find the minimal X where you can be sure of the path 
@@ -9003,6 +9003,53 @@ public class CodeChef {
         long X = scn.nextLong(); 
         long N = scn.nextLong();        
         System.out.println((X - (N * 10)) / 20);
+        scn.close();
+    }
+
+    /*
+     * Problem: Long Queue
+     * Unfortunately as soon as Sushil reached the sweet shop, he saw there was a huge queue. 
+     * At first, Sushil joins at the end of the line. 
+     * But he is impatient and now has decided to bully people in front of him, by flexing his wealth, so that they let him proceed.
+     * There are N people in the line, with the i-th person having a wealth of Rs. Ai. 
+     * Sushil is currently the N-th person in this line.
+     * Everytime Sushil sees that the person directly in front of him has a wealth less than or equal to half of his own wealth, 
+     * Sushil will bully him out of the line, and the queue will reduce by 1. 
+     * Note that Sushil can only bully the person directly infront of him.
+     * More formally, if Sushil has wealth X, he can bully people with wealth smaller than or equal to X / 2. 
+     * Find the final position of Sushil.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of input contains N - the number of people in the queue including Sushil.
+     * The second line contains N integers - A1, A2, ..., AN, the wealths of all the people in the queue.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the final position of Sushil after he finishes bullying people.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 2 <= N <= 100
+     * 1 <= Ai <= 100
+     */
+    public static void solveCodeChefLONGQUEUE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            ArrayList<Long> Ai = new ArrayList<>();
+            while (N-- > 0)
+                Ai.add(scn.nextLong());
+            int pos = Ai.size() - 1;
+            long X = Ai.get(pos) / 2;
+            for (int i = Ai.size() - 2; i >= 0; i--) {
+                if (Ai.get(i) > X)
+                    break;
+                pos--;
+            }
+            System.out.println(pos + 1);
+        }
         scn.close();
     }
 
