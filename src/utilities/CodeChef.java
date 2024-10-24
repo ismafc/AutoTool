@@ -9054,6 +9054,50 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Bi_lindrome!
+     * 
+     * You are given a string S of length N.
+     * Your task is to delete a subsequence of maximum length from the string, such that, 
+     * after concatenating the remaining parts of the string, it becomes a palindrome of length greater than 1.
+     * If this is possible, print the maximum length of the subsequence that can be deleted. Otherwise, print -1.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of 2 lines of input:
+     * 1.- The first line consists the a single integer N - the length of string S.
+     * 2.- The second line contains string S, consisting of lowercase english alphabets.
+     * 
+     * Output Format:
+     * For each test case, if it is possible to delete a subsequence under the given conditions, 
+     * print a single integer, denoting the maximum length of the subsequence that can be deleted. Otherwise, print -1.
+     * 
+     * Constraints:
+     * 1 <= T <= 2500
+     * 3 <= N <= 100
+     * S consists of lowercase english alphabets.
+     */
+    public static void solveCodeChefQTOO_2523() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            String S = scn.next();
+            boolean found = false;
+            HashMap<Character, Boolean> hashMap = new HashMap<>();
+            for (char c : S.toCharArray()) {
+                if (hashMap.containsKey(c)) {
+                    found = true;
+                    break;
+                }
+                else
+                    hashMap.put(c, true);
+            }
+            System.out.println(found ? S.length() - 2 : -1);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
