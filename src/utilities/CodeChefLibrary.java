@@ -1,5 +1,6 @@
 package utilities;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -26,6 +27,37 @@ public class CodeChefLibrary {
      */
     public static boolean isLeapYear(int y) {
         return (y % 4 == 0 && y % 100 != 0) || (y % 400 == 0);
+    }
+
+    /**
+     * Calculates all divisors for 'n'.
+     * @param n value to check divisors
+     * @return Ordered array with all divisors of 'n'
+     */
+    public static ArrayList<Long> divisors(long n) {
+        ArrayList<Long> l1 = new ArrayList<>();
+        ArrayList<Long> l2 = new ArrayList<>();
+        
+        // Calculamos el límite para los divisores 'complementarios'
+        long limit = (long)Math.sqrt(n);
+        
+        // Añadimos el 1
+        l1.add(1L);
+        for (long i = 2; i <= limit; i++) {
+            if (n % i == 0) {
+                l1.add(i);
+                if (i != n / i) {
+                    // No es un cuadrado perfecto
+                    l2.add(0, n / i);
+                }
+            }
+        }
+        l1.addAll(l2);
+        
+        // Añadimos 'n'
+        if  (n != 1L)
+            l1.add(n);
+        return l1;
     }
 
     /**

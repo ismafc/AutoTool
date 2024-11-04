@@ -9155,6 +9155,59 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Even vs Odd Divisors
+     * 
+     * Given an integer N, 
+     * let f(N) denote the number of even divisors of N g(N) denote the number of odd divisors of N.
+     * For example, the divisors of 6 are 1, 2, 3 and 6. 
+     * f(N) = 2, g(N) = 2 as there are 2 even and 2 odd numbers in this list;
+     * Find whether f(N) > g(N) or f(N) = g(N) or f(N) < g(N).
+     * 
+     * Output:
+     * 1 if f(N) > g(N)
+     * 0 if f(N) = g(N)
+     * -1 if f(N) < g(N)
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line consists of a single integer N.
+     * 
+     * Output Format:
+     * For each test case, output on a new line:
+     * 1 if f(N) > g(N)
+     * 0 if f(N) = g(N)
+     * -1 if f(N) < g(N)
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     */
+    public static void solveCodeChefEVENODDDIV() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            ArrayList<Long> d = CodeChefLibrary.divisors(N);
+            long even = 0;
+            long odd = 0;
+            for (long i : d) {
+                if (i % 2 == 0)
+                    even++;
+                else
+                    odd++;
+            }
+            if (even == odd)
+                System.out.println(0);
+            else if (even > odd)
+                System.out.println(1);
+            else
+                System.out.println(-1);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
