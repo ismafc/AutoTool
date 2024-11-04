@@ -9208,6 +9208,57 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Non-matching Name
+     * 
+     * Alice and Bob invented a brand-new algorithm - but they can't decide what to name it!
+     * Alice suggested the name SA, and Bob suggested the name SB.
+     * (SA and SB are both strings of lowercase English letters.)
+     * However, Alice thinks Bob's naming sense is really bad -
+     * she'll only be happy if the name given to the algorithm is not close to SB at all.
+     * More specifically, Alice will be happy if and only if the algorithm's name does not share any characters with SB.
+     * Similarly, Bob thinks Alice's naming sense is really bad, 
+     * and will only be happy if the algorithm's name doesn't share any characters with SA.
+     * Is there a way to name the algorithm (using only lowercase English letters) so that both Alice and Bob are happy?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three lines of input.
+     * The first line of each test case contains two space-separated integers N and M - 
+     * the length of SA and the length of SB, respectively.
+     * The second line contains the string SA. 
+     * The third line contains the string SB.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the answer: 
+     * "YES" if a valid name exists for the algorithm, and "NO" otherwise.
+     * Each letter of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings NO, No, nO, and no will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= N <= 50
+     * 1 <= M <= 50
+     * SA and SB contain only lowercase English letters, i.e, the characters 'a' through 'z'.
+     */
+    public static void solveCodeChefABNOMAT() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            scn.nextLong();
+            scn.nextLong();
+            String SA = scn.next();
+            String SB = scn.next();
+            HashMap<Character, Long> hashMap = new HashMap<>();
+            for (char c : SA.toCharArray())
+                hashMap.put(c, hashMap.getOrDefault(c, 0L) + 1);
+            for (char c : SB.toCharArray())
+                hashMap.put(c, hashMap.getOrDefault(c, 0L) + 1);
+            System.out.println(hashMap.size() == 26 ? "NO" : "YES");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
