@@ -9080,7 +9080,7 @@ public class CodeChef {
         Scanner scn = new Scanner(System.in);
         long T = scn.nextLong(); 
         while (T-- > 0) {
-            long N = scn.nextLong();
+            scn.nextLong();
             String S = scn.next();
             boolean found = false;
             HashMap<Character, Boolean> hashMap = new HashMap<>();
