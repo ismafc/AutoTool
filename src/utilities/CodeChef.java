@@ -9283,6 +9283,37 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Movie Snacks
+     * 
+     * Chef is watching a movie, and during the intermission, wants to get himself some snacks.
+     * A bucket of popcorn costs X rupees, and a drink costs Y rupees.
+     * There is also a combo offer available, which provides one bucket of popcorn and one drink at a cost of Z rupees.
+     * Chef wants to buy two buckets of popcorn and three drinks.
+     * What's the minimum amount he needs to pay to do so?
+     * 
+     * Input Format:
+     * The first and only line of input will contain three space-separated integers X, Y and Z - 
+     * the price of one bucket of popcorn, one drink, and the combo, respectively.
+     * 
+     * Output Format:
+     * Print a single integer: the minimum price Chef needs to pay to buy two buckets of popcorn and three drinks.
+     * 
+     * Constraints:
+     * 50 <= X, Y, Z <= 200
+     * X, Y <= Z
+     */
+    public static void solveCodeChefMOVPR() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        long Z = scn.nextLong();
+        long P1 = X * 2 + Y * 3;
+        long P2 = 2 * Z + Y;
+        System.out.println(Math.min(P1, P2));
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
