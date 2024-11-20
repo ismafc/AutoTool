@@ -9348,6 +9348,44 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Too Many Oranges
+     * 
+     * Chef has N oranges with him. Each orange has either 10, 11 or 12 slices.
+     * Chef wanted to eat exactly K slices of orange. 
+     * However, the oranges were too tasty, and Chef ended up eating all N of them!
+     * Chef wasn't paying attention, so he didn't count the number of slices he ate, 
+     * and he also doesn't know how many slices each orange had -
+     * the only thing he knows is that each orange has either 10, 11 or 12 slices.
+     * Is it possible that Chef ate exactly KK slices from N oranges?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of a single line of input, containing two space-separated integers N and K - 
+     * the number of oranges, and the number of slices Chef wants to eat.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the answer: 
+     * "YES" if Chef could have eaten exactly N orange slices, and "NO" otherwise. 
+     * The output should be without quotes. Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e, the strings No, NO, nO, and no will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 5000
+     * 1 <= N <= 30
+     * 1 <= K <= 500
+     */
+    public static void solveCodeChefORANGES() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long K = scn.nextLong();
+            System.out.println((N * 10 > K || N * 12 < K) ? "NO" : "YES");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
