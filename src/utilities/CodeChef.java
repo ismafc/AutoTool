@@ -9411,6 +9411,57 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Selling Donuts
+     * 
+     * Chef owns a donut shop, which sells N different types of donuts, numbered from 1 to N.
+     * Today, he baked Ai donuts of the i-th type.
+     * M customers will visit the shop. The i-th customer wants to buy exactly one donut of type Bi.
+     * If Chef has no remaining donuts of type i, the i-th customer will become sad.
+     * How many customers will become sad?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three lines of input.
+     * The first line of each test case contains two space-separated integers N and M - 
+     * the number of donut types and the number of customers.
+     * The second line contains N space-separated integers A1, A2, ..., AN, the number of each type of donut that Chef has.
+     * The third line contains M space-separated integers B1, B2, ..., BM, denoting the types of donuts the M customers want.
+     * 
+     * Output Format:
+     * For each test case, output on a new line a single integer: the number of customers who will become sad.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 1 <= M <= 100
+     * 0 <= Ai <= 100
+     * 1 <= Bi <= N
+     */
+    public static void solveCodeChefDONUTSELL() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long M = scn.nextLong();
+            ArrayList<Long> backed = new ArrayList<>();
+            for (long i = 0; i < N; i++)
+                backed.add(scn.nextLong());
+            long sad = 0;
+            for (long i = 0; i < M; i++) {
+                int Bi = (int)scn.nextLong() - 1;
+                long remain = backed.get(Bi);
+                if (remain == 0)    
+                    sad++;
+                else
+                    backed.set(Bi, remain - 1);
+            }
+            System.out.println(sad);
+        }
+        scn.close();
+    }
+
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
