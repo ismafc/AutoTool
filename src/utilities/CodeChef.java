@@ -9386,6 +9386,31 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Moneymaking
+     * 
+     * Chef has X nuggets and Y star pieces with him.
+     * Each nugget sells for 5000 coins, and each star piece sells for 9800 coins.
+     * How much money can Chef make by selling all of his items?
+     * 
+     * Input Format:
+     * The only line of input will contain two space-separated integers X and Y - 
+     * the number of nuggets and star pieces Chef has.
+     * 
+     * Output Format:
+     * Output a single integer: the amount of money Chef can earn by selling all his items.
+     * 
+     * Constraints:
+     * 0 <= X, Y <= 10
+     */
+    public static void solveCodeChefNUGGET() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(X * 5000 + Y * 9800);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
