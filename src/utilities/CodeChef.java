@@ -9460,6 +9460,54 @@ public class CodeChef {
         scn.close();
     }
 
+    /*
+     * Problem: Card Swipe
+     * 
+     * In the bustling CodeChef office, the entrance is equipped with a high-tech card swipe system. 
+     * Each employee is assigned a unique ID card that they use to swipe in and out of the building.
+     * The system records every swipe, capturing the first swipe of an ID as in, second as out, 
+     * third as in, and so on. Given an array A consisting of N IDs denoting N swipes throughout the day, 
+     * find the maximum number of people in the office at any time.
+     * Note that there is nobody inside the office before the first swipe.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains an integer N - the number of swipes throughout the day.
+     * The next line contains N space-separated integers denoting the ID of the ith swipe.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the maximum number of people in the office at any time.
+     * 
+     * Constraints:
+     * 1 <= T <= 2*10^5
+     * 1 <= N <= 2*10^5
+     * 1 <= Ai <= N
+     * The sum of N over all test cases won't exceed 10^6.
+     */
+    public static void solveCodeChefCARDSWIPE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long in = 0;
+            long maxIn = 0;
+            HashMap<Long, Boolean> hashMap = new HashMap<>();
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                Boolean inOrOut = hashMap.getOrDefault(Ai, true);
+                if (inOrOut) {
+                    in++;
+                    maxIn = Math.max(maxIn, in);
+                }
+                else
+                    in--;
+                hashMap.put(Ai, !inOrOut);
+            }
+            System.out.println(maxIn);
+        }
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
