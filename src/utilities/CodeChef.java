@@ -6828,7 +6828,7 @@ public class CodeChef {
     /*
      * Problem: String protocol
      * 
-     * An input string SS of length N is transferred through the network using a special protocol. 
+     * An input string S of length N is transferred through the network using a special protocol. 
      * The protocol can send the string through a series of operations. 
      * In one operation, we can choose a lowercase english alphabet C and do one of the following:
      * Transfer 1 copy of C through the network.
@@ -9356,7 +9356,7 @@ public class CodeChef {
      * Chef wasn't paying attention, so he didn't count the number of slices he ate, 
      * and he also doesn't know how many slices each orange had -
      * the only thing he knows is that each orange has either 10, 11 or 12 slices.
-     * Is it possible that Chef ate exactly KK slices from N oranges?
+     * Is it possible that Chef ate exactly K slices from N oranges?
      * 
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
@@ -9515,10 +9515,10 @@ public class CodeChef {
      * Vishal loves running. He often visits his favourite Nehru Park and runs for very long distances. 
      * On one such visit he found that the number of girls in the park was unusually high. 
      * Now he wants to use this as an opportunity to impress a large number of girls with his awesome speed.
-     * The track on which he runs is an NN kilometres long straight path. 
+     * The track on which he runs is an N kilometres long straight path. 
      * There are aiai​ girls standing within the ithith kilometre of this path. 
      * A girl will be impressed only if Vishal is running at his maximum speed when he passes by her. 
-     * But he can run at his best speed only for a single continuous stretch of KK kilometres. 
+     * But he can run at his best speed only for a single continuous stretch of K kilometres. 
      * Now Vishal wants to know what is the maximum number of girls that he can impress.
      * 
      * Input:
@@ -9593,6 +9593,55 @@ public class CodeChef {
         while (T-- > 0) {
             long N = scn.nextLong();
             System.out.println("1 1 " + (N - 2));
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Magician versus Chef
+     * 
+     * When Chef was visiting a fair in Byteland, he met a magician. 
+     * The magician had N boxes (numbered 1 through N) and a gold coin. 
+     * He challenged Chef to play a game with him; 
+     * if Chef won the game, he could have the coin, but if he lost, the magician would kidnap Chef.
+     * At the beginning of the game, the magician places the gold coin into the X-th box. 
+     * Then, he performs S swaps. To win, Chef needs to correctly identify the position of the coin after all swaps.
+     * In each swap, the magician chooses two boxes A and B, 
+     * moves the contents of box A (before the swap) to box B and the contents of box B (before the swap) to box A.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first line of each test case contains three space-separated integers N, X and S.
+     * S lines follow. Each of these lines contains two space-separated integers A and B denoting a pair of swapped boxes.
+     * 
+     * Output:
+     * For each test case, print a single line containing one integer - 
+     * the number of the box containing the gold coin after all swaps are performed.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 2 <= N <= 10^5
+     * 1 <= S <= 10^4
+     * 1 <= X, A, B <= N
+     * A != B
+     * the sum of S for all test cases does not exceed 2*10^5
+     */
+    public static void solveCodeChefMAGICHF() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            scn.nextLong();
+            long X = scn.nextLong();
+            long S = scn.nextLong();
+            for (long i = 0; i < S; i++) {
+                long S1 = scn.nextLong();
+                long S2 = scn.nextLong();
+                if (S1 == X)
+                    X = S2;
+                else if (S2 == X)
+                    X = S1;
+            }
+            System.out.println(X);
         }
         scn.close();
     }
