@@ -9508,6 +9508,60 @@ public class CodeChef {
         }
         scn.close();
     }
+    
+    /*
+     * Problem: The Great Run
+     * 
+     * Vishal loves running. He often visits his favourite Nehru Park and runs for very long distances. 
+     * On one such visit he found that the number of girls in the park was unusually high. 
+     * Now he wants to use this as an opportunity to impress a large number of girls with his awesome speed.
+     * The track on which he runs is an NN kilometres long straight path. 
+     * There are aiai​ girls standing within the ithith kilometre of this path. 
+     * A girl will be impressed only if Vishal is running at his maximum speed when he passes by her. 
+     * But he can run at his best speed only for a single continuous stretch of KK kilometres. 
+     * Now Vishal wants to know what is the maximum number of girls that he can impress.
+     * 
+     * Input:
+     * First line of the input contains the number of testcases T. For each test case,
+     * First line contains two space-separated integers N and K, the length of the track and the maximum distance he can run at his best speed.
+     * Second line contains N space-separated integers, the number of girls within each kilometre of the track.
+     * 
+     * Output:
+     * For each test case print one line containing an integer, denoting the maximum number of girls Vishal can impress.
+     * 
+     * Constraints:
+     * 1 <= T <= 10
+     * 1 <= K <= N <= 100
+     * 1 <= ai <= 100
+     */
+    public static void solveCodeChefPROC18A() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long K = scn.nextLong();
+            long actual = 0;
+            ArrayList<Long> Ai = new ArrayList<>();
+            long i = 0;
+            while (i < K) {
+                Ai.add(scn.nextLong());
+                actual += Ai.get((int)i);
+                i++;
+            }
+            long max = actual;
+            long j = 0;
+            while (i < N) {
+                Ai.add(scn.nextLong());
+                actual -= Ai.get((int)j);
+                actual += Ai.get((int)i);
+                max = Math.max(actual, max);
+                j++;
+                i++;
+            }
+            System.out.println(max);
+        }
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
