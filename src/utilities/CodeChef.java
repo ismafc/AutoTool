@@ -9564,6 +9564,40 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Chocolate Distribution
+     * 
+     * Chef has a total of N (N >= 4) chocolates. He decided to distribute them into three jars such that:
+     * -> At least one jar has odd number of chocolates;
+     * -> Exactly two jars have same number of chocolates;
+     * -> Every jar has at least one chocolate.
+     * Find a valid distribution of chocolates for Chef.
+     * Note that a valid distribution always exists. If multiple such distributions exist, you may print any.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of a single integer N - the total number of chocolates.
+     * 
+     * Output Format:
+     * 
+     * For each test case, output on a new line, 
+     * three space-separated integers denoting the number of chocolates in each jar after distribution.
+     * Note that a valid distribution always exists. If multiple such distributions exist, you may print any.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 4 <= N <= 10^5
+     */
+    public static void solveCodeChefCHOCOCHEF() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            System.out.println("1 1 " + (N - 2));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
