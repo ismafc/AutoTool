@@ -9674,6 +9674,52 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Assignment Score
+     * 
+     * Chef has a total of N + 1 assignments. He knows his score on the first N of them, 
+     * and he is now working on his last assignment. His scores in the first N assignment are A1, A2, ..., AN. 
+     * Each of them are graded out of 100 marks, and his total marks is just a sum of all his N + 1 assignment marks.
+     * Chef is now worried about he might fail in his course. 
+     * He will fail if he scores less than 50% of the total marks. 
+     * Can you help Chef find what is the minimum score he needs to get to not fail? 
+     * It may be impossible for Chef to pass, output -1 then.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line contains N - the number of completed assignments
+     * -> The second line contains N integers - A1, A2, ..., AN - the scores on those assignments.
+     * 
+     * Output Format:
+     * For each test case, output on a new line
+     * -> The minimum score needed on the N + 1'th assignment for Chef to pass, if it possible for him to pass
+     * -> −1 if it is impossible for Chef to pass
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 0 <= Ai <= 100 
+     */
+    public static void solveCodeChefASSIGNSCORE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long sum = 0;
+            for (long i = 0; i < N; i++)
+                sum += scn.nextLong();
+            long left = (N + 1) * 50 - sum;
+            if (left > 100)
+                System.out.println(-1);
+            else if (left < 0)
+                System.out.println(0);
+            else
+                System.out.println(left);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
