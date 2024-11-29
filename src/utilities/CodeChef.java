@@ -9647,6 +9647,33 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Calorie Intake
+     * 
+     * Chef has decided that he will cut down on his calorie intake. He will eat atmost X calories in a day.
+     * Today, he already ate Y sweets, each having Z calories. 
+     * Find out how many more calories he can eat. If he has already exceeded his limit, output −1.
+     * 
+     * Input Format:
+     * The first and only line of input contains 3 integers - X, Y and Z.
+     * 
+     * Output Format:
+     * For each test case, output on a new line:
+     * -> −1 if Chef has exceeded his calorie limit.
+     * -> The amount of calories Chef can still eat if he has not exceeded it.
+     * 
+     * Constraints:
+     * 1 <= X, Y, Z <= 100
+     */
+    public static void solveCodeChefCALINTAKE() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        long Z = scn.nextLong();
+        System.out.println(Y * Z > X ? -1 : X - Y * Z);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
