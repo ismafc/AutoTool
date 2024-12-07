@@ -9720,6 +9720,33 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Chef and Socks
+     * 
+     * Chef needs A dollars to buy himself a new pair of socks for Christmas.
+     * If he has X dollars saved up and his parents give him an additional Y dollars, will Chef be able to buy new socks?
+     * 
+     * Input Format:
+     * The first and only line of input will contain 3 space-separated integers A, X, and Y -
+     * the cost of the socks, the amount of money Chef has saved up, and the additional money he received from his parents.
+     * 
+     * Output Format:
+     * Output a single string denoting the answer: "YES" if Chef can afford the socks, and "NO" otherwise (without quotes).
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e., the strings NO, No, nO, and no will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= A, X, Y <= 100
+     */
+    public static void solveCodeChefCHEFSOCKS() {
+        Scanner scn = new Scanner(System.in);
+        long A = scn.nextLong();
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(X + Y >= A ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
