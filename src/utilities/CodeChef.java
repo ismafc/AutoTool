@@ -9768,7 +9768,7 @@ public class CodeChef {
      * 1 <= N <= 100
      * 0 <= K <= 100
      */
-    public static void solveCodeChefABINARYSUM() {
+    public static void solveCodeChefBINARYSUM() {
         Scanner scn = new Scanner(System.in);
         long T = scn.nextLong(); 
         while (T-- > 0) {
@@ -9778,6 +9778,53 @@ public class CodeChef {
                 System.out.println(K == N / 2 ? "YES" : "NO");
             else
                 System.out.println(((K == N / 2) || (K == N / 2 + 1)) ? "YES" : "NO");
+        }
+        scn.close();
+    }
+
+    /*
+     * problem: Even Numbers Hate
+     * 
+     * Sushil has an array A of N integers - A1, A2, ..., AN​. 
+     * He constructs a new array from it, the prefix sum array P = [P1, P2, ..., PN], 
+     * where Pi = A1 + A2 + ... + Ai​, i.e. the sum of the first i elements.
+     * Sushil hates even numbers but he likes odd numbers, 
+     * and thus wants to sure there are as many odd numbers as possible in the prefix sum array P. 
+     * He is allowed to play with the array AA and rearrange it arbitrarily. 
+     * Find the maximum number of odd numbers in the prefix sum array P if Sushil rearranges the array A optimally.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains N - the size of the array
+     * -> The second line contains NN integers - A1, A2, ..., AN.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum possible number of odd numbers in the prefix sum array.
+     * 
+     * Constraints:
+     * 1 <= T <= 100 
+     * 1 <= N <= 100
+     * 1 <= Ai <= 100
+     */
+    public static void solveCodeChefEVENHATE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long even = 0;
+            long odd = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                if (Ai % 2 == 0)
+                    even++;
+                else
+                    odd++;
+            }
+            if (odd == 0)
+                System.out.println(0);
+            else
+                System.out.println(1 + even + (odd - 1) / 2);
         }
         scn.close();
     }
