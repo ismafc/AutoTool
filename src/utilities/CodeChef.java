@@ -9830,6 +9830,54 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Three Friends
+     * 
+     * There are three friends; let's call them A, B, C. They made the following statements:
+     * A: "I have x Rupees more than B."
+     * B: "I have y rupees more than C."
+     * C: "I have z rupees more than A."
+     * You do not know the exact values of x, y, z. Instead, you are given their absolute values, 
+     * i.e. X = |x|, Y = |y| and Z = |z|. Note that x, y, z may be negative; 
+     * "having −r rupees more" is the same as "having r rupees less".
+     * Find out if there is some way to assign amounts of money to A, B, C such that all of their statements are true.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first and only line of each test case contains three space-separated integers X, Y and Z.
+     * 
+     * Output:
+     * For each test case, print a single line containing the string "yes" if the presented scenario is possible or "no" otherwise (without quotes).
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= X, Y, Z <= 1000
+     */
+    public static void solveCodeChefTHREEFR() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long Z = scn.nextLong();
+            if (-X + Y + Z == 0)
+                System.out.println("YES");
+            else if (X - Y + Z == 0)
+                System.out.println("YES");
+            else if (X + Y - Z == 0)
+                System.out.println("YES");
+            else if (-X - Y + Z == 0)
+                System.out.println("YES");
+            else if (-X + Y - Z == 0)
+                System.out.println("YES");
+            else if (X - Y - Z == 0)
+                System.out.println("YES");
+            else 
+                System.out.println("NO");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
