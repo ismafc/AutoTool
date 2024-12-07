@@ -9747,6 +9747,42 @@ public class CodeChef {
     }
 
     /*
+     * problem: Binary Sum
+     * 
+     * You're given two integers N and K. Your task is to determine if there exists a binary string S of length NN such that:
+     * S1 + S2 + S3 + ... + SN = K, i.e, the sum of all the digits of the string equals K; 
+     * and Si != Si + 1 for every 1 <= i < N, meaning that no two adjacent digits are equal.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains two space-separated integers N and K.
+     * 
+     * Output Format:
+     * For each test case, output on a new line a single string denoting the answer: 
+     * "YES" if a valid binary string exists, and "NO" otherwise (without quotes).
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e., the strings NO, No, nO, and no will all be treated as equivalent.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 0 <= K <= 100
+     */
+    public static void solveCodeChefABINARYSUM() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long K = scn.nextLong();
+            if (N % 2 == 0)
+                System.out.println(K == N / 2 ? "YES" : "NO");
+            else
+                System.out.println(((K == N / 2) || (K == N / 2 + 1)) ? "YES" : "NO");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
