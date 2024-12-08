@@ -9878,6 +9878,54 @@ public class CodeChef {
     }
 
     /*
+     * Problem: The Wave
+     * 
+     * Chef is stuck in the wavey world of polynomials. 
+     * You are given all N roots of a polynomial P(x) = Prod(i = 1 to N)(x − ai). 
+     * The roots are pairwise distinct integers, but they are not given in any particular order.
+     * To help Chef escape, you should answer Q queries (numbered 1 through Q). 
+     * For each valid i, in the i-th query, you are given an integer xi​ and you have to determine whether P(xi​) is positive, negative or 0.
+     * 
+     * Input:
+     * The first line of the input contains two space-separated integers N and Q.
+     * The second line contains NN space-separated integers a1, a2, ..., aN​.
+     * Q lines follow. For each valid i, the i-th of these lines contains a single integer xi​ describing the i-th query.
+     * 
+     * Output:
+     * For each query, print a single line containing the string "POSITIVE", "NEGATIVE" or "0" (without quotes) 
+     * describing the value of the polynomial for the ii-th query.
+     * 
+     * Constraints:
+     * 1 <= N, Q <= 2*10^5
+     * |ai| <= 10^9 for each valid i
+     * a1, a2, ..., aN​ are pairwise distinct
+     * |xi| <= 10^9 for each valid i
+     */
+    public static void solveCodeChefWAV2() {
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt(); 
+        int Q = scn.nextInt(); 
+        int[] a = new int [N];
+        for (int i = 0; i < N; i++)
+            a[i] = scn.nextInt();
+        Arrays.sort(a);
+        while (Q-- > 0) {
+            int x = scn.nextInt();
+            int i = Arrays.binarySearch(a, x);
+            if (i >= 0)
+                System.out.println("0");
+            else {
+                i = -i - 1;
+                if (i % 2 == 0)
+                    System.out.println("POSITIVE");
+                else
+                    System.out.println("NEGATIVE");
+            }
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
