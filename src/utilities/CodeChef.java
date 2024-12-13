@@ -208,7 +208,7 @@ public class CodeChef {
      * You are given a date string S. 
      * The date follows the Gregorian calendar, the one used in most parts of the world.
      * Identify whether it is of the form DD/MM/YYYY or MM/DD/YYYY, or if it can be of both forms.
-     * Here DD denotes the 2-digit day, MM denotes the 2-digit month and YYYY denotes the 4-digit year.
+     * Here D denotes the 2-digit day, M denotes the 2-digit month and YYYY denotes the 4-digit year.
      * It is guaranteed that S is a valid date taking at least one of these forms.
      * 
      * For example,
@@ -8160,9 +8160,9 @@ public class CodeChef {
      * Problem: No Winner
      * 
      * After a series of matches between Alice, Bob, and Cameron, their scores are A, B, and C, respectively.
-     * Chef plans to organise MM additional matches. In each match, two players compete, and there is exactly one winner.
+     * Chef plans to organise M additional matches. In each match, two players compete, and there is exactly one winner.
      * The winner of the match receives one point.
-     * Determine if it is possible for at least two players to end up with the same score after all MM additional matches have been completed.
+     * Determine if it is possible for at least two players to end up with the same score after all M additional matches have been completed.
      * 
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
@@ -8589,7 +8589,7 @@ public class CodeChef {
      * Problem: Winning World Finals
      * 
      * Chef's team is participating in the ICPC World Finals.
-     * The contest is 300 minutes long, of which MM minutes have passed already.
+     * The contest is 300 minutes long, of which M minutes have passed already.
      * Chef's team has only one problem left to solve. Their time penalty so far is P.
      * At any minute strictly before the 300-th, the team can make a submission.
      * When making a submission at minute X, one of two things can happen:
@@ -8844,7 +8844,7 @@ public class CodeChef {
      * You are a traveler and you are at a junction of 2 paths - 
      * one leads to eternal happiness, the other to certain doom.
      * There are a total of N + M people, N of which always tell the truth, 
-     * while the remaining MM may tell the truth or lie. All of them are aware of which path leads to where.
+     * while the remaining M may tell the truth or lie. All of them are aware of which path leads to where.
      * You don't know who is a truth teller and who is not. 
      * You will ask some randomly chosen X people the following question:
      * Which among the 2 paths leads to eternal happiness?
@@ -9749,7 +9749,7 @@ public class CodeChef {
     /*
      * problem: Binary Sum
      * 
-     * You're given two integers N and K. Your task is to determine if there exists a binary string S of length NN such that:
+     * You're given two integers N and K. Your task is to determine if there exists a binary string S of length N such that:
      * S1 + S2 + S3 + ... + SN = K, i.e, the sum of all the digits of the string equals K; 
      * and Si != Si + 1 for every 1 <= i < N, meaning that no two adjacent digits are equal.
      * 
@@ -9797,7 +9797,7 @@ public class CodeChef {
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of multiple lines of input.
      * -> The first line of each test case contains N - the size of the array
-     * -> The second line contains NN integers - A1, A2, ..., AN.
+     * -> The second line contains N integers - A1, A2, ..., AN.
      * 
      * Output Format:
      * For each test case, output on a new line the maximum possible number of odd numbers in the prefix sum array.
@@ -9888,7 +9888,7 @@ public class CodeChef {
      * 
      * Input:
      * The first line of the input contains two space-separated integers N and Q.
-     * The second line contains NN space-separated integers a1, a2, ..., aN​.
+     * The second line contains N space-separated integers a1, a2, ..., aN​.
      * Q lines follow. For each valid i, the i-th of these lines contains a single integer xi​ describing the i-th query.
      * 
      * Output:
@@ -9922,6 +9922,40 @@ public class CodeChef {
                     System.out.println("NEGATIVE");
             }
         }
+        scn.close();
+    }
+
+    /*
+     * Problem: New-Pro Coder
+     * 
+     * Ved claims to be a pro at programming, but his friend Varun disagrees. 
+     * To settle the debate, they decided to seek advice from their mentor. The mentor proposed a simple challenge:
+     * Ved must write a program containing N lines of code. 
+     * When the code is compiled, the compiler will indicate how many of those lines have errors, denoted as M. 
+     * Based on the results:
+     * -> If errors are present in at least half of the total lines, Ved will be labeled as a NEWBIE.
+     * -> Otherwise, he will be called a PRO
+     * After compiling Ved's code, the compiler reported errors in M lines. 
+     * Determine Ved's skill category based on this evaluation.
+     * 
+     * Input Format:
+     * The input contains two space-separated integers N and M - 
+     * the number of lines of code written by Ved and the number of lines of code containing errors, respectively.
+     * 
+     * Output Format:
+     * Output PRO if Ved is pro, else output NEWBIE.
+     * It is allowed to print each character in either case. pro,pRo,PRo will all be accepted.
+     * 
+     * Constraints:
+     * 1 <= N <= 1000
+     * 1 <= M <= 1000
+     * M <= N
+     */
+    public static void solveCodeChefSPC2025() {
+        Scanner scn = new Scanner(System.in);
+        long N = scn.nextLong();
+        long M = scn.nextLong();
+        System.out.println(M * 2 >= N ? "NEWBIE" : "PRO");
         scn.close();
     }
 
