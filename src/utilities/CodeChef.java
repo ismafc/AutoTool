@@ -10070,6 +10070,52 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Alternating String
+     * 
+     * A binary string is called alternating if no two adjacent characters of the string are equal. 
+     * Formally, a binary string T of length M is called alternating if T(i) != T(i+1)​ for each 1 <= i <= M.
+     * For example, 0, 1, 01, 10, 101, 010, 1010 are alternating strings while 11, 001, 1110 are not.
+     * You are given a binary string S of length N. 
+     * You would like to rearrange the characters of S such that the length of the longest alternating substring of S is maximum. 
+     * Find this maximum value.
+     * A binary string is a string that consists of characters 0 and 1. 
+     * A string 'a' is a substring of a string 'b' if 'a' can be obtained from 'b' 
+     * by deletion of several (possibly, zero or all) characters from the beginning and several (possibly, zero or all) characters from the end.
+     * 
+     * Input Format:
+     * The first line of input contains an integer T, denoting the number of test cases. The T test cases then follow:
+     * The first line of each test case contains an integer N.
+     * The second line of each test case contains the binary string S.
+     * 
+     * Output Format:
+     * For each test case, output the maximum possible length of the longest alternating substring of S after rearrangement.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= N <= 10^5
+     * S contains only the characters 0 and 1.
+     * Sum of N over all test cases does not exceed 2*10^5.
+     */
+    public static void solveCodeChefALTSTR() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            String S = scn.next(); 
+            long ones = 0;
+            long zeroes = 0;
+            for (long i = 0; i < N; i++) {
+                if (S.charAt((int)i) == '1')
+                    ones++;
+                else
+                    zeroes++;
+            }
+            System.out.println(Math.min(ones, zeroes) * 2 + ((ones != zeroes) ? 1 : 0));            
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
