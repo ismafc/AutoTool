@@ -10140,6 +10140,48 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Poster Perimeter
+     * 
+     * Chef wants to print out a poster on a rectangular piece of paper.
+     * The piece of paper he uses cannot be too large, or his printer will be unable to handle it.
+     * Specifically, the length of the rectangle must be an integer between 1 and N units, 
+     * and the width must be an integer between 1 and M units.
+     * Chef would like it if the perimeter of the paper is as close to K as possible.
+     * If Chef chooses the paper's dimensions optimally, find the minimum possible difference between the paper's perimeter and K.
+     * Recall that the perimeter of a rectangle with length l and width w equals 2 * (l + w).
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of input will contain three space-separated integers N,M, and K - 
+     * the maximum allowed length and width, and the target perimeter.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum possible difference between the paper's perimeter and K.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N, M, K <= 100
+     */
+    public static void solveCodeChefPOSTPERI() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long M = scn.nextLong(); 
+            long K = scn.nextLong(); 
+            if (K <= 3)
+                System.out.println(4 - K);
+            else {
+                if (N + M >= K / 2)
+                    System.out.println(K % 2);
+                else
+                    System.out.println(K - 2 * N - 2 * M);
+            }
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
