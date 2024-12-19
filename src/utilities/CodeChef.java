@@ -10116,6 +10116,30 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Christmas Cake
+     * 
+     * Chef plans to celebrate Christmas by baking a cake.
+     * Christmas falls on the 25-th of December.
+     * Every day before Christmas, till the 24-th of December, Chef will bake exactly one practice cake.
+     * Today is the X-th of December. How many practice cakes will Chef bake starting from today?
+     * 
+     * Input Format:
+     * The first and only line of input will contain a single integer X — today's date.
+     * 
+     * Output Format:
+     * For each test case, output a single integer: the number of practice cakes Chef will bake.
+     * 
+     * Constraints:
+     * 1 <= X <= 24
+     */
+    public static void solveCodeChefCRCK() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        System.out.println(25 - X);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
