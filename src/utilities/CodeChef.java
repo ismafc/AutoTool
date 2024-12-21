@@ -10259,6 +10259,46 @@ public class CodeChef {
     }
 
     /*
+     * Problem: The Attack of Queen
+     * 
+     * Chef has started developing interest in playing chess, and was learning how the Queen moves.
+     * Chef has an empty N x N chessboard. He places a Queen at (X, Y) and wonders - 
+     * What are the number of cells that are under attack by the Queen?
+     * 
+     * Notes:
+     * The top-left cell is (1, 1), the top-right cell is (1, N), the bottom-left cell is (N,1) and the bottom-right cell is (N, N).
+     * The Queen can be moved any number of unoccupied cells in a straight line vertically, horizontally, or diagonally.
+     * The cell on which the Queen is present, is not said to be under attack by the Queen.
+     * 
+     * Input Format:
+     * The first line contains a single integer T - the number of test cases. Then the test cases follow.
+     * The first and only line of each test case contains three integers N, X and Y, as described in the problem statement.
+     * 
+     * Output Format:
+     * For each test case, output in a single line, the total number of cells that are under attack by the Queen.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= N <= 10^6
+     * 1 <= X, Y <= N
+     */
+    public static void solveCodeChefQUEENATTACK() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long X = scn.nextLong(); 
+            long Y = scn.nextLong(); 
+            long diagonal1 = Math.min(N - X, N - Y);
+            long diagonal2 = Math.min(X - 1, Y - 1);
+            long diagonal3 = Math.min(X - 1, N - Y);
+            long diagonal4 = Math.min(N - X, Y - 1);
+            System.out.println((N - 1) * 2 + diagonal1 + diagonal2 + diagonal3 + diagonal4);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
