@@ -9790,7 +9790,7 @@ public class CodeChef {
      * where Pi = A1 + A2 + ... + Ai​, i.e. the sum of the first i elements.
      * Sushil hates even numbers but he likes odd numbers, 
      * and thus wants to sure there are as many odd numbers as possible in the prefix sum array P. 
-     * He is allowed to play with the array AA and rearrange it arbitrarily. 
+     * He is allowed to play with the array A and rearrange it arbitrarily. 
      * Find the maximum number of odd numbers in the prefix sum array P if Sushil rearranges the array A optimally.
      * 
      * Input Format:
@@ -10294,6 +10294,44 @@ public class CodeChef {
             long diagonal3 = Math.min(X - 1, N - Y);
             long diagonal4 = Math.min(N - X, Y - 1);
             System.out.println((N - 1) * 2 + diagonal1 + diagonal2 + diagonal3 + diagonal4);
+        }
+        scn.close();
+    }
+
+    /* 
+     * Problem: Shuffling Parities
+     * 
+     * Chef is given an array A consisting of N positive integers. 
+     * Chef shuffles the array A and creates a new array B of length N, where Bi = (Ai + i)  mod  2, for each i  (1 <= i <=N).
+     * Find the maximum possible sum of integers of the array B, if Chef shuffles the array A optimally.
+     * 
+     * Input Format:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * Each test case contains two lines of input.
+     * The first line of each test case contains an integer N.
+     * The second line of each test case contains N space-separated integers A1, A2, ..., AN.
+     * 
+     * Output Format:
+     * For each test case, print a single line containing one integer - the maximum sum of integers of the array B.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= N <= 10^5
+     * 1 <= Ai <= 10^9
+     * Sum of N over all test cases does not exceed 3*10^5.
+     */
+    public static void solveCodeChefSHUFFLIN() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong(); 
+            long evens = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                if (Ai % 2 == 0)
+                    evens++;
+            }
+            System.out.println(Math.min(evens, (N + 1) / 2) + Math.min(N - evens, N / 2));
         }
         scn.close();
     }
