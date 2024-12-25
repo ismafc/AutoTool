@@ -10337,6 +10337,37 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Merry Christmas!
+     * 
+     * Chef is planning Christmas festivities and has three activities to choose from:
+     * Decorating a Christmas tree, which takes 1 hour.
+     * Baking cookies, which takes 2 hours.
+     * Making a gingerbread house, which takes 4 hours.
+     * Given that Chef has X hours available, determine the maximum number of activities he can complete.
+     * Note that no two activities can overlap in time.
+     * 
+     * Input Format:
+     * The first and only line of input will contain a single integer X, denoting the number of hours Chef has.
+     * 
+     * Output Format:
+     * Output on a new line, the maximum number of activities he can complete.
+     * 
+     * Constraints:
+     * 1 <= X <= 10
+     */
+    public static void solveCodeChefMERRYXMAS() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        if (X <= 2)
+            System.out.println(1);
+        else if (X <= 6)
+            System.out.println(2);
+        else
+            System.out.println(3);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
