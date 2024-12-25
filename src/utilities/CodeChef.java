@@ -10368,6 +10368,42 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Christmas Gifts
+     * 
+     * Chef is wrapping Christmas gifts for his friends. 
+     * He has a rectangular sheet of wrapping paper with a total area of 1000 square centimeters. 
+     * Each identical gift is a rectangular box with dimensions:
+     * Height (H) centimeters
+     * Length (L) centimeters
+     * Width (W) centimeters
+     * To wrap a gift, Chef needs enough paper to cover all six faces of the box, with no overlapping or gaps. 
+     * Calculate the maximum number of complete gifts Chef can wrap using the available wrapping paper.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of three space-separated integers H, L and W - the dimensions of each gift box.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the maximum number of complete gifts Chef can wrap using the available wrapping paper.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= H, L, W <= 10
+     */
+    public static void solveCodeChefWRAPGIFTS() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long H = scn.nextLong(); 
+            long L = scn.nextLong(); 
+            long W = scn.nextLong();
+            long area = H * L * 2 + H * W * 2 + L * W * 2;
+            System.out.println(1000 / area);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
