@@ -10404,6 +10404,51 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Chefland Library
+     * 
+     * In the Chefland Library, there is a penalty system for late book returns with the following rules:
+     * -> For each book returned late, penalty points equal the number of days the book is overdue.
+     * -> When multiple books are returned on the same day, only the highest penalty among those books is counted.
+     * Chef has borrowed N books from the library. For the ithith book (1 <= i <= N):
+     * -> It was returned i days late.
+     * -> It was returned on day Ai​.
+     * 
+     * Calculate the total penalty points Chef must pay.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains an integer N - the number of books Chef borrowed from the library.
+     * The next line contains N space-separated integers AiAi​, denoting the day on which ithith book was returned.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the total penalty points Chef must pay.
+     * 
+     * Constraints:
+     * 1 <= T <= 1100
+     * 1 <= N <= 10^5
+     * 1 <= Ai <= 10^5
+     * The sum of N over all test cases won't exceed 2*10^5.
+     */
+    public static void solveCodeChefBORROWBOOK() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            HashMap<Long, Long> books = new HashMap<>();
+            for (long i = 1; i <= N; i++) {
+                long Ai = scn.nextLong();
+                books.put(Ai, i);
+            }
+            long penalty = 0;
+            for (Map.Entry<Long, Long> entry : books.entrySet())
+                penalty += entry.getValue();
+            System.out.println(penalty);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
