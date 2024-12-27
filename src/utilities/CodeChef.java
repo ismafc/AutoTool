@@ -4079,7 +4079,7 @@ public class CodeChef {
      * Every wicket taken earns 20 points.
      * The player with the highest total points is awarded the "Man of the Match" title.
      * You are given the scorecard of a cricket match, listing the contributions of all 22 players.
-     * The players are numbered from 11 to 22. Find the "Man of the Match".
+     * The players are numbered from 1 to 22. Find the "Man of the Match".
      * It is guaranteed that for all inputs to this problem, the "Man of the Match" is unique.
      * Note: A player who belongs to the losing team can also win the "Man of the Match" award.
      * 
@@ -10444,6 +10444,63 @@ public class CodeChef {
             for (Map.Entry<Long, Long> entry : books.entrySet())
                 penalty += entry.getValue();
             System.out.println(penalty);
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Even Matrix
+     * 
+     * Chef has an integer N and he wants to generate a matrix M with N rows (numbered 1 through N) and N columns (numbered 1 through N). 
+     * He thinks that MM would be delicious if:
+     * -> Each element of this matrix is an integer between 1 and N^2 inclusive.
+     * -> All the elements of the matrix are pairwise distinct.
+     * -> For each square submatrix containing cells in rows rr through r + a and in columns c through c + a (inclusive) for some valid integers r, c and a >= 0:
+     * ----> Mr,c + Mr+a,c+a is even
+     * ----> Mr,c+a + Mr+a,c is even
+     * Can you help Chef generate a delicious matrix? It can be proved that a solution always exists. If there are multiple solutions, you may find any one.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first and only line of each test case contains a single integer N.
+     * 
+     * Output:
+     * For each test case, print N lines describing a delicious matrix M. 
+     * For each valid i, the i-th of these lines should contain N space-separated integers Mi,1; Mi,2; ...; Mi,N.
+     * 
+     * Constraints:
+     * 1 <= T <= 10
+     * 1 <= N <= 10^3
+     * the sum of N over all test cases does not exceed 10^3
+     */
+    public static void solveCodeChefEVENM() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long number = 1;
+            for (long r = 0; r < N; r++) {
+                for (long c = 0; c < N; c++) {
+                    // If odd number of rows and columns we can print all numbers in order
+                    if (N % 2 == 1)
+                        System.out.print(number + " ");
+                    // If even number of rows and columns
+                    else {
+                        // If odd rows we have to swap values every two columns
+                        if (r % 2 == 1) {
+                            if (c % 2 == 0)
+                                System.out.print((number + 1) + " ");
+                            else
+                                System.out.print((number - 1) + " ");
+                        }
+                        // If odd rows we have to swap values every two columns
+                        else
+                            System.out.print(number + " ");
+                    }
+                    number++;
+                }
+                System.out.println();
+            }
         }
         scn.close();
     }
