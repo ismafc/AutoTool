@@ -10567,6 +10567,50 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Far Away
+     * 
+     * Chef has an array A of size N and an integer M, such that 1 <= Ai <= M for every 1 <= i <= N.
+     * The distance of an array B from array A is defined as:
+     * d(A, B) = sum{from i = 1 to N} |Ai - Bi|
+     * Chef wants an array B of size N, such that 1 <= Bi <= M and the value d(A, B) is as large as possible, 
+     * i.e, the distance of B from A is maximum.
+     * Find the maximum distance for any valid array B.
+     * Note: |X| denotes the absolute value of an integer X. For example, |-4| = 4 and |7| = 7.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * The first line of each test case contains two space-separated integers N and M -
+     * the length of array A and the limit on the elements of A and B.
+     * The second line contains N space-separated integers A1, A2, ..., AN.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum distance of an array from A.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= N <= 2*10^5
+     * 1 <= M <= 10^9
+     * 1 <= Ai <= M
+     * The sum of N over all test cases won't exceed 3*10^5.
+     */
+    public static void solveCodeChefFARAWAY() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long M = scn.nextLong();
+            long maxDistance = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                maxDistance += Math.max(Ai - 1, M - Ai);
+            }
+            System.out.println(maxDistance);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
