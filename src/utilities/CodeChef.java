@@ -10506,6 +10506,29 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Happy New Year!
+     * 
+     * Currently, it is X:00 hours on December 31st and you are wondering how many hours are left till midnight.
+     * For the purposes of this problem, we use a 24 hour system. 
+     * So, X can range from 0 to 23, and you need to tell the number of hours left till 00:00 of the next day.
+     * 
+     * Input Format:
+     * The first and only line of input contains a single integer X.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the number of hours left till midnight
+     * 
+     * Constraints:
+     * 0 <= X <= 23
+     */
+    public static void solveCodeChefNEWYEAR() {
+        Scanner scn = new Scanner(System.in);
+        int X = scn.nextInt(); 
+        System.out.println(24 - X);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
