@@ -204,4 +204,19 @@ public class CodeChefLibrary {
         }
         prices[prices.length - 1] = Pi;
     }
+
+    /**
+     * @brief returns the sum of all digits in 'N'
+     * @param N The number to sum its digits
+     * @return The sum of all digits in 'N'
+     */
+    public static long digitSum(long N) {
+        long sum = 0;
+        while (N > 0) {
+            sum += N % 10;
+            N /= 10;
+        }
+        return sum;
+    }
+    
 }

@@ -10529,6 +10529,44 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Digit Sum Parities
+     * 
+     * For a positive integer M, MoEngage defines digitSum(M) as the sum of digits of the number M (when written in decimal).
+     * For example, digitSum(1023) = 1 + 0 + 2 + 3 = 6.
+     * Given a positive integer N, find the smallest integer X strictly greater than N such that:
+     * digitSum(N) and digitSum(X) have different parity, i.e. one of them is odd and the other is even.
+     * 
+     * Input Format:
+     * The first line contains an integer T, the number of test cases. The description of the T test cases follow.
+     * Each test case consists of a single line of input with a single integer, the number N.
+     * 
+     * Output Format:
+     * For each test case, print in a single line, an integer, the answer to the problem.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= N < 10^9
+     */
+    public static void solveCodeChefDIGSMPAR() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            if (N % 10 != 9)
+                System.out.println(N + 1);
+            else {
+                long dsN = CodeChefLibrary.digitSum(N);
+                long dsN1 = CodeChefLibrary.digitSum(N + 1);
+                if (dsN % 2 != dsN1 % 2)
+                    System.out.println(N + 1);
+                else
+                    System.out.println(N + 2);
+            }
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
