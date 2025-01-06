@@ -10611,6 +10611,54 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Even Sum Subarray
+     * 
+     * Given an array A of size N, find the size of the largest subarray of A which has an even sum.
+     * For example, for the array [2, 1, 2] the answer is just 1 as the largest subarray with an even sum is [2].
+     * Note that a subarray is a contiguous part of an array. For the array [1, 3, 2], some possible subarrays are [1], [2], [1, 3], [1, 3, 2]. 
+     * However, [1, 2] is not a subarray for this array.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains a single integer N - the size of the array.
+     * -> The next line contains N space-separated integer - A1, A2, ...,AN.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the size of the largest subarray with even sum.
+     * 
+     * Constraints:
+     * 1 <= T <= 50
+     * 1 <= N <= 50
+     * 1 <= Ai <= 10^4
+     */
+    public static void solveCodeChefEVENSUMSUB() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long even = 0;
+            long firstOdd = -1;
+            long lastOdd = -1;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                even += ((Ai % 2 == 0) ? 1 : 0);
+                if (Ai % 2 == 1) {
+                    if (firstOdd == -1)
+                        firstOdd = i;
+                    lastOdd = i;
+                }
+            }
+            long odd = N - even;
+            if (odd % 2 == 0)
+                System.out.println(N);
+            else
+                System.out.println(Math.max(N - firstOdd - 1, lastOdd));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
