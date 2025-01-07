@@ -10659,6 +10659,57 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Chef And Salary Pay
+     * 
+     * Given the schedule of Chef for 30 days 
+     * (A binary string of length 3030 where '0' denotes that Chef was on leave and '1' denotes Chef was working on that day). 
+     * Chef gets X-Rs for every day he worked. 
+     * As working continuously for a long time is hectic so Company introduced the following policy to give a bonus to its employees.
+     * The company will check the longest streak for which an employee has worked and will award Y-Rs for every day of that streak as a bonus. 
+     * Calculate the salary received by Chef (including the bonus).
+     * Note: Rs represents the currency of Chefland, and if there are two or more longest streaks of the same length, 
+     * only one is counted for the bonus.
+     * 
+     * Input Format:
+     * The first line contains an integer T denoting the number of test cases. The T test cases then follow.
+     * The first line of each test case contains X and Y.
+     * Second line contains a binary string (i.e it contains only '0' / '1'), 
+     * where '0' denotes that Chef was on leave and '1' denotes Chef was working on that day.
+     * 
+     * Output Format:
+     * For each testcase, output in a single line answer to the problem. i.e The salary received by Chef (including the bonus).
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= X <= 999
+     * 1 <= Y <= 999
+     * |S| = 30
+     */
+    public static void solveCodeChefHCAGMAM1() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            String S = scn.next();
+            long ones = 0;
+            long currentOnes = 0;
+            long greatestOnes = 0;
+            for (char c : S.toCharArray()) {
+                if (c == '1') {
+                    ones++;
+                    currentOnes++;
+                    greatestOnes = Math.max(greatestOnes, currentOnes);
+                }
+                else
+                    currentOnes = 0;
+            }
+            System.out.println(ones * X + greatestOnes * Y);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
