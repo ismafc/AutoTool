@@ -8341,7 +8341,7 @@ public class CodeChef {
      *
      * Input Format:
      * The first line of input will contain a single integer T, denoting the number of test cases.
-     * Each test case consists of three space-separated integers A, B, and CC - 
+     * Each test case consists of three space-separated integers A, B, and C - 
      * the number of strips of orange, white, and green color respectively.
      *
      * Output Format:
@@ -10705,6 +10705,55 @@ public class CodeChef {
                     currentOnes = 0;
             }
             System.out.println(ones * X + greatestOnes * Y);
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Interesting XOR!
+     * 
+     * You are given an integer C. Let d be the smallest integer such that 2^d is strictly greater than C.
+     * Consider all pairs of non-negative integers (A, B) such that A, B < 2^d and A XOR B = C (XOR denotes the bitwise XOR operation). 
+     * Find the maximum value of A * B over all these pairs.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first and only line of each test case contains a single integer C.
+     * 
+     * Output:
+     * For each test case, print a single line containing one integer - the maximum possible product A * B.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= C <= 10^9
+     */
+    public static void solveCodeChefIRSTXOR() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long C = scn.nextLong();
+            String bC = Long.toBinaryString(C);
+            String A = "";
+            String B = "";
+            boolean firstOne = false;
+            for (char c : bC.toCharArray()) {
+                if (c == '0') {
+                    A += "1";
+                    B += "1";
+                }
+                else {
+                    if (firstOne) {
+                        A += "0";
+                        B += "1";
+                    }
+                    else {
+                        A += "1";
+                        B += "0";
+                        firstOne = true;
+                    }
+                }
+            }
+            System.out.println(Long.parseLong(A, 2) * Long.parseLong(B, 2));
         }
         scn.close();
     }
