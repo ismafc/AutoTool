@@ -10759,6 +10759,29 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Can You Bench
+     * 
+     * Chef goes to the gym daily and follow a progressive bench press routine. 
+     * In the 1st1st set, Chef will lift X kilograms. For each subsequent set, you increase the weight by 10 kilograms.
+     * Your task is to calculate the amount of weight Chef will bench in the 3rd set.
+     * 
+     * Input Format:
+     * The input consists of a single integer X, the weight (in kilograms) Chef benches in the 1st set.
+     * 
+     * Output Format:
+     * Output a single integer - the weight (in kilograms) Chef will bench in the 3rd set.
+     * 
+     * Constraints:
+     * 1 <= X <= 100
+     */
+    public static void solveCodeChefHJJ() {
+        Scanner scn = new Scanner(System.in);
+        int X = scn.nextInt(); 
+        System.out.println(X + 20);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
