@@ -10782,6 +10782,46 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Big Achiever
+     * 
+     * Given N students standing in a row, each student i has an distinct achievement score Ai​ provided in an array A = [A1, A2, ..., An]. 
+     * The array A consists of distinct integers from 1 to N.
+     * A student i (1 <= i <= N) will be happy if their achievement score Ai​ is greater than the achievement scores of all the students standing before them in the array.
+     * The task is to print whether a student is happy or not.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * -> The first line of each test case contains N - the number of students.
+     * -> The second line of each test case contains N space-separated integers A1, A2, ..., AN, denoting the achievement scores of the students.
+     * 
+     * Output Format:
+     * For each test case, print a single line containing NN integers. Print ithith integer as 1 if the ithith student is happy, otherwise print 0.
+     * Each test case's output should be on a new line, with the integers separated by spaces.
+     * 
+     * Constraints:
+     * 1 <= T <= 4*10^5
+     * 1 <= N <= 10
+     * 1 <= Ai <= N
+     * The sum of N over all test cases does not exceed 4*10^5.
+     */
+    public static void solveCodeChefBIG() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long max = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                System.out.print(Ai > max ? "1 " : "0 ");
+                max = Math.max(max, Ai);
+            }
+            System.out.println();
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
