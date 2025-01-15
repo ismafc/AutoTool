@@ -10822,6 +10822,54 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Hungry Chef
+     * 
+     * Chef is very hungry. So, Chef goes to a shop selling burgers. The shop has 2 types of burgers:
+     * -> Normal burgers, which cost X rupees each
+     * -> Premium burgers, which cost Y rupees each (where Y > X)
+     * Chef has R rupees. Chef wants to buy exactly N burgers. 
+     * He also wants to maximize the number of premium burgers he buys. Determine the number of burgers of both types Chef must buy.
+     * Output −1 if it is not possible for Chef to buy N burgers.
+     * 
+     * Input Format:
+     * The first line contains a single integer T - the number of test cases. Then the test cases follow.
+     * The first and only line of each test case contains four space-separated integers X, Y, N and R - 
+     * the cost of a normal burger, the cost of a premium burger, the number of burgers Chef wants to buy and the amount of money Chef has.
+     * 
+     * Output Format:
+     * For each test case, output on a new line two integers: 
+     * the number of normal burgers and the number of premium burgers Chef must buy satisfying the given conditions.
+     * Output −1 if he cannot buy N burgers.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= X <= Y <= 1000
+     * 1 <= N <= 10^6
+     * 1 <= R <= 10^9
+     */
+    public static void solveCodeChefBURGERS2() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long N = scn.nextLong();
+            long R = scn.nextLong();
+            long Z = (R - N * X) / (Y - X);
+            if (Z < 0)
+                System.out.println(-1);
+            else {
+                if (Z > N)
+                    Z = N;
+                if ((N - Z) * X + Z * Y <= R)
+                    System.out.println((N - Z) + " " + Z);
+                else
+                    System.out.println(-1);
+            }
+        }
+        scn.close();
+    }
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
