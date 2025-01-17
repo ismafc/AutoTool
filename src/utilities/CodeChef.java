@@ -10932,6 +10932,41 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Opposite Attract
+     * 
+     * You are given a binary string S of length N. 
+     * Your task is to generate a new binary string T of the same length such that each corresponding character of T is different from the character at the same position in S.
+     * In other words, for each position i (0 <= i < N), the following condition must hold Ti != Si.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * -> The first line of each test case contains one integer N - the length of S.
+     * -> The next line contains the binary string S.
+     * 
+     * Output Format:
+     * For each test case, output on a new line a binary string T of length N, where Ti != Si​ for all valid indices i.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= N <= 10
+     * S is a binary string, i.e, contains only the characters 0 and 1.
+     * The sum of N over all test cases won't exceed 2*10^5.
+     */
+    public static void solveCodeChefP2169() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            scn.nextLong();
+            String S = scn.next();
+            for (char c : S.toCharArray())
+                System.out.print(c == '0' ? "1" : "0");
+            System.out.println();
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
