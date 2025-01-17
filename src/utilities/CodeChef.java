@@ -10869,6 +10869,44 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Chef and Serves
+     * 
+     * In a regular table tennis match, the player who serves changes every time after 2 points are scored, regardless of which players scored them.
+     * Chef and Cook are playing a different match - 
+     * they decided that the player who serves would change every time after K points are scored instead (again regardless of which players scored them). 
+     * When the game starts, it's Chef's turn to serve.
+     * You are given the current number of points scored by Chef and Cook (P1​ and P2​ respectively). Find out whether Chef or Cook has to serve next.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first and only line of each test case contains three space-separated integers P1​, P2​ and K.
+     * 
+     * Output:
+     * For each test case, print a single line containing the string "CHEF" if it is Chef's turn or "COOK" if it is Cook's turn.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= K <= 10^9
+     * 0 <= P1,P2 <= 10^9
+     */
+    public static void solveCodeChefCHSERVE() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long P1 = scn.nextLong();
+            long P2 = scn.nextLong();
+            long K = scn.nextLong();
+            long turn = (P1 + P2) / K;
+            if (turn % 2 == 0)
+                System.out.println("CHEF");
+            else
+                System.out.println("COOK");
+        }
+        scn.close();
+    }
+
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
