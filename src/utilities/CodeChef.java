@@ -10908,6 +10908,30 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Entry Check
+     * 
+     * Chef wants to visit a fair, but there is an age restriction for entry. A person can attend the fair if their age is greater than or equal to 10 years.
+     * You are given Chef's age, represented by the integer X. Your task is to determine whether Chef is eligible to attend the fair or not.
+     * If Chef's age is greater than or equal to 10, print "YES". Otherwise, print "NO".
+     * 
+     * Input Format:
+     * A single integer X, representing Chef's age.
+     * 
+     * Output Format:
+     * Print YES if Chef is eligible to attend the fair, otherwise print NO.
+     * You may print each character of the string in uppercase or lowercase (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= X <= 20
+     */
+    public static void solveCodeChefP1169() {
+        Scanner scn = new Scanner(System.in);
+        int X = scn.nextInt(); 
+        System.out.println(X >= 10 ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
