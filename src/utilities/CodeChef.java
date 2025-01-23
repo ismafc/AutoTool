@@ -10967,6 +10967,35 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Access Code Equality
+     * 
+     * You are attempting to join the Web Club NITK’s exclusive online session. 
+     * To do so, you need to enter the correct access code.
+     * The correct code is "WECNITK" (without quotes).
+     * The code you entered is given by the string S, which has length 7.
+     * Your task is to verify whether the entered code S matches the correct code.
+     * If it does, print "Welcome to Web Club!". Otherwise, print "Access denied".
+     * 
+     * Input Format:
+     * The first and the only line of input will contain a string S of length 7, denoting the access code that was entered.
+     * 
+     * Output Format:
+     * Print the correct output according to the access code S.
+     * Each letter of the output may be printed in either uppercase or lowercase - 
+     * for example the string "AcCeSS DEniEd" will be accepted if the correct answer is "Access denied".
+     * 
+     * Constraints:
+     * The length of the string S is exactly 7.
+     * S contains only uppercase and lowercase English letters, i.e. the characters 'a'-'z' and 'A'-'Z'.
+     */
+    public static void solveCodeChefWECNITK() {
+        Scanner scn = new Scanner(System.in);
+        String S = scn.next(); 
+        System.out.println(S.equals("WECNITK") ? "Welcome to Web Club!" : "Access denied");
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
