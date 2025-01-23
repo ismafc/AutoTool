@@ -10996,6 +10996,50 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Minimum Bottles
+     * 
+     * There are N identical water bottles, each of which has a capacity of X liters.
+     * The ith bottle initially contains Ai liters of water.
+     * You want to go on a trip and want to carry all your water with you.
+     * However, to not make packing a hassle, you also want to carry the least number of bottles with you.
+     * You can transfer any amount of water from one bottle to another, 
+     * provided there is no spillage and no bottle contains more than X liters. 
+     * Water from one bottle can be transferred to different bottles if you wish to do that.
+     * What is the minimum number of bottles that you can carry with you, while still having all your water?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * The first line of each test case contains two space-separated integers N and X - 
+     * the number of bottles and capacity of each bottle in liters, respectively.
+     * The second line contains N space separated integers A1, A2, ..., AN
+     * denoting the volume of water in liters filled in each bottle.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum number of bottles that can be carried.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 1 <= X <= 1000
+     * 1 <= Ai <= X
+     */
+    public static void solveCodeChefMINBOTTLES() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long X = scn.nextLong();
+            long total = 0;
+            for (long i = 0; i < N; i++)
+                total += scn.nextLong();
+            long needed = (total - 1) / X + 1;
+            System.out.println(needed);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
