@@ -11040,6 +11040,35 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Squid Game - Piggy Bank
+     * 
+     * In the deadly "Squid Game," the participants start with N players. 
+     * After the game ends, only K players survive. 
+     * The prize pool increases based on the number of players eliminated.
+     * Each eliminated player contributes a fixed amount of 10000 units to the prize pool.
+     * Your task is to calculate the total prize money added to the pool, 
+     * given the number of players N at the start of the game and the number of players who survive, K.
+     * 
+     * Input Format:
+     * The first line contains two integers N and K, where:
+     * -> N is the total number of players at the start of the game.
+     * -> K is the number of players still alive after the game.
+     * 
+     * Output Format:
+     * Print a single integer - the total prize money added to the pool.
+     * 
+     * Constraints:
+     * 1 <= K < N <= 100
+     */
+    public static void solveCodeChefSQUIDBANK() {
+        Scanner scn = new Scanner(System.in);
+        int N = scn.nextInt(); 
+        int K = scn.nextInt(); 
+        System.out.println((N - K) * 10000);
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
