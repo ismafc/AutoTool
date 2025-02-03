@@ -10796,7 +10796,7 @@ public class CodeChef {
      * -> The second line of each test case contains N space-separated integers A1, A2, ..., AN, denoting the achievement scores of the students.
      * 
      * Output Format:
-     * For each test case, print a single line containing NN integers. Print ithith integer as 1 if the ithith student is happy, otherwise print 0.
+     * For each test case, print a single line containing N integers. Print ithith integer as 1 if the ithith student is happy, otherwise print 0.
      * Each test case's output should be on a new line, with the integers separated by spaces.
      * 
      * Constraints:
@@ -11148,6 +11148,51 @@ public class CodeChef {
             Long N = scn.nextLong();
             Long M = scn.nextLong();
             System.out.println((N - 1) * (M - 1));
+        }
+        scn.close();
+    }
+
+    /* 
+     * Problem: Two Different Palindromes
+     * 
+     * You are given two positive integers A and B. 
+     * You need to construct two different binary strings (i.e, they are strings which consist of only 0s and 1s), 
+     * which satisfy these two conditions:
+     * -> Both the strings should be palindromes.
+     * -> Each string should have exactly A 0s, and exactly B 1s in them.
+     * Output Yes if two such different binary strings can be constructed and No otherwise.
+     * Note:
+     * A string is said to be a palindrome, if the string and the reverse of the string are identical.
+     * Two strings are said to be different if either their lengths are different, or if they differ in at least one character.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case contains two space-separated integers, A and B, in a new line.
+     * 
+     * Output Format:
+     * For each test case, output on a new line 'Yes', if you can construct two different binary strings satisfying the conditions. 
+     * If not, output No.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YeS, yes, YES, and YEs will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= A, B <= 10^6
+     */
+    public static void solveCodeChefTWODIFFPALIN() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            Long A = scn.nextLong();
+            Long B = scn.nextLong();
+            if ((A % 2) == 1 && (B % 2) == 1)
+                System.out.println("No");
+            else if ((A % 2) == 0 && (B % 2) == 0)
+                System.out.println("Yes");
+            else if (A == 1 || B == 1)
+                System.out.println("No");
+            else
+                System.out.println("Yes");
         }
         scn.close();
     }
