@@ -11287,6 +11287,51 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Group Assignment
+     * 
+     * Chef is hosting a party at his house and N people are invited to it. Everyone has arrived and they are eager to make a group and chit-chat.
+     * The ith person prefers to be in a group of exactly Pi​ people (including himself). 
+     * A person who is not in a group of preferred size gets upset. 
+     * Find whether Chef would be able to assign every person to a group such that everyone remains happy.
+     * 
+     * Input Format:
+     * 
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains an integer N - the number of people at the party.
+     * -> The next line contains the array P - where Pi​ denotes the preferred group size for ith person.
+     * 
+     * Output Format:
+     * For each test case, output YES, if Chef can assign every person to a group such that everyone remains happy. Otherwise output NO.
+     * The output is case-insensitive, meaning that outputs such as yES, YeS, YES and yes mean the same.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 2 <= N <= 10^5
+     * 2 <= Pi <= N
+     * Sum of N over all test cases does not exceed 10^5.
+     */
+    public static void solveCodeChefGRPASSN() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            HashMap<Long, Long> hashMap = new HashMap<>();
+            for (long i = 0; i < N; i++) {
+                long Pi = scn.nextLong();
+                hashMap.put(Pi, hashMap.getOrDefault(Pi, 0L) + 1);            
+            }
+            boolean possible = true;
+            for (Map.Entry<Long, Long> entry : hashMap.entrySet()) {
+                if (entry.getValue() % entry.getKey() != 0)
+                    possible = false;
+            }
+            System.out.println(possible ? "YES" : "NO");
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
