@@ -11332,6 +11332,31 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Time Machine
+     * 
+     * Chef is currently in the year X in Chefland. 
+     * He has a time machine that allows him to travel at most 25 years into the future, but he can use it only once.
+     * Determine whether Chef can reach the year 2050 with a single use of the time machine.
+     * 
+     * Input Format:
+     * A single integer X, representing current year in Chefland.
+     * 
+     * Output Format:
+     * Print YES if Chef can reach the year 2050, otherwise print NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 2000 <= X <= 2050
+     */
+    public static void solveCodeChefTIMA() {
+        Scanner scn = new Scanner(System.in);
+        int X = scn.nextInt(); 
+        System.out.println(X + 25 >= 2050 ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
