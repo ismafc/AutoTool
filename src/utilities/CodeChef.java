@@ -11357,6 +11357,41 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Small Palindrome
+     * 
+     * Chef has X ones (1s) and Y twos (2s) in his collection. 
+     * He wants to arrange all of them into the smallest possible palindrome number (*)
+     * using all of these ones (1s) and twos (2s).
+     * Help Chef with the answer.
+     * Note: X and Y are both even numbers.
+     * (*) A palindromic number is a number that remains the same when its digits are reversed.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case will contain two space-separated integers X, and Y - 
+     * the amount of ones (1s) and twos (2s) respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the smallest possible palindrome number using X ones (1s) and Y twos (2s).
+     * 
+     * Constraints:
+     * 1 <= T <= 50
+     * 0 <= X, Y <= 10
+     * X and Y are both even
+     * 2 <= X + Y <= 10
+     */
+    public static void solveCodeChefSMLPAL() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long X = scn.nextLong() / 2;
+            long Y = scn.nextLong();
+            System.out.println("1".repeat((int)X) + "2".repeat((int)Y) + "1".repeat((int)X));
+        }
+        scn.close();
+    }
+    
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
