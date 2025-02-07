@@ -11390,6 +11390,85 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Streak Star
+     * 
+     * The Streak Value of an array B is defined as the maximum length of a non-decreasing subarray, more formally:
+     * max {1 <= i <= j <= N} (j - i + 1) where Bi <= B{i + 1} <= B{i + 2} <= ... <= Bj.
+     * Chef has an array A of length NN and a magical number X. You are allowed to perform the following operation at most once:
+     * Select an index i, and update the element at Ai by multiplying it with X, i.e., set Ai := Ai * X
+     * Your task is to find the maximum possible Streak Value achievable for array A.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first line of each test case contains two space-separated integers N and X - the length of array and magical number respectively.
+     * The second line of each test case contains NN space-separated integers A1, A2, A3 ... AN - the elements of the array.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum possible Streak Value of A.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^3
+     * 1 <= N, X <= 10^3
+     * 1 <= Ai <= 10^5
+     * The sum of N over all test cases won't exceed 10^3.
+     */
+    public static void solveCodeChefSTKSTR() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long X = scn.nextLong();
+            ArrayList<Long> B = new ArrayList<>();
+            for (long i = 0; i < N; i++)
+                B.add(scn.nextLong());
+
+            long maxStreak = 0;
+            long currentStreak = 0;
+            long lastBi = 0;
+            boolean firstStreaking = true;
+            int i = 0;
+            int lasti = 0;
+            while (i < N) {
+                long Bi = B.get(i);
+                if (Bi >= lastBi) {
+                    currentStreak++;
+                    lastBi = Bi;
+                    i++;
+                }
+                else {
+                    if (firstStreaking) {
+                        Bi *= X;
+                        firstStreaking = false;
+                        lasti = i;
+                        if (Bi >= lastBi) {
+                            currentStreak++;
+                            lastBi = Bi;
+                            i++;
+                        }
+                        else {
+                            maxStreak = Math.max(maxStreak, currentStreak);
+                            firstStreaking = true;
+                            currentStreak = 1;
+                            lastBi = Bi / X;
+                            i++;
+                        }
+                    }
+                    else {
+                        maxStreak = Math.max(maxStreak, currentStreak);
+                        firstStreaking = true;
+                        currentStreak = 0;
+                        lastBi = 0;
+                        i = lasti;
+                    }
+                }
+            }
+            System.out.println(Math.max(maxStreak, currentStreak));
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
