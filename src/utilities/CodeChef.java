@@ -11469,6 +11469,57 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Access Control
+     * 
+     * Chef is a visitor in CodeChef's new office. All doors inside the office require a swipe of access card.
+     * The access card allows a fixed number of swipes and expires after that.
+     * You are given a binary string S of length N and an integer X.
+     * Let Si = 0 denote the swipe of access card, thus reducing the remaining swipes by 1; 
+     * and Si = 1 denote a renewal of access card which sets the remaining swipes to X.
+     * Find whether the string S denotes a valid string of renewal and swipes where the card never expires before a door is accessed.
+     * Note that the access card has 0 swipes left in the beginning.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains two space-separated integers N and X - 
+     *    the length of the binary string and the number of swipes left in the access card after renewal.
+     * -> The next line contains a binary string S of length N.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, YES, if the string SS denotes a valid string of renewal 
+     * and swipes where the card never expires before a door is accessed. Otherwise output NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= X <= N <= 10^5
+     * Si ∈ {0, 1}
+     * The sum of N over all test cases won't exceed 2*10^6.
+     */
+    public static void solveCodeChefACCESS() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            scn.nextLong();
+            long X = scn.nextLong();
+            String S = scn.next();
+            long swipes = 0;
+            for (Character c : S.toCharArray()) {
+                if (c == '1')
+                    swipes = X;
+                else
+                    swipes--;
+                if (swipes < 0)
+                    break;
+            }
+            System.out.println(swipes < 0 ? "NO" : "YES");
+        }
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
