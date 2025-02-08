@@ -11396,7 +11396,7 @@ public class CodeChef {
      * 
      * The Streak Value of an array B is defined as the maximum length of a non-decreasing subarray, more formally:
      * max {1 <= i <= j <= N} (j - i + 1) where Bi <= B{i + 1} <= B{i + 2} <= ... <= Bj.
-     * Chef has an array A of length NN and a magical number X. You are allowed to perform the following operation at most once:
+     * Chef has an array A of length N and a magical number X. You are allowed to perform the following operation at most once:
      * Select an index i, and update the element at Ai by multiplying it with X, i.e., set Ai := Ai * X
      * Your task is to find the maximum possible Streak Value achievable for array A.
      * 
@@ -11404,7 +11404,7 @@ public class CodeChef {
      * The first line of input will contain a single integer T, denoting the number of test cases.
      * Each test case consists of multiple lines of input.
      * The first line of each test case contains two space-separated integers N and X - the length of array and magical number respectively.
-     * The second line of each test case contains NN space-separated integers A1, A2, A3 ... AN - the elements of the array.
+     * The second line of each test case contains N space-separated integers A1, A2, A3 ... AN - the elements of the array.
      * 
      * Output Format:
      * For each test case, output on a new line the maximum possible Streak Value of A.
@@ -11489,7 +11489,7 @@ public class CodeChef {
      * -> The next line contains a binary string S of length N.
      * 
      * Output Format:
-     * For each test case, output on a new line, YES, if the string SS denotes a valid string of renewal 
+     * For each test case, output on a new line, YES, if the string S denotes a valid string of renewal 
      * and swipes where the card never expires before a door is accessed. Otherwise output NO.
      * You may print each character of the string in uppercase or lowercase 
      * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
@@ -11517,6 +11517,56 @@ public class CodeChef {
                     break;
             }
             System.out.println(swipes < 0 ? "NO" : "YES");
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Sort the String
+     * 
+     * You have a binary string S of length N. In one operation you can select a substring of S and reverse it. 
+     * For example, on reversing the substring S[2, 4] for S = 11000, we change 11000 -> 10010.
+     * Find the minimum number of operations required to sort this binary string.
+     * It can be proven that the string can always be sorted using the above operation finite number of times.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of 2 lines of input.
+     * -> The first line of each test case contains a single integer N — the length of the binary string.
+     * -> The second line of each test case contains a binary string S of length N.
+     * 
+     * Output Format:
+     * For each test case, output on a new line - the minimum number of operations required to sort the binary string.
+     * 
+     * Constraints:
+     * 1 <= T <= 2*10^5
+     * 1 <= N <= 2^10^5
+     * Sum of N over all test cases does not exceed 10^6.
+     * String S consists of only '0's and '1's.
+     */
+    public static void solveCodeChefSRTARR() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            String S = scn.next();
+            long lastOne = -1;
+            long swaps = 0;
+            long i = 0;
+            while (i < N) {
+                if (S.charAt((int)i) == '1') {
+                    if (lastOne == i - 1 || lastOne == -1)
+                        lastOne = i;
+                    else {
+                        swaps++;
+                        lastOne = i;
+                    }
+                }
+                i++;
+            }
+            if (i != lastOne + 1 && lastOne != -1)
+                swaps++;
+            System.out.println(swaps);
         }
         scn.close();
     }
