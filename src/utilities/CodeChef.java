@@ -11570,6 +11570,35 @@ public class CodeChef {
         }
         scn.close();
     }
+
+    /*
+     * Problem: Time Penalty
+     * 
+     * Unlike a usual CodeChef Starters contest, Starters 173 has a time penalty for every wrong submission.
+     * You are participating in CodeChef Starters 173, which has a time penalty of 10 minutes for every incorrect submission you make.
+     * That is, the total penalty for a problem equals the number of minutes from the start of the contest till your submission receives the AC verdict, 
+     * plus 10 minutes for every incorrect submission made before that.
+     * You solved a problem X minutes after the start of the contest, and made Y incorrect submissions while doing so.
+     * What's the total time penalty for this problem?
+     * 
+     * Input Format:
+     * The first and only line of input will contain two space-separated integers X and Y - 
+     * the number of minutes after which you solved the problem, and the number of wrong submissions you made.
+     * 
+     * Output Format:
+     * Output a single integer: the total time penalty for the problem.
+     * 
+     * Constraints:
+     * 1 <= X <= 150
+     * 0 <= Y <= 10
+     */
+    public static void solveCodeChefWAPEN() {
+        Scanner scn = new Scanner(System.in);
+        int X = scn.nextInt(); 
+        int Y = scn.nextInt(); 
+        System.out.println(X + Y * 10);
+        scn.close();
+    }
     
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
