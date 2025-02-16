@@ -4259,16 +4259,6 @@ public class CodeChef {
         Scanner scn = new Scanner(System.in);
         long T = scn.nextLong();
         while (T-- > 0) {
-/*            long A1 = scn.nextLong();
-            long A2 = scn.nextLong();
-            long A3 = scn.nextLong();
-            long A4 = scn.nextLong();
-            if (A1 == A2 && A2 == A3 && A3 == A4)
-                System.out.println(0);
-            else if ((A1 == A2 && A2 == A3) || (A2 == A3 && A3 == A4) || (A3 == A4 && A4 == A1) || (A4 == A1 && A1 == A2))
-                System.out.println(1);
-            else
-                System.out.println(2);*/
             HashMap<Long, Long> hashMap = new HashMap<>();
             for (int i = 0; i < 4; i++) {
                 long Ai = scn.nextLong();
@@ -11597,6 +11587,67 @@ public class CodeChef {
         int X = scn.nextInt(); 
         int Y = scn.nextInt(); 
         System.out.println(X + Y * 10);
+        scn.close();
+    }
+
+    /*
+     * Problem: Cool Subsequences
+     * 
+     * You are given an array A containing N positive integers.
+     * A subsequence of this array is called cool if the averages of all non-empty subsequences of this subsequence are present in the complement subsequence. 
+     * The complement subsequence refers to the subsequence formed by the elements we didn't consider.
+     * For example, consider the array A = [8, 4, 2, 1, 3, 2, 5, 8, 2].
+     * Consider the subsequence [2, 2, 8] of this array.
+     * The complement subsequence is [8, 4, 1, 3, 5, 2].
+     * The non-empty subsequences of [2, 2, 8] are [2], [8], [2,2], [2,8], [2,2,8], with averages 2, 8, 2, 5, 4 respectively.
+     * All of these values are present in the complement subsequence, therefore [2, 2, 8] is a cool subsequence.
+     * Note that no rounding is done when computing the average. For example the average of {1, 2, 5} is (1 + 2 + 5) / 3 = 8 / 3, we do not round it to 2 or 3.
+     * Find any cool subsequence of the array with length at least 1, or report that no such subsequence exists.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * -> The first line of each test case contains a single integer N - the length of the array.
+     * -> The second line contains N space-separated integers A1, A2, ..., AN - the elements of the array.
+     * 
+     * Output Format:
+     * For each test case,
+     * -> If a cool subsequence exists in A, print two lines.
+     * ---> The first line should contain an integer K (1 <= K < N), denoting the length of the cool subsequence you found.
+     * ---> The second line should contain K space-separated integers denoting the elements of the cool subsequence.
+     * -> If no cool subsequence exists, print the single integer −1 on a new line instead.
+     * If there are multiple cool subsequences in A, any of them will be accepted as a valid output.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 2*10^5
+     * 1 <= Ai <= 10^7
+     * The sum of N over all test cases won't exceed 2*10^5.
+     */
+    public static void solveCodeChefCOOLSUB() {
+        Scanner scn = new Scanner(System.in);
+        int T = scn.nextInt(); 
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            HashMap<Long, Long> hashMap = new HashMap<>();
+            long maxOccurrences = 0;
+            long maxOccurrencesValue = 0;
+            for (long i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                long occurrences = hashMap.getOrDefault(Ai, 0L) + 1;
+                hashMap.put(Ai, occurrences);
+                if (occurrences > maxOccurrences) {
+                    maxOccurrencesValue = Ai;
+                    maxOccurrences = occurrences;
+                }
+            }
+            if (maxOccurrences <= 1)
+                System.out.println(-1);
+            else {
+                System.out.println("1");
+                System.out.println(maxOccurrencesValue);
+            }
+        }
         scn.close();
     }
     
