@@ -11853,6 +11853,35 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Assignment Due
+     * 
+     * You are eagerly awaiting for the upcoming Technex event organized by IIT BHU Varanasi! 
+     * However, you also have an assignment due. The deadline for the assignment is in Y days, and it takes you X days to complete it.
+     * Determine whether you can finish the assignment on or before the deadline.
+     * 
+     * Input Format:
+     * The input consists of two space-separated integers X and Y, where:
+     * -> X denotes the number of days required to complete the assignment.
+     * -> Y denotes the number of days remaining until the deadline.
+     * 
+     * Output Format:
+     * Print YES if you can complete the assignment on or before the due date, otherwise print NO
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= X <= 100
+     * 1 <= Y <= 100
+     */
+    public static void solveCodeChefP1_175() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(X <= Y ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
