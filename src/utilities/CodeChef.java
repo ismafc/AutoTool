@@ -11882,6 +11882,42 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Technex Tickets
+     * 
+     * You are standing in a queue that is infinitely long, waiting to get tickets for various events during Technex.
+     * The ticket distribution follows these rules:
+     * -> Every second, tickets are given to the 1st and 3rd persons in the queue.
+     * -> After receiving their tickets, those people leave the queue.
+     * -> The person who was originally in the 2nd position (before the 1st and 3rd people left) moves up to the 1st position.
+     * -> This process repeats every second, with the 1st and 3rd persons receiving tickets and leaving.
+     * Initially, you are at position N in the queue.
+     * Determine after how many seconds you will get the tickets.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case contains a single line of input N your initial position in the line.
+     * 
+     * Output Format:
+     * For each test case, output on a new line after how many seconds will you get the tickets.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= N <= 1000
+     */
+    public static void solveCodeChefP2_175() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            if (N % 2 == 0)
+                System.out.println((N / 2) + 1);
+            else
+                System.out.println(N == 1 ? 1 : N / 2);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
