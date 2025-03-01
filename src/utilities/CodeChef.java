@@ -11981,6 +11981,35 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Plus 2 or Minus 1
+     * 
+     * Chef has a number X whose value is initially 0. In one move, he can do one of the following:
+     * -> Increment X by 2 i.e. X := X + 2
+     * -> Decrement X by 1 i.e. X := X − 1
+     * He can perform at most Y moves. He wants to determine how many distinct values can X have after performing at most Y moves.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of each test case contains an integer Y — the maximum number of moves Chef can perform.
+     * 
+     * Output Format:
+     * For each test case, output the number of distinct values X can have after performing at most Y moves.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 0 <= Y <= 10^6
+     */
+    public static void solveCodeChefPLUS2MINUS1() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long Y = scn.nextLong();
+            System.out.println(1 + Y + 2 * Y - (Y == 0 ? 0 : 1));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
