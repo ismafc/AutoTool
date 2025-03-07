@@ -12072,6 +12072,58 @@ public class CodeChef {
     }
 
     /*
+     * problem: Clothing Store
+     * 
+     * Chef owns a clothing store and has a limited number of t-shirts in different sizes. There are three sizes available:
+     * Small (S): Chef has X small t-shirts.
+     * Large (L): Chef has Y large t-shirts.
+     * Extra Large (XL): Chef has Z extra-large t-shirts.
+     * There are A people who wear small, B people who wear large, and C people who wear extra-large t-shirts.
+     * Each person is happy if they receive a t-shirt in their desired size. 
+     * However, Chef has a magical tailoring machine that allows him to convert larger shirts into smaller ones:
+     * An XL t-shirt can be converted into an L or an S t-shirt.
+     * An L t-shirt can be converted into an S t-shirt.
+     * Conversions are one-way and irreversible.
+     * Each conversion maintains a 1:1 ratio (i.e., one XL can become exactly one L or one S). 
+     * Chef wants to distribute the t-shirts optimally, making conversions if necessary, to maximize the number of happy people.
+     * Can you determine the maximum number of people who will be happy?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of a single line containing six space-separated integers X, Y, Z, A, B and C - 
+     * the number of small t-shirts available, large t-shirts available, extra-large t-shirts available, 
+     * people who want small t-shirts, people who want large t-shirts, and people who want extra-large t-shirts respectively.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum number of people who will be happy.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 0 <= X, Y, Z, A, B, C <= 5
+     */
+    public static void solveCodeChefXLSL() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long Z = scn.nextLong();
+            long A = scn.nextLong();
+            long B = scn.nextLong();
+            long C = scn.nextLong();
+            long total = Math.min(Z, C);
+            Z -= total;
+            Y += Z;
+            total += Math.min(Y, B);
+            Y -= Math.min(Y, B);
+            X += Y;
+            total += Math.min(X, A);
+            System.out.println(total);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
