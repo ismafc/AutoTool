@@ -12124,6 +12124,49 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Odd Even Binary String
+     * 
+     * Chef had an array A of length N such that 1 <= Ai <= N for all 1 <= i <= N. 
+     * Chef constructed another binary array B of length N in the following manner:
+     * -> Bi = 1 if the frequency of element i in A is odd.
+     * -> Bi = 0 if the frequency of element i in A is even.
+     * Such an array B is called the parity encoding array of A.
+     * For example, if A = [1, 1, 2, 3], then B = [0, 1, 1, 0].
+     * Unfortunately, Chef completely forgot the array A and vaguely remembers the parity encoding array B. 
+     * He is now wondering whether there exists any valid array A for which the parity encoding array is B. Can you help Chef?
+     * 
+     * Input Format:
+     * The first line contains a single integer T - the number of test cases. Then the test cases follow.
+     * The first line of each test case contains an integer N - the size of the arrays A and B.
+     * The second line of each test case contains N space-separated integers B1, B2, ..., BN denoting the parity encoding array B.
+     * 
+     * Output Format:
+     * For each test case, output YES if there exists any valid array A for which the parity encoding array is B. Otherwise, output NO.
+     * You may print each character of YES and NO in uppercase or lowercase (for example, yes, yEs, Yes will be considered identical).
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= N <= 10^5
+     * Bi ∈ {0, 1}
+     * Sum of N over all test cases does not exceed 2*10^5.
+     */
+    public static void solveCodeChefODDEVENBS() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long I = scn.nextLong();
+            long zeroes = 0;
+            while (I-- > 0) {
+                long Bi = scn.nextLong();
+                if (Bi == 0)
+                    zeroes++;
+            }
+            System.out.println(zeroes % 2 == 0 ? "YES" : "NO");
+        }
+        scn.close();
+    }
+    
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
