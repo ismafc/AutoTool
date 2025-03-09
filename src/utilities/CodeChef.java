@@ -10442,7 +10442,7 @@ public class CodeChef {
      * Problem: Even Matrix
      * 
      * Chef has an integer N and he wants to generate a matrix M with N rows (numbered 1 through N) and N columns (numbered 1 through N). 
-     * He thinks that MM would be delicious if:
+     * He thinks that M would be delicious if:
      * -> Each element of this matrix is an integer between 1 and N^2 inclusive.
      * -> All the elements of the matrix are pairwise distinct.
      * -> For each square submatrix containing cells in rows rr through r + a and in columns c through c + a (inclusive) for some valid integers r, c and a >= 0:
@@ -12162,6 +12162,55 @@ public class CodeChef {
                     zeroes++;
             }
             System.out.println(zeroes % 2 == 0 ? "YES" : "NO");
+        }
+        scn.close();
+    }
+
+    /*
+     * Problem: Pintu and Fruits
+     * 
+     * Chef went to Australia and saw the destruction caused by bushfires, which made him sad, 
+     * so he decided to help the animals by feeding them fruits. First, he went to purchase fruits from Pintu.
+     * Pintu sells M different types of fruits (numbered 1 through M). He sells them in N baskets (numbered 1 through N), 
+     * where for each valid i, the i-th basket costs Pi​ and it contains fruits of type Fi​. 
+     * Chef does not have too much money, so he cannot afford to buy everything; 
+     * instead, he wants to choose one of the MM available types and purchase all the baskets containing fruits of that type.
+     * Help Chef choose the type of fruit to buy such that he buys at least one basket and the total cost of the baskets he buys is the smallest possible.
+     * 
+     * Input:
+     * The first line of the input contains a single integer T denoting the number of test cases. The description of T test cases follows.
+     * The first line of each test case contains two space-separated integers N and M.
+     * The second line contains N space-separated integers F1, F2, ..., FN.
+     * The third line contains N space-separated integers P1, P2, ..., PN.
+     * 
+     * Output:
+     * For each test case, print a single line containing one integer - the minimum price Chef must pay.
+     * 
+     * Constraints:
+     * 1 <= T <= 1000
+     * 1 <= M, N <= 50
+     * 1 <= Fi <= M for each valid i
+     * 0 <= Pi <= 50 for each valid i
+     */
+    public static void solveCodeChefCHPINTU() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long M = scn.nextLong();
+            ArrayList<Long> Fi = new ArrayList<>();
+            for (long i = 0; i < N; i++)
+                Fi.add(scn.nextLong());
+            ArrayList<Long> Pi = new ArrayList<>();
+            for (long i = 0; i < N; i++)
+                Pi.add(scn.nextLong());
+            HashMap<Long, Long> hashMap = new HashMap<>();
+            for (long i = 0; i < N; i++)
+                hashMap.put(Fi.get((int)i), hashMap.getOrDefault(Fi.get((int)i), 0L) + Pi.get((int)i));
+            long minCost = Long.MAX_VALUE;
+            for (Map.Entry<Long, Long> entry : hashMap.entrySet())
+                minCost = Math.min(minCost, entry.getValue());
+            System.out.println(minCost);
         }
         scn.close();
     }
