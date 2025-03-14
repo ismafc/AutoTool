@@ -12248,6 +12248,49 @@ public class CodeChef {
     }
 
     /*
+     * Problem: 2 Boxes
+     * 
+     * You have 2 boxes, the first having X stones, and the second having Y stones.
+     * You want the (absolute) difference between the stones of the 2 boxes to be exactly K.
+     * Each second, you can take a stone from the 1st box and put it in the 2nd, or take from the 2nd and put it in the 1st1st box.
+     * Find the minimum time till the difference between the stones of the 2 boxes becomes exactly K. If it is impossible, print −1 instead.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * The first and only line of input contains 3 integers - X, Y and K.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum time to get the difference to exactly K or −1 if impossible.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^3
+     * 1 <= X, Y <= 10
+     * 0 <= K <= X + Y
+     */
+    public static void solveCodeChefBOX2() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long K = scn.nextLong();
+            if (X + Y < K)
+                System.out.println(-1);
+            else {
+                long diff = Math.abs(Y - X);
+                if (diff % 2 == 0 && K % 2 == 1)
+                    System.out.println(-1);
+                else if (diff % 2 == 1 && K % 2 == 0)
+                    System.out.println(-1);
+                else
+                    System.out.println(Math.abs(diff - K) / 2);
+            }
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
