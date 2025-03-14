@@ -12214,7 +12214,39 @@ public class CodeChef {
         }
         scn.close();
     }
-    
+
+    /*
+     * Problem: Triangle Checking
+     * 
+     * You are given 3 sticks of length A, B and C.
+     * Please check if they can be the side lengths of a valid non-degenerate triangle.
+     * Recall that A,B and C can be the side-lengths of a non-degenerate triangle if and only if each of the following 3 conditions hold:
+     * A + B > C
+     * B + C > A
+     * A + C > B
+     * 
+     * Input Format:
+     * The first and only line of input contains 3 integers - A, B and C.
+     * 
+     * Output Format:
+     * For each test case, output on a new line Yes if the side lengths form a valid triangle, and else No.
+     * It is allowed to print each character in either case. For example, YES, yes and yEs will all be accepted as positive responses.
+     * 
+     * Constraints:
+     * 1 <= A, B, C <= 10
+     */
+    public static void solveCodeChefTRICKECK() {
+        Scanner scn = new Scanner(System.in);
+        long A = scn.nextLong();
+        long B = scn.nextLong();
+        long C = scn.nextLong();
+        if ((A + B) > C && (B + C) > A && (C + A) > B)
+            System.out.println("YES");
+        else
+            System.out.println("NO");
+        scn.close();
+    }
+
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
