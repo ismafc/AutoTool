@@ -12406,6 +12406,46 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Sale
+     * 
+     * Chef knows the projected sales of his store for the next N days. The projected sales of the ith day is Ai​.
+     * On any particular day, Chef can announce that his shop is closing which will double his sales for that day, 
+     * but since Chef is a man of his word, he won't make any sale after that day.
+     * Find the maximum possible total sales which Chef can make.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains an integer N — the number of days.
+     * -> The second line consists of N space-separated integers denoting the projected sales of each day.
+     * 
+     * Output Format:
+     * For each test case, output on a new line, the maximum total sales that Chef can make.
+     * 
+     * Constraints:
+     * 1 <= T <= 3*10^5
+     * 1 <= N <= 3*10^5
+     * 1 <= Ai <= 10^9
+     * The sum of N over all test cases won't exceed 3*10^5.
+     */
+    public static void solveCodeChefFINALSALE() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            long maxSales = 0;
+            long previousSales = 0;
+            for (int i = 0; i < N; i++) {
+                long Ai = scn.nextLong();
+                maxSales = Math.max(previousSales + Ai * 2, maxSales);
+                previousSales += Ai;
+            }
+            System.out.println(maxSales);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
