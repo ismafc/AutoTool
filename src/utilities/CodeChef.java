@@ -12291,6 +12291,80 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Ordered Distances
+     * 
+     * Chef had a sequence of N distinct points X1, X2, ..., XN.
+     * Chef did the following action to get a new sequence of points Y:
+     * Choose a pivot index i (1 <= i <= N), and thus a pivot value P = Xi.
+     * Make a list L of the N pairs (|Xj − P|, Xj) for each 1 <= j <= N, i.e. pair of (distance, value).
+     * Sort the list L in increasing order.
+     * Define Yk​ as the second element in the k-th pair in this sorted list L.
+     * For example,
+     * Suppose we start with X = [2, 6, 5, 4], pivot index i = 3 and thus, P = X3 = 5.
+     * List L = [(3, 2), (1, 6), (0, 5), (1, 4)]
+     * Sorted order of List L = [(0, 5), (1, 4), (1, 6), (3, 2)]
+     * Y = [5, 4, 6, 2] taking the second elements from the list.
+     * Now, you are given the sequences X and Y but you do not know the pivot index chosen by Chef. 
+     * Can you recover any valid pivot index, or declare an inconsistency in the results. (i.e. no valid pivot index exists)
+     * It is guaranteed the input values of the array X and Y are all distinct, and that X is a permutation of Y.
+     * Increasing order of pairs is defined as (A, B) < (C, D)  if and only if either of the 2 conditions hold:
+     * A < C
+     * A = C, B < D
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains N - the number of points.
+     * -> The second line contains N integers - X1, X2, ..., XN, the initial sequence of distinct points.
+     * -> The third line contains N integers - Y1, Y2, ..., YN, the final sequence of distinct points.
+     * 
+     * Output Format:
+     * For each test case, output either the pivot index ii (1 <= i <= N) if it exists or −1 to indicate no valid pivot.
+     * If multiple answers are possible, all will be accepted.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 2 <= N <= 100
+     * 1 <= Xi,Yi <= 1000
+     * Xi != Xj​ for all i != j
+     * Yi != Yj​ for all i != j
+     * X is a permutation of Y
+     */
+    public static void solveCodeChefORDDIST() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            HashMap<Long, Long> X = new HashMap<>();
+            for (long i = 0; i < N; i++) {
+                X.put(scn.nextLong(), i + 1);
+            }
+            long pivot = scn.nextLong();            
+            long lastDiff = 0;
+            long lastDiffValue = pivot;
+            for (long i = 1; i < N; i++) {
+                long Yi = scn.nextLong();
+                long newDiff = Math.abs(Yi - pivot);
+                if (newDiff > lastDiff) {
+                    lastDiff = newDiff;
+                    lastDiffValue = Yi;
+                }
+                else if (newDiff == lastDiff && Yi > lastDiffValue) {
+                    lastDiffValue = Yi;
+                }
+                else {
+                    lastDiff = Long.MAX_VALUE;
+                }
+            }
+            if (lastDiff == Long.MAX_VALUE)
+                System.out.println(-1);
+            else
+                System.out.println(X.get(pivot));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
