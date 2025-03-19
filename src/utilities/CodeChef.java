@@ -12365,6 +12365,47 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Ada and crayons
+     * Read problems statements in mandarin chinese, russian and vietnamese as well.
+     * Ada has an array of N crayons, some crayons are pointing upwards and some downwards. 
+     * Ada thinks that an array of crayons is beautiful if all the crayons are pointing in the same direction.
+     * In one step you can flip any segment of consecutive crayons. After flipping a segment, all crayons pointing downwards will point upwards and visceversa
+     * What is the minimum number of steps to make the array of crayons beautiful?
+     * 
+     * Input:
+     * The first line of the input contains T the number of test cases. Each test case is described in one line containing a string S of N characters, 
+     * the i-th character is 'U' if the i-th crayon is pointing upwards and 'D' if it is pointing downwards.
+     * 
+     * Output:
+     * For each test case, output a single line containing the minimum number of flips needed to make all crayons point to the same direction.
+     * 
+     * Constraints:
+     * 1 <= T <= 3000
+     * 1 <= N <= 50
+     */
+    public static void solveCodeChefADACRA() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            Character lastC = '?';
+            long Us = 0;
+            long Ds = 0;
+            String S = scn.next();
+            for (int i = 0; i < S.length(); i++) {
+                if (S.charAt(i) != lastC) {
+                    lastC = S.charAt(i);
+                    if (S.charAt(i) == 'U')
+                        Us++;
+                    else
+                        Ds++;
+                }
+            }
+            System.out.println(Math.min(Us, Ds));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
