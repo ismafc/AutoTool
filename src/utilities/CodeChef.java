@@ -12488,6 +12488,40 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Placing 01 And 10
+     * 
+     * You have X 01 strings and Y 10 strings. 
+     * You will form a new string S by first rearranging these strings in some order, and then concatenate them in this rearranged order.
+     * Let f(S) denote the number of indices i such that 1 <= i <= |S| and S(i) != S(i + 1)​. Find the minimum possible value of f(S).
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * The first and only line of input contains 2 integers - X and Y.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the minimum possible value of f(S).
+     * 
+     * Constraints:
+     * 1 <= T <= 10^4
+     * 1 <= X, Y <= 100
+     */
+    public static void solveCodeChefPLACE0110() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long X = scn.nextLong();
+            long Y = scn.nextLong();
+            long min = Math.min(X, Y);
+            if (X == Y)
+                System.out.println(min * 2);
+            else
+                System.out.println(min * 2 + (Math.max(X, Y) - min) * 2 - 1);
+        }
+        scn.close();
+    }
+
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
