@@ -12551,6 +12551,35 @@ public class CodeChef {
         scn.close();
     }
 
+    /*
+     * Problem: Conquer the Fest!!
+     * 
+     * IIIT Pune is celebrating its annual fest with a lineup of exciting events. 
+     * And among the technical events InfInITy stands out as a prestigious coding contest, known for its challenging coding problems.
+     * This year, the contest includes a difficult problem.
+     * The problem has a difficulty level of B, and a participant needs an IQ of at least 10 * B to solve it.
+     * You have an IQ of N. Can you take on the challenge and solve this tough problem, or is it too hard to crack?
+     * 
+     * Input Format:
+     * The first and only line of input will contain two space-separated integers N and B - 
+     * your IQ, and the difficulty level of the problem you are trying to solve.
+     * 
+     * Output Format:
+     * Output on a single line the answer: "YES" (without quotes) if you can solve the problem, and "NO" (without quotes) otherwise.
+     * Each character of the output may be printed in either uppercase or lowercase, 
+     * i.e. if the answer is No, then all of NO, No, nO, and no will be accepted.
+     * 
+     * Constraints:
+     * 1 <= N <= 500
+     * 1 <= B <= 100
+     */
+    public static void solveCodeChefCLSI() {
+        Scanner scn = new Scanner(System.in);
+        long N = scn.nextLong();
+        long B = scn.nextLong();
+        System.out.println((N / B) >= 10 ? "YES" : "NO");
+        scn.close();
+    }
 
     /*
      * @brief: Method to show the CodeChef solved problems implemented.
