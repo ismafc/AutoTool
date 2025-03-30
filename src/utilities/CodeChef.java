@@ -12582,6 +12582,56 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Lost in the Fest!!
+     * 
+     * Bhoomi was excited for the annual fest at IIIT Pune. She found a spot in the queue, eagerly waiting for the performance. 
+     * But there was a problem: tall students ahead blocked her view!
+     * Frustrated, she wondered: "How much do I have to move to be able to see the performance?"
+     * There are N students who want to watch the performance at the fest. 
+     * They're standing in a straight queue, and the i-th student in the queue has a height of Hi.
+     * A student will be able to watch the performance if and only if they are strictly taller than every student ahead of them.
+     * That is, student ii will be able to watch the performance if and only if Hi > Hj  for every 1 <= j < i.
+     * Bhoomi is the last student in the queue, with a height of HN.
+     * Every second, she can swap places with the person just in front of her - that is, if she's currently at position i,
+     * she can move to position i − 1 (and the person previously at position i − 1 will move to position i instead).
+     * How many seconds will it take till Bhoomi is able to see the performance?
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of two lines of input.
+     * -> The first line of each test case contains a single integer N — the number of students in the queue.
+     * -> The second line contains NN space-separated integers H1, H2, ..., HN​, denoting the heights of the students in the queue.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the answer: the number of seconds till Bhoomi is able to see the performance.
+     * 
+     * Constraints:
+     * 1 <= T <= 100
+     * 1 <= N <= 100
+     * 1 <= Hi <= 100
+     */
+    public static void solveCodeChefMDGT() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            long N = scn.nextLong();
+            ArrayList<Long> H = new ArrayList<>();
+            for (long i = 0; i < N; i++)
+                H.add(scn.nextLong());
+            long HN = H.getLast();
+            long ni = H.size() - 1;
+            for (int i = 0; i < N - 1; i++) {
+                if (H.get(i) >= HN) {
+                    ni = i;
+                    break;
+                }
+            }
+            System.out.println(H.size() - ni - 1);
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
