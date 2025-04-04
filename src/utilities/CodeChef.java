@@ -12197,7 +12197,7 @@ public class CodeChef {
         long T = scn.nextLong();
         while (T-- > 0) {
             long N = scn.nextLong();
-            long M = scn.nextLong();
+            scn.nextLong();
             ArrayList<Long> Fi = new ArrayList<>();
             for (long i = 0; i < N; i++)
                 Fi.add(scn.nextLong());
