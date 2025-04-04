@@ -12632,6 +12632,36 @@ public class CodeChef {
     }
 
     /*
+     * Problem: CodeMat
+     * 
+     * Code-mat is an annual programming competition organized by the Mathematics and Computing Society (MACS) at IIT BHU. 
+     * Last year, the event had X participants, while this year it attracted Y participants. 
+     * Determine whether this year's event was more successful by checking if Y is greater than X. 
+     * If it was more successful, print Yes. Otherwise, print No.
+     * 
+     * Input Format:
+     * The input consists of two space-separated integers X and Y, where:
+     * X denotes the number of participants last year.
+     * Y denotes the number of participants this year.
+     * 
+     * Output Format:
+     * Print YES if this year's event had more participants than last year, otherwise print NO.
+     * You may print each character of the string in uppercase or lowercase 
+     * (for example, the strings YES, yEs, yes, and yeS will all be treated as identical).
+     * 
+     * Constraints:
+     * 1 <= X <= 1000
+     * 1 <= Y <= 1000
+     */
+    public static void solveCodeChefCDMT() {
+        Scanner scn = new Scanner(System.in);
+        long X = scn.nextLong();
+        long Y = scn.nextLong();
+        System.out.println(Y > X ? "YES" : "NO");
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
