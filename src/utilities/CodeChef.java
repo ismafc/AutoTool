@@ -12662,6 +12662,56 @@ public class CodeChef {
     }
 
     /*
+     * Problem: Maximum Ones
+     * 
+     * You are given a binary string S of length N consisting only of characters 0 and 1. 
+     * You are allowed to perform at most K operations on this string. 
+     * In each operation, you can choose an index i (where 0 <= i < N − 1) and update the character at position i as follows:
+     * S(i) = max⁡(S(i), S(i+1))
+     * Here, the maximum is taken in the numerical sense, i.e., ′1′ is considered greater than ′0′. 
+     * This operation essentially means that if S(i+1)​ is ′1′, then S(i)​ becomes ′1′ regardless of its previous value.
+     * Your task is to determine the maximum possible number of 1s in the string after performing at most K such operations.
+     * 
+     * Input Format:
+     * The first line of input will contain a single integer T, denoting the number of test cases.
+     * Each test case consists of multiple lines of input.
+     * -> The first line of each test case contains two space-separated integers N and K.
+     * -> The second line of each test case contains a binary string S of length N, consisting of the characters 0 and 1.
+     * 
+     * Output Format:
+     * For each test case, output on a new line the maximum number of 1s that can be achieved in the string after performing at most K operations.
+     * 
+     * Constraints:
+     * 1 <= T <= 10^5
+     * 1 <= N <= 10
+     * 0 <= K <= N
+     * S(i) ∈ {0, 1}
+     */
+    public static void solveCodeChefMXON() {
+        Scanner scn = new Scanner(System.in);
+        long T = scn.nextLong();
+        while (T-- > 0) {
+            scn.nextLong();
+            long K = scn.nextLong();
+            String S = scn.next();
+            long zeros = 0;
+            long ones = 0;
+            long totalZeros = 0;
+            for (Character c : S.toCharArray()) {
+                if (c == '0')
+                    zeros++;
+                else {
+                    totalZeros += zeros;
+                    zeros = 0;
+                    ones++;
+                }
+            }
+            System.out.println(ones + Math.min(totalZeros, K));
+        }
+        scn.close();
+    }
+
+    /*
      * @brief: Method to show the CodeChef solved problems implemented.
      * It shows all procedures with name starting with "solveCodeChef".
      */
